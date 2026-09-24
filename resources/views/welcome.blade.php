@@ -102,7 +102,7 @@
   --color-primary-container: #143ee4;
 }
 </style>
-</head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 left-0 w-full z-50 bg-surface/75 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="MDT Solution Indonesia Corporate Logo" class="h-8 w-auto object-contain" src="/assets/media/logos/logo2.png"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">MDT Solution Indonesia</span></div><nav class="hidden lg:flex items-center gap-8" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="one-page-home" href="#home">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#about">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#services">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="portfolio" href="#portfolio">Portfolio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="news" href="#news">News</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#contact">Contact</a></nav><div class="flex items-center gap-4"><button aria-label="Toggle Light/Dark Theme" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark'); this.querySelector('span').textContent = document.documentElement.classList.contains('dark') ? 'dark_mode' : 'light_mode';" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><a class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-[0_2px_8px_rgba(59,91,253,0.24)]" href="#contact">Hubungi Kami</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+</head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 left-0 w-full z-50 bg-surface/75 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="MDT Solution Indonesia Corporate Logo" class="h-8 w-auto object-contain" src="/assets/media/logos/logo2.png"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">MDT Solution Indonesia</span></div><nav class="hidden lg:flex items-center gap-8" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="one-page-home" href="#home">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#about">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#services">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="portfolio" href="#portfolio">Portfolio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="news" href="#news">News</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#contact">Contact</a></nav><div class="flex items-center gap-4"><div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant font-code-sm text-code-sm shadow-sm"><span class="material-symbols-outlined text-[16px] text-primary">monitoring</span><span class="font-semibold">{{ number_format(\App\Models\Visitor::count(), 0, ',', '.') }} Visitors</span></div><button aria-label="Toggle Light/Dark Theme" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark'); this.querySelector('span').textContent = document.documentElement.classList.contains('dark') ? 'dark_mode' : 'light_mode';" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><a class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-[0_2px_8px_rgba(59,91,253,0.24)]" href="#contact">Hubungi Kami</a></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
 <!-- HERO SECTION (#home) -->
 <section class="relative w-full overflow-hidden py-16 lg:py-24" id="home">
 <!-- Atmospheric Ambient Glows -->
@@ -116,7 +116,7 @@
 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
 <span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide uppercase">Next-Gen Enterprise Engine</span>
 </div>
-<h1 class="font-display text-display text-on-surface leading-tight tracking-tight">
+<h1 class="font-display text-headline-lg md:text-display text-on-surface leading-tight tracking-tight">
             Mentransformasi Ambisi Bisnis Menjadi Solusi Teknologi <span class="text-primary">Skala Global</span>
 </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
@@ -234,7 +234,7 @@
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/50 mb-3">
 <span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Tentang MDT Solution Indonesia</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold tracking-tight">
           Membangun Fondasi Masa Depan Digital Berkelanjutan
         </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
@@ -339,7 +339,7 @@
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
 <span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Layanan Terpadu</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold tracking-tight">
           Keahlian Rekayasa dan Inovasi Digital untuk Akselerasi Bisnis
         </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
@@ -474,7 +474,7 @@
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
 <span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Portfolio Unggulan</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold tracking-tight">
             Studi Kasus Solusi Berdampak Nyata
           </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
@@ -604,7 +604,7 @@
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
 <span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Wawasan &amp; Berita</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold tracking-tight">
             Analisis Tren Teknologi dan Transformasi Industri
           </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
@@ -701,7 +701,7 @@
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
 <span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Keunggulan Kami</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold tracking-tight">
           Mengapa Memilih MDT Solution Indonesia
         </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
@@ -782,7 +782,7 @@
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
 <span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Testimoni Klien</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold tracking-tight">
             Apa Kata Para Pemimpin Bisnis
           </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
@@ -888,7 +888,7 @@
 <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
 <span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide uppercase">Konsultasi Arsitektur Gratis</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mb-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold tracking-tight mb-4">
             Siap Mengembangkan Bisnis Anda Menuju Skala Berikutnya?
           </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
@@ -927,7 +927,7 @@
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
 <span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Mulai Kolaborasi</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold tracking-tight">
           Hubungi Tim Konsultan MDT Solution Indonesia
         </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
@@ -1090,7 +1090,7 @@
 <span class="material-symbols-outlined text-[20px]">close</span>
 </button>
 <span class="px-3 py-1 rounded-full bg-secondary-container/60 font-label-sm text-label-sm text-primary font-semibold" id="cs-modal-category">Digital Transformation</span>
-<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-3 mb-2" id="cs-modal-title">Aura Banking Next-Gen Core Platform</h3>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold mt-3 mb-2" id="cs-modal-title">Aura Banking Next-Gen Core Platform</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-6" id="cs-modal-subtitle">Modernisasi arsitektur perbankan komersial menuju sistem event-driven berkecepatan ultra tinggi.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="p-4 rounded-lg bg-surface-container-low">
@@ -1148,7 +1148,7 @@
 <span>•</span>
 <span id="article-modal-readtime">6 Menit Baca</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mb-6 leading-tight" id="article-modal-title">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold mb-6 leading-tight" id="article-modal-title">
         Navigasi Implementasi Generative AI di Sektor Keuangan Berizin Resmi
       </h2>
 <div class="flex items-center gap-3 pb-8 mb-8 border-none bg-surface-container-low p-4 rounded-lg">
