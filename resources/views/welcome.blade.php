@@ -148,61 +148,54 @@
 </div>
 </div>
 </div>
-<!-- Right Bento Card Assembly Visual -->
-<div class="lg:col-span-5 relative">
-<div class="relative bg-surface-container-lowest/80 backdrop-blur-xl rounded-xl p-6 shadow-xl">
-<!-- Header bar of visual mockup -->
-<div class="flex items-center justify-between pb-5">
+<!-- Right Animated Tech Visual -->
+<div class="lg:col-span-5 relative flex items-center justify-center h-full min-h-[400px]">
+<div class="relative w-full max-w-md aspect-square flex items-center justify-center scale-90 sm:scale-100">
+<!-- Core glowing orb -->
+<div class="absolute w-24 h-24 bg-primary rounded-full animate-ping opacity-20"></div>
+<div class="absolute w-32 h-32 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+<div class="absolute w-20 h-20 bg-gradient-to-tr from-primary to-tertiary-fixed-dim rounded-full shadow-[0_0_50px_rgba(59,91,253,0.6)] flex items-center justify-center z-20">
+<span class="material-symbols-outlined text-on-primary text-4xl">memory</span>
+</div>
+
+<!-- Orbital Ring 1 (Inner) -->
+<div class="absolute w-48 h-48 border-[1.5px] border-primary/40 rounded-full animate-[spin_6s_linear_infinite] z-10">
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-surface rounded-full border-2 border-primary shadow-[0_0_10px_rgba(59,91,253,0.8)]"></div>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-surface rounded-full border-2 border-primary shadow-[0_0_10px_rgba(59,91,253,0.8)]"></div>
+</div>
+
+<!-- Orbital Ring 2 (Middle) -->
+<div class="absolute w-72 h-72 border-[1.5px] border-tertiary-fixed-dim/30 rounded-full animate-[spin_10s_linear_infinite_reverse] z-10">
+<div class="absolute top-1/2 -left-2 -translate-y-1/2 w-5 h-5 bg-surface rounded-full border-2 border-tertiary-fixed-dim shadow-[0_0_12px_rgba(76,215,246,0.8)] flex items-center justify-center">
+<div class="w-1.5 h-1.5 bg-tertiary-fixed-dim rounded-full"></div>
+</div>
+<div class="absolute top-1/2 -right-2 -translate-y-1/2 w-3 h-3 bg-tertiary-fixed-dim rounded-full shadow-[0_0_15px_rgba(76,215,246,0.8)]"></div>
+</div>
+
+<!-- Orbital Ring 3 (Outer) -->
+<div class="absolute w-[22rem] h-[22rem] border border-secondary-fixed-dim/20 rounded-full animate-[spin_15s_linear_infinite] border-dashed">
+<div class="absolute top-1/4 -right-1 w-3 h-3 bg-primary-fixed-dim rounded-full shadow-[0_0_10px_rgba(186,195,255,0.6)] animate-pulse"></div>
+<div class="absolute bottom-1/4 -left-1 w-3 h-3 bg-primary-fixed-dim rounded-full shadow-[0_0_10px_rgba(186,195,255,0.6)] animate-pulse"></div>
+<div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-error/80 rounded-full shadow-[0_0_10px_rgba(255,0,0,0.5)]"></div>
+</div>
+
+<!-- Floating Tech Elements -->
+<div class="absolute top-10 right-0 px-3 py-1.5 bg-surface-container-lowest/80 backdrop-blur-md rounded-lg border border-outline-variant/30 shadow-lg animate-[bounce_4s_ease-in-out_infinite] z-20">
 <div class="flex items-center gap-2">
-<span class="w-3 h-3 rounded-full bg-error/60"></span>
-<span class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></span>
-<span class="w-3 h-3 rounded-full bg-primary/70"></span>
-<span class="font-code-sm text-code-sm text-on-surface-variant ml-2 font-medium">mdtsolution-mesh-node-01</span>
-</div>
-<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary">LIVE</span>
-</div>
-<!-- Mini visual chart / status widget -->
-<div class="p-4 rounded-lg bg-surface-container-low mb-4">
-<div class="flex items-center justify-between text-on-surface mb-2">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Real-Time Core Throughput</span>
-<span class="font-code-sm text-code-sm font-semibold text-primary">128,490 req/s</span>
-</div>
-<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
-<div class="h-full bg-primary rounded-full w-[84%] transition-all duration-1000"></div>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-on-surface">AI Inference: 12ms</span>
 </div>
 </div>
-<!-- Metrics grid inside visual -->
-<div class="grid grid-cols-2 gap-3 mb-4">
-<div class="p-3.5 rounded-lg bg-surface-container-lowest shadow-sm">
-<span class="font-body-sm text-body-sm text-on-surface-variant block">System SLA</span>
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold">99.98%</span>
-<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1 mt-1">
-<span class="material-symbols-outlined text-[14px]">arrow_upward</span> High Availability
-                </span>
-</div>
-<div class="p-3.5 rounded-lg bg-surface-container-lowest shadow-sm">
-<span class="font-body-sm text-body-sm text-on-surface-variant block">AI Inference</span>
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold">12ms</span>
-<span class="font-label-sm text-label-sm text-primary flex items-center gap-1 mt-1">
-<span class="material-symbols-outlined text-[14px]">speed</span> Tensor Parallel
-                </span>
+<div class="absolute bottom-16 left-0 px-3 py-1.5 bg-surface-container-lowest/80 backdrop-blur-md rounded-lg border border-outline-variant/30 shadow-lg animate-[bounce_5s_ease-in-out_infinite_reverse] z-20">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-on-surface">System SLA: 99.98%</span>
 </div>
 </div>
-<!-- Tech Stack Tags -->
-<div class="pt-2 flex flex-wrap gap-2">
-<span class="px-3 py-1 rounded bg-secondary-container/60 font-code-sm text-code-sm text-on-surface">Kubernetes v1.30</span>
-<span class="px-3 py-1 rounded bg-secondary-container/60 font-code-sm text-code-sm text-on-surface">PyTorch Core</span>
-<span class="px-3 py-1 rounded bg-secondary-container/60 font-code-sm text-code-sm text-on-surface">Rust Engine</span>
-<span class="px-3 py-1 rounded bg-secondary-container/60 font-code-sm text-code-sm text-on-surface">Kafka Pipeline</span>
-</div>
-<!-- Floating Badge Overlay -->
-<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest/90 backdrop-blur-md rounded-lg p-3.5 shadow-lg hidden sm:flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[20px]">format_image_left</span>
-</div>
-<div>
-<span class="font-label-sm text-label-sm font-semibold text-on-surface block">Enterprise Grade Security</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Zero-Trust End-to-End</span>
+<div class="absolute bottom-4 right-10 px-3 py-1.5 bg-surface-container-lowest/80 backdrop-blur-md rounded-lg border border-outline-variant/30 shadow-lg animate-[bounce_6s_ease-in-out_infinite] z-20">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-on-surface">Secured Node</span>
 </div>
 </div>
 </div>
