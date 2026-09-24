@@ -120,7 +120,7 @@
             Mentransformasi Ambisi Bisnis Menjadi Solusi Teknologi <span class="text-primary">Skala Global</span>
 </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            MDT Solution Indonesia menghadirkan rekayasa perangkat lunak presisi tinggi, adopsi AI terpadu, dan strategi transformasi digital untuk enterprise yang siap memimpin industri.
+            MDT Solution Indonesia menghadirkan rekayasa perangkat lunak presisi tinggi dan strategi transformasi digital untuk enterprise yang siap memimpin industri.
           </p>
 <div class="flex flex-wrap items-center gap-4 pt-2">
 <a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary-container transition-all" href="#services">
@@ -183,7 +183,7 @@
 <div class="absolute top-10 right-0 px-3 py-1.5 bg-surface-container-lowest/80 backdrop-blur-md rounded-lg border border-outline-variant/30 shadow-lg animate-[bounce_4s_ease-in-out_infinite] z-20">
 <div class="flex items-center gap-2">
 <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
-<span class="font-code-sm text-code-sm text-on-surface">AI Inference: 12ms</span>
+<span class="font-code-sm text-code-sm text-on-surface">System Latency: 12ms</span>
 </div>
 </div>
 <div class="absolute bottom-16 left-0 px-3 py-1.5 bg-surface-container-lowest/80 backdrop-blur-md rounded-lg border border-outline-variant/30 shadow-lg animate-[bounce_5s_ease-in-out_infinite_reverse] z-20">
@@ -256,7 +256,7 @@
               MDT Solution Indonesia berdiri sebagai konsultan dan mitra rekayasa teknologi terpercaya yang memadukan keahlian teknis kelas dunia dengan pemahaman mendalam tentang lanskap bisnis modern. Kami tidak sekadar membangun aplikasi; kami merancang ekosistem komputasi adaptif yang memungkinkan perusahaan beroperasi tanpa hambatan di era ketidakpastian pasar.
             </p>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-              Mulai dari modernisasi sistem monolitik hingga penerapan orkestrasi microservices dan pipeline data AI berkecepatan tinggi, seluruh solusi kami dibangun berdasarkan standar kepatuhan tata kelola industri terketat.
+              Mulai dari modernisasi sistem monolitik hingga penerapan orkestrasi microservices berkecepatan tinggi, seluruh solusi kami dibangun berdasarkan standar kepatuhan tata kelola industri terketat.
             </p>
 </div>
 <div class="pt-6 flex flex-wrap items-center gap-4">
@@ -346,121 +346,67 @@
           Portofolio layanan komprehensif yang dirancang untuk mendukung setiap fase pertumbuhan dan modernisasi infrastruktur teknologi Anda.
         </p>
 </div>
-<!-- Bento Grid (6 Service Cards) -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Service 01: Web Development -->
+<!-- Bento Grid (4 Service Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Service 01: Pembuatan Aplikasi Berbasis Website -->
 <div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
 <div>
 <div class="flex items-center justify-between mb-6">
 <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-[26px]">code</span>
+<span class="material-symbols-outlined text-[26px]">language</span>
 </div>
 <span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">01</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Web Development</h3>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Pembuatan Aplikasi Berbasis Website</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Pembangunan platform dan web application skala enterprise dengan arsitektur mikro, ketahanan tinggi, dan skalabilitas masif berkinerja optimal.
+              Pembangunan platform dan aplikasi web skala enterprise dengan arsitektur mikro, ketahanan tinggi, dan skalabilitas masif.
             </p>
 </div>
-<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('web')" type="button">
-<span>Pelajari Lebih Lanjut</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
 </div>
-<!-- Service 02: UI/UX Design -->
-<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-6">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-[26px]">design_services</span>
-</div>
-<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">02</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">UI/UX Design</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Desain antarmuka manusiawi yang didasarkan pada riset pengguna mendalam, design system modular, dan arsitektur informasi ergonomis.
-            </p>
-</div>
-<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('uiux')" type="button">
-<span>Pelajari Lebih Lanjut</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
-</div>
-<!-- Service 03: AI Solution -->
-<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-6">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-[26px]">smart_toy</span>
-</div>
-<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">03</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">AI Solution</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Implementasi Large Language Models privat, agen cerdas operasional, computer vision, dan pipeline data analitik prediktif terintegrasi.
-            </p>
-</div>
-<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('ai')" type="button">
-<span>Pelajari Lebih Lanjut</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
-</div>
-<!-- Service 04: Digital Transformation -->
-<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-6">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-[26px]">transform</span>
-</div>
-<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">04</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Digital Transformation</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Modernisasi menyeluruh terhadap legacy systems, migrasi arsitektur cloud AWS/GCP, dan otomatisasi alur kerja digital lintas divisi.
-            </p>
-</div>
-<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('transformation')" type="button">
-<span>Pelajari Lebih Lanjut</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
-</div>
-<!-- Service 05: Mobile Application -->
+<!-- Service 02: Aplikasi Berbasis Mobile -->
 <div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
 <div>
 <div class="flex items-center justify-between mb-6">
 <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
 <span class="material-symbols-outlined text-[26px]">smartphone</span>
 </div>
-<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">05</span>
+<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">02</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Mobile Application</h3>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Aplikasi Berbasis Mobile</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Rekayasa aplikasi mobile native (Swift/Kotlin) dan hybrid berkualitas tinggi dengan interaksi mulus, keamanan perbankan, dan konsumsi baterai efisien.
+              Rekayasa aplikasi mobile berkualitas tinggi dengan interaksi mulus, keamanan terjamin, dan konsumsi sumber daya yang efisien.
             </p>
 </div>
-<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('mobile')" type="button">
-<span>Pelajari Lebih Lanjut</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
 </div>
-<!-- Service 06: IT Consulting -->
+<!-- Service 03: Website Company Profile -->
 <div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
 <div>
 <div class="flex items-center justify-between mb-6">
 <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-[26px]">insights</span>
+<span class="material-symbols-outlined text-[26px]">contact_page</span>
 </div>
-<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">06</span>
+<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">03</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">IT Consulting</h3>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Website Company Profile</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Audit menyeluruh arsitektur teknologi, evaluasi postur cyber security, serta penyusunan roadmap strategis teknologi informasi bagi dewan direksi.
+              Pembuatan website company profile yang profesional, modern, dan informatif untuk meningkatkan citra digital perusahaan Anda.
             </p>
 </div>
-<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('consulting')" type="button">
-<span>Pelajari Lebih Lanjut</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
+</div>
+<!-- Service 04: CCTV -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">videocam</span>
+</div>
+<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">04</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">CCTV</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Layanan instalasi dan pemeliharaan sistem keamanan CCTV cerdas untuk pengawasan area bisnis secara real-time dan andal.
+            </p>
+</div>
 </div>
 </div>
 </div>
@@ -486,9 +432,7 @@
 <button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all" onclick="filterPortfolio('all', this)" type="button">All</button>
 <button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('website', this)" type="button">Website</button>
 <button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('mobile', this)" type="button">Mobile</button>
-<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('uiux', this)" type="button">UI/UX</button>
-<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('ai', this)" type="button">AI</button>
-<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('transformation', this)" type="button">Digital Transformation</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('cctv', this)" type="button">CCTV</button>
 </div>
 </div>
 <!-- Bento Grid Projects -->
@@ -515,15 +459,15 @@
 </div>
 </div>
 <!-- Project 2: AetherHealth (Span 4 col) -->
-<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="ai mobile">
+<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="mobile">
 <div>
 <div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic mobile healthcare application interface displayed on a sleek glass smartphone mockup with clean vital-signs telemetry, ambient cyan glow, minimalist medical AI diagnostic charts, neutral studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd3V2O-dKRCmSj9Ig5694QKXfktVcpu2OqCgWdyrERegxOyNch_KYx7_dL2uOUeopOKqyasx5TlB2E3AQ8ldO-KEv3dJ0Yj-6RDDx-We2oQSqX0pVyGliptwD0ZQoCg0qJCFmVCe-w9gg-1rw29iGfL8kY4GjcyUXUiPwHBFBFbtCzVaqGX4cQRiLwE9IEL2ME1epNjuIL35LdZvHiNWnRapN7wyuafaGjFilaTweuvll6Hlx138-0"/>
-<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">AI &amp; Mobile</span>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Mobile</span>
 </div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">AetherHealth Telemedicine &amp; AI Triage</h3>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">AetherHealth Telemedicine</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
-              Aplikasi mobile telemedicine dengan engine triage berbasis AI untuk klasifikasi gejala darurat dan integrasi rekam medis instan.
+              Aplikasi mobile telemedicine dengan engine terpadu untuk klasifikasi gejala darurat dan integrasi rekam medis instan.
             </p>
 </div>
 <div class="flex items-center justify-between pt-4">
@@ -549,7 +493,7 @@
 </div>
 </div>
 <!-- Project 4: NexaFlow (Span 4 col) -->
-<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="ai">
+<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="website">
 <div>
 <div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
 <div class="w-full h-full bg-gradient-to-br from-primary/10 via-surface-container-high to-tertiary/10 flex items-center justify-center p-6">
@@ -558,11 +502,11 @@
 <span class="font-code-sm text-code-sm text-on-surface font-semibold">Autonomous Ops Model v2</span>
 </div>
 </div>
-<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">AI Platform</span>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Platform</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">NexaFlow Autonomous Ops Agent</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
-              Agen AI otonom untuk menyelesaikan 85% tiket kendala IT enterprise dan resolusi otomatis insiden infrastruktur cloud.
+              Sistem otonom untuk menyelesaikan 85% tiket kendala IT enterprise dan resolusi otomatis insiden infrastruktur cloud.
             </p>
 </div>
 <div class="flex items-center justify-between pt-4">
@@ -931,7 +875,7 @@
           Hubungi Tim Konsultan MDT Solution Indonesia
         </h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
-          Kirimkan pesan Anda atau hubungi kantor pusat kami di SCBD Jakarta untuk mendiskusikan peluang proyek baru.
+          Kirimkan pesan Anda atau hubungi kantor kami di Medan untuk mendiskusikan peluang proyek baru.
         </p>
 </div>
 <!-- Bento Grid (Contact Info + Form) -->
@@ -944,10 +888,9 @@
 <span class="material-symbols-outlined text-[22px]">mail</span>
 </div>
 <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Email Resmi</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Tim kami akan merespons dalam 1x24 jam kerja.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Tim kami akan merespons pesan Anda segera.</p>
 <div class="font-code-sm text-code-sm text-primary font-semibold space-y-1">
-<a class="block hover:underline" href="mailto:contact@mdtsolution.id">contact@mdtsolution.id</a>
-<a class="block hover:underline" href="mailto:enterprise@mdtsolution.id">enterprise@mdtsolution.id</a>
+<a class="block hover:underline" href="mailto:mdtsolution@gmail.com">mdtsolution@gmail.com</a>
 </div>
 </div>
 <!-- Phone Card -->
@@ -955,9 +898,9 @@
 <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
 <span class="material-symbols-outlined text-[22px]">call</span>
 </div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Telepon &amp; Konsultasi Langsung</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Senin – Jumat, 09.00 – 18.00 WIB</p>
-<p class="font-code-sm text-code-sm text-primary font-semibold">+62 21 5088 9200</p>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Telepon &amp; WhatsApp</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Hubungi kami untuk konsultasi langsung.</p>
+<p class="font-code-sm text-code-sm text-primary font-semibold">082275849670</p>
 </div>
 <!-- Address Card -->
 <div class="p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
@@ -966,23 +909,18 @@
 </div>
 <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Kantor Pusat</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-              Nexa Tower Lt. 28, Kawasan SCBD Kav. 52-53, Jl. Jend. Sudirman, Jakarta Selatan 12190
+              Jalan Karya Wisata Komplek Johor Indah Permai Blok L No 21<br>
+              Medan Johor, Kota Medan
             </p>
 </div>
 <!-- Social Links Card -->
 <div class="p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
 <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Kanal Digital</h4>
 <div class="flex items-center gap-3">
-<a aria-label="LinkedIn" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://linkedin.com">
+<a aria-label="LinkedIn" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="#">
 <span class="material-symbols-outlined text-[20px]">share</span>
 </a>
-<a aria-label="GitHub" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://github.com">
-<span class="material-symbols-outlined text-[20px]">terminal</span>
-</a>
-<a aria-label="X Twitter" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://x.com">
-<span class="material-symbols-outlined text-[20px]">tag</span>
-</a>
-<a aria-label="Instagram" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://instagram.com">
+<a aria-label="Instagram" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="#">
 <span class="material-symbols-outlined text-[20px]">photo_camera</span>
 </a>
 </div>
@@ -1149,23 +1087,23 @@
 <span id="article-modal-readtime">6 Menit Baca</span>
 </div>
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold mb-6 leading-tight" id="article-modal-title">
-        Navigasi Implementasi Generative AI di Sektor Keuangan Berizin Resmi
+        Navigasi Implementasi Sistem Terpusat di Sektor Keuangan Berizin Resmi
       </h2>
 <div class="flex items-center gap-3 pb-8 mb-8 border-none bg-surface-container-low p-4 rounded-lg">
 <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary font-headline-sm">DR</div>
 <div>
 <h4 class="font-label-md text-label-md text-on-surface font-bold">Dr. Dimas Raditya</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Principal AI Research Architect • MDT Solution Indonesia Laboratory</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Head of IT Research • MDT Solution Indonesia Laboratory</p>
 </div>
 </div>
 <div class="font-body-md text-body-md text-on-surface-variant space-y-4 leading-relaxed" id="article-modal-body">
-<p>Integrasi teknologi Generative AI dan Large Language Models (LLM) di sektor perbankan dan asuransi menuntut ketelitian ganda. Tidak seperti implementasi konsumen terbuka, perbankan di Indonesia terikat oleh regulasi privasi data yang ketat dan standar audit kelayakan algoritma dari otoritas berwenang.</p>
-<p>Dalam artikel ini, kami menjabarkan framework penerapan <em>air-gapped retrieval-augmented generation (RAG)</em> yang berjalan di atas private cloud terisolasi. Arsitektur ini memastikan tidak ada data nasabah sensitif yang terpapar ke model publik dari vendor pihak ketiga.</p>
-<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold pt-4">Tiga Pilar Kunci Tata Kelola AI Enterprise:</h4>
+<p>Integrasi teknologi modern di sektor perbankan dan asuransi menuntut ketelitian ganda. Tidak seperti implementasi konsumen terbuka, perbankan di Indonesia terikat oleh regulasi privasi data yang ketat dan standar audit kelayakan sistem dari otoritas berwenang.</p>
+<p>Dalam artikel ini, kami menjabarkan framework penerapan arsitektur terisolasi yang berjalan di atas private cloud. Arsitektur ini memastikan tidak ada data nasabah sensitif yang terpapar ke jaringan publik.</p>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold pt-4">Tiga Pilar Kunci Tata Kelola Sistem Enterprise:</h4>
 <ul class="space-y-2 list-disc list-inside pl-2">
-<li><strong>Isolasi Model &amp; Data Embeddings:</strong> Vektor database disimpan secara terenkripsi menggunakan kunci KMS yang dikontrol langsung oleh tim sekuriti internal bank.</li>
-<li><strong>Explainability &amp; Hallucination Guardrails:</strong> Setiap inferensi dilengkapi penanda sumber rujukan dokumen resmi untuk meniadakan risiko kesalahan faktual hukum keuangan.</li>
-<li><strong>Real-time Compliance Audit Trail:</strong> Logging komprehensif pada level prompt-response yang siap diaudit kapan pun oleh auditor eksternal.</li>
+<li><strong>Isolasi Database Khusus:</strong> Database disimpan secara terenkripsi menggunakan kunci KMS yang dikontrol langsung oleh tim sekuriti internal bank.</li>
+<li><strong>Keandalan Tinggi:</strong> Setiap transaksi dilengkapi penanda sumber rujukan resmi untuk meniadakan risiko kesalahan faktual operasional keuangan.</li>
+<li><strong>Real-time Compliance Audit Trail:</strong> Logging komprehensif yang siap diaudit kapan pun oleh auditor eksternal.</li>
 </ul>
 </div>
 <div class="mt-8 pt-6 flex justify-end">
@@ -1186,8 +1124,8 @@
 <div class="space-y-4">
 <div class="cursor-pointer p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors" onclick="openArticleModal('gen-ai'); closeNewsDrawer();">
 <span class="font-code-sm text-code-sm text-primary font-semibold">15 Mei 2025</span>
-<h4 class="font-label-md text-label-md text-on-surface font-bold mt-1">Navigasi Implementasi Generative AI di Sektor Keuangan</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Standar kepatuhan LLM privat untuk institusi perbankan resmi.</p>
+<h4 class="font-label-md text-label-md text-on-surface font-bold mt-1">Navigasi Implementasi Sistem Terpusat di Sektor Keuangan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Standar kepatuhan sistem privat untuk institusi perbankan resmi.</p>
 </div>
 <div class="cursor-pointer p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors" onclick="openArticleModal('microservices'); closeNewsDrawer();">
 <span class="font-code-sm text-code-sm text-primary font-semibold">28 April 2025</span>
@@ -1196,8 +1134,8 @@
 </div>
 <div class="cursor-pointer p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors" onclick="openArticleModal('ux-ai'); closeNewsDrawer();">
 <span class="font-code-sm text-code-sm text-primary font-semibold">10 April 2025</span>
-<h4 class="font-label-md text-label-md text-on-surface font-bold mt-1">Prinsip Human-Centered UX Era AI Otomatis</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Merancang kendali human-in-the-loop yang mulus dan bebas friksi.</p>
+<h4 class="font-label-md text-label-md text-on-surface font-bold mt-1">Prinsip Human-Centered UX dalam Desain Aplikasi Modern</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Merancang kendali pengguna yang mulus dan bebas friksi.</p>
 </div>
 <div class="cursor-pointer p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors" onclick="openArticleModal('zero-trust'); closeNewsDrawer();">
 <span class="font-code-sm text-code-sm text-primary font-semibold">22 Maret 2025</span>
@@ -1466,19 +1404,19 @@
     // 5. ARTICLE MODAL
     const articleData = {
       'gen-ai': {
-        tag: 'AI Governance',
+        tag: 'Enterprise Systems',
         date: '15 Mei 2025',
         read: '6 Menit Baca',
-        title: 'Navigasi Implementasi Generative AI di Sektor Keuangan Berizin Resmi',
+        title: 'Navigasi Implementasi Sistem Terpusat di Sektor Keuangan Berizin Resmi',
         author: 'Dr. Dimas Raditya',
-        role: 'Principal AI Research Architect • MDT Solution Indonesia Laboratory',
-        body: `<p>Integrasi teknologi Generative AI dan Large Language Models (LLM) di sektor perbankan dan asuransi menuntut ketelitian ganda. Tidak seperti implementasi konsumen terbuka, perbankan di Indonesia terikat oleh regulasi privasi data yang ketat dan standar audit kelayakan algoritma dari otoritas berwenang.</p>
-        <p>Dalam artikel ini, kami menjabarkan framework penerapan air-gapped retrieval-augmented generation (RAG) yang berjalan di atas private cloud terisolasi. Arsitektur ini memastikan tidak ada data nasabah sensitif yang terpapar ke model publik dari vendor pihak ketiga.</p>
-        <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold pt-4">Tiga Pilar Kunci Tata Kelola AI Enterprise:</h4>
+        role: 'Head of IT Research • MDT Solution Indonesia Laboratory',
+        body: `<p>Integrasi teknologi modern di sektor perbankan dan asuransi menuntut ketelitian ganda. Tidak seperti implementasi konsumen terbuka, perbankan di Indonesia terikat oleh regulasi privasi data yang ketat dan standar audit kelayakan sistem dari otoritas berwenang.</p>
+        <p>Dalam artikel ini, kami menjabarkan framework penerapan arsitektur terisolasi yang berjalan di atas private cloud. Arsitektur ini memastikan tidak ada data nasabah sensitif yang terpapar ke jaringan publik.</p>
+        <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold pt-4">Tiga Pilar Kunci Tata Kelola Sistem Enterprise:</h4>
         <ul class="space-y-2 list-disc list-inside pl-2">
-          <li><strong>Isolasi Model & Data Embeddings:</strong> Vektor database disimpan secara terenkripsi menggunakan kunci KMS yang dikontrol langsung oleh tim sekuriti internal bank.</li>
-          <li><strong>Explainability & Hallucination Guardrails:</strong> Setiap inferensi dilengkapi penanda sumber rujukan dokumen resmi untuk meniadakan risiko kesalahan faktual hukum keuangan.</li>
-          <li><strong>Real-time Compliance Audit Trail:</strong> Logging komprehensif pada level prompt-response yang siap diaudit kapan pun oleh auditor eksternal.</li>
+          <li><strong>Isolasi Database Khusus:</strong> Database disimpan secara terenkripsi menggunakan kunci KMS yang dikontrol langsung oleh tim sekuriti internal bank.</li>
+          <li><strong>Keandalan Tinggi:</strong> Setiap transaksi dilengkapi penanda sumber rujukan resmi untuk meniadakan risiko kesalahan faktual operasional keuangan.</li>
+          <li><strong>Real-time Compliance Audit Trail:</strong> Logging komprehensif yang siap diaudit kapan pun oleh auditor eksternal.</li>
         </ul>`
       },
       'microservices': {
@@ -1497,11 +1435,11 @@
         tag: 'Design & Human Factors',
         date: '10 April 2025',
         read: '5 Menit Baca',
-        title: 'Prinsip Human-Centered UX dalam Era Antarmuka Berbasis AI Otomatis',
+        title: 'Prinsip Human-Centered UX dalam Desain Aplikasi Modern',
         author: 'Maya Salsabila',
         role: 'Director of Experience Design • MDT Solution Indonesia',
-        body: `<p>Ketika kecerdasan buatan mengambil alih keputusan operasional rutin, tantangan utama desainer bukan lagi mempermudah klik antarmuka, melainkan merancang sistem <em>human-in-the-loop</em> yang mempertahankan kepercayaan dan kendali manusia.</p>
-        <p>Kami menemukan bahwa antarmuka AI yang terlalu agresif mengaburkan transparansi justru memicu resistensi pengguna korporat. Memberikan indikator confidence score visual serta tombol 'override manual' satu langkah terbukti meningkatkan tingkat adopsi sistem cerdas hingga 82%.</p>`
+        body: `<p>Ketika sistem aplikasi menjadi semakin kompleks, tantangan utama desainer bukan lagi sekadar membuat antarmuka menarik, melainkan merancang sistem operasional yang mempertahankan kepercayaan dan kendali manusia.</p>
+        <p>Kami menemukan bahwa antarmuka sistem enterprise yang terlalu kaku atau membingungkan justru memicu resistensi pengguna korporat. Memberikan indikator proses visual serta kendali yang jelas terbukti meningkatkan tingkat produktivitas sistem operasional hingga 82%.</p>`
       },
       'zero-trust': {
         tag: 'Cyber Security',
