@@ -1,583 +1,1581 @@
-@extends('layouts.app')
+<!DOCTYPE html>
 
-@section('content')
-<div class="flex flex-col w-full">
-<!-- HERO SECTION -->
-<section class="relative w-full overflow-hidden bg-surface-container-low py-space-xl">
-<!-- Subtle architectural background ambience -->
-<div class="absolute inset-0 pointer-events-none opacity-40">
-<div class="absolute -top-32 -left-20 w-96 h-96 rounded-full bg-surface-variant blur-3xl"></div>
-<div class="absolute top-1/2 -right-24 w-[500px] h-[500px] rounded-full bg-secondary-fixed blur-3xl opacity-60"></div>
-<svg class="absolute inset-0 w-full h-full stroke-on-surface/5" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<pattern height="48" id="grid-pattern" patternunits="userSpaceOnUse" width="48">
-<path d="M 48 0 L 0 0 0 48" fill="none" stroke-width="1"></path>
-</pattern>
-</defs>
-<rect fill="url(#grid-pattern)" height="100%" width="100%"></rect>
-</svg>
+<html class="scroll-smooth dark" lang="id"><head><link rel="icon" type="image/png" href="/assets/media/logos/logo2.png" /><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MDT Solution Indonesia - Enterprise Technology Solutions</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background": "var(--color-background)", "surface-container-low": "var(--color-surface-container-low)", "secondary": "var(--color-secondary)", "error": "var(--color-error)", "tertiary-fixed": "var(--color-tertiary-fixed)", "surface-tint": "var(--color-surface-tint)", "on-tertiary-fixed": "var(--color-on-tertiary-fixed)", "on-secondary-fixed": "var(--color-on-secondary-fixed)", "secondary-fixed-dim": "var(--color-secondary-fixed-dim)", "surface-container-high": "var(--color-surface-container-high)", "inverse-primary": "var(--color-inverse-primary)", "on-secondary-container": "var(--color-on-secondary-container)", "error-container": "var(--color-error-container)", "primary-fixed": "var(--color-primary-fixed)", "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)", "surface-dim": "var(--color-surface-dim)", "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)", "primary-fixed-dim": "var(--color-primary-fixed-dim)", "primary": "var(--color-primary)", "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)", "inverse-on-surface": "var(--color-inverse-on-surface)", "secondary-container": "var(--color-secondary-container)", "secondary-fixed": "var(--color-secondary-fixed)", "surface-container-lowest": "var(--color-surface-container-lowest)", "on-secondary": "var(--color-on-secondary)", "on-primary-container": "var(--color-on-primary-container)", "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)", "inverse-surface": "var(--color-inverse-surface)", "surface-variant": "var(--color-surface-variant)", "outline": "var(--color-outline)", "on-tertiary-container": "var(--color-on-tertiary-container)", "on-tertiary": "var(--color-on-tertiary)", "on-primary-fixed": "var(--color-on-primary-fixed)", "surface-bright": "var(--color-surface-bright)", "surface-container": "var(--color-surface-container)", "on-surface-variant": "var(--color-on-surface-variant)", "tertiary-container": "var(--color-tertiary-container)", "surface-container-highest": "var(--color-surface-container-highest)", "outline-variant": "var(--color-outline-variant)", "on-primary": "var(--color-on-primary)", "tertiary": "var(--color-tertiary)", "on-background": "var(--color-on-background)", "on-error": "var(--color-on-error)", "on-surface": "var(--color-on-surface)", "surface": "var(--color-surface)", "on-error-container": "var(--color-on-error-container)", "primary-container": "var(--color-primary-container)"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-xl":"2.5rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem","margin":"2rem","space-lg":"1.5rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"body-md":["Inter"],"code-sm":["JetBrains Mono"],"label-md":["Inter"]},"fontSize":{"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"code-sm":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"500"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.005em","fontWeight":"500"}]}}}};</script>
+<style>
+:root {
+  --color-background: #f8f9ff;
+  --color-surface-container-low: #eff4ff;
+  --color-secondary: #565e74;
+  --color-error: #ba1a1a;
+  --color-tertiary-fixed: #acedff;
+  --color-surface-tint: #2549ed;
+  --color-on-tertiary-fixed: #001f26;
+  --color-on-secondary-fixed: #131b2e;
+  --color-secondary-fixed-dim: #bec6e0;
+  --color-surface-container-high: #dce9ff;
+  --color-inverse-primary: #bac3ff;
+  --color-on-secondary-container: #5c647a;
+  --color-error-container: #ffdad6;
+  --color-primary-fixed: #dee0ff;
+  --color-on-secondary-fixed-variant: #3f465c;
+  --color-surface-dim: #cbdbf5;
+  --color-tertiary-fixed-dim: #4cd7f6;
+  --color-primary-fixed-dim: #bac3ff;
+  --color-primary: #143ee4;
+  --color-on-tertiary-fixed-variant: #004e5c;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-secondary-container: #dae2fd;
+  --color-secondary-fixed: #dae2fd;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-on-primary-container: #f1f0ff;
+  --color-on-primary-fixed-variant: #002fc9;
+  --color-inverse-surface: #213145;
+  --color-surface-variant: #d3e4fe;
+  --color-outline: #747687;
+  --color-on-tertiary-container: #dcf7ff;
+  --color-on-tertiary: #ffffff;
+  --color-on-primary-fixed: #00105b;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-container: #e5eeff;
+  --color-on-surface-variant: #444656;
+  --color-tertiary-container: #00798e;
+  --color-surface-container-highest: #d3e4fe;
+  --color-outline-variant: #c4c5d9;
+  --color-on-primary: #ffffff;
+  --color-tertiary: #005e6f;
+  --color-on-background: #0b1c30;
+  --color-on-error: #ffffff;
+  --color-on-surface: #0b1c30;
+  --color-surface: #f8f9ff;
+  --color-on-error-container: #93000a;
+  --color-primary-container: #3b5bfd;
+}
+.dark {
+  --color-background: #0b0e14;
+  --color-surface-container-low: #121620;
+  --color-secondary: #bec6e0;
+  --color-error: #ffb4ab;
+  --color-tertiary-fixed: #acedff;
+  --color-surface-tint: #2549ed;
+  --color-on-tertiary-fixed: #001f26;
+  --color-on-secondary-fixed: #131b2e;
+  --color-secondary-fixed-dim: #bec6e0;
+  --color-surface-container-high: #222a3b;
+  --color-inverse-primary: #143ee4;
+  --color-on-secondary-container: #dae2fd;
+  --color-error-container: #93000a;
+  --color-primary-fixed: #dee0ff;
+  --color-on-secondary-fixed-variant: #3f465c;
+  --color-surface-dim: #080a0f;
+  --color-tertiary-fixed-dim: #4cd7f6;
+  --color-primary-fixed-dim: #bac3ff;
+  --color-primary: #bac3ff;
+  --color-on-tertiary-fixed-variant: #004e5c;
+  --color-inverse-on-surface: #0b0e14;
+  --color-secondary-container: #3f465c;
+  --color-secondary-fixed: #dae2fd;
+  --color-surface-container-lowest: #2a354d;
+  --color-on-secondary: #131b2e;
+  --color-on-primary-container: #dee0ff;
+  --color-on-primary-fixed-variant: #002fc9;
+  --color-inverse-surface: #e2e4eb;
+  --color-surface-variant: #d3e4fe;
+  --color-outline: #8e9099;
+  --color-on-tertiary-container: #acedff;
+  --color-on-tertiary: #001f26;
+  --color-on-primary-fixed: #00105b;
+  --color-surface-bright: #1a1d24;
+  --color-surface-container: #1a202d;
+  --color-on-surface-variant: #c4c6d0;
+  --color-tertiary-container: #004e5c;
+  --color-surface-container-highest: #2b3548;
+  --color-outline-variant: #44474f;
+  --color-on-primary: #00105b;
+  --color-tertiary: #4cd7f6;
+  --color-on-background: #e2e4eb;
+  --color-on-error: #690005;
+  --color-on-surface: #e2e4eb;
+  --color-surface: #0b0e14;
+  --color-on-error-container: #ffdad6;
+  --color-primary-container: #143ee4;
+}
+</style>
+</head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 left-0 w-full z-50 bg-surface/75 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="MDT Solution Indonesia Corporate Logo" class="h-8 w-auto object-contain" src="/assets/media/logos/logo2.png"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">MDT Solution Indonesia</span></div><nav class="hidden lg:flex items-center gap-8" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="one-page-home" href="#home">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#about">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#services">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="portfolio" href="#portfolio">Portfolio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="news" href="#news">News</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#contact">Contact</a></nav><div class="flex items-center gap-4"><button aria-label="Toggle Light/Dark Theme" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark'); this.querySelector('span').textContent = document.documentElement.classList.contains('dark') ? 'dark_mode' : 'light_mode';" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><a class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-[0_2px_8px_rgba(59,91,253,0.24)]" href="#contact">Hubungi Kami</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- HERO SECTION (#home) -->
+<section class="relative w-full overflow-hidden py-16 lg:py-24" id="home">
+<!-- Atmospheric Ambient Glows -->
+<div class="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-10 right-0 w-[30rem] h-[30rem] rounded-full bg-tertiary-fixed-dim/20 blur-3xl pointer-events-none -z-10"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Left Content Column -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container/60 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide uppercase">Next-Gen Enterprise Engine</span>
 </div>
-<div class="relative w-full px-margin-mobile md:px-margin mx-auto max-w-7xl flex flex-col gap-space-lg">
-<!-- Badge & Category Identifier -->
-<div class="flex flex-wrap items-center gap-space-sm">
-<span class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md shadow-sm">
-<span class="material-symbols-outlined text-[16px]">verified</span>
-          Jaringan Media Luar Ruang Terluas di Indonesia
-        </span>
-<span class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
-<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          800+ Titik Aktif Siap Pakai
-        </span>
-</div>
-<!-- Main Headline & Subtitle -->
-<div class="max-w-4xl flex flex-col gap-space-sm">
-<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-tight">
-          Tingkatkan <span class="text-secondary">Brand Visibility</span> Anda dengan 800+ Titik Strategis di Seluruh Indonesia
-        </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
-          Solusi iklan luar ruang (OOH), Billboard premium, Megatron &amp; Videotron digital beresolusi tinggi di jalur protokol, persimpangan utama, dan pusat komersial nasional berizin resmi pemda.
-        </p>
-</div>
-<!-- Quick Interactive Search & Filter Matrix Engine -->
-<div class="w-full bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-lg mt-space-sm">
-<form class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-end" id="heroFilterForm" onsubmit="event.preventDefault(); window.location.hash = 'katalog-lokasi-ooh';">
-<!-- Filter 1: Wilayah / Provinsi -->
-<div class="md:col-span-3 flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary">location_on</span>
-              Pilih Provinsi / Kota
-            </label>
-<div class="relative">
-<select class="w-full h-11 px-space-md pr-8 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:bg-surface-container transition-all">
-<option value="all">Semua Provinsi (Nasional)</option>
-<option value="dki">DKI Jakarta</option>
-<option value="jabar">Jawa Barat (Bandung, Bekasi)</option>
-<option value="jatim">Jawa Timur (Surabaya, Malang)</option>
-<option value="sumut">Sumatera Utara (Medan)</option>
-<option value="jambi">Jambi (Kota Jambi, Sipin)</option>
-<option value="bali">Bali (Denpasar, Badung)</option>
-<option value="sulsel">Sulawesi Selatan (Makassar)</option>
-<option value="kaltim">Kalimantan Timur (Balikpapan)</option>
-</select>
-<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
-</div>
-</div>
-<!-- Filter 2: Jenis Media Display -->
-<div class="md:col-span-3 flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary">view_carousel</span>
-              Format Media OOH
-            </label>
-<div class="relative">
-<select class="w-full h-11 px-space-md pr-8 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface appearance-none focus:outline-none focus:bg-surface-container transition-all">
-<option value="all">Semua Format OOH</option>
-<option value="videotron">Videotron LED Digital (DOOH)</option>
-<option value="billboard">Billboard Frontlight Premium</option>
-<option value="megatron">Megatron Sudut Jalan</option>
-<option value="jpo">JPO &amp; Pedestrian Overpass</option>
-<option value="bando">Bando Jalan Protokol</option>
-</select>
-<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
-</div>
-</div>
-<!-- Filter 3: Kata Kunci / Kode Titik OOH -->
-<div class="md:col-span-4 flex flex-col gap-space-xs">
-<label class="font-label-md text-label-md text-on-surface flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary">search</span>
-              Nama Jalan atau Kode Titik
-            </label>
-<div class="relative">
-<input class="w-full h-11 px-space-md pl-10 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container transition-all" placeholder="Cth: Sudirman, BG_JAMBI_01, Darmo" type="text"/>
-<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[20px]">pin_drop</span>
-</div>
-</div>
-<!-- Action Buttons -->
-<div class="md:col-span-2 flex items-center gap-space-xs">
-<button class="w-full h-11 inline-flex items-center justify-center gap-space-xs rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container font-label-lg text-label-lg transition-all shadow-md" type="submit">
-<span class="material-symbols-outlined text-[18px]">travel_explore</span>
-<span>Cari Titik</span>
-</button>
-</div>
-</form>
-<!-- Quick Location Tags / Suggestions -->
-<div class="mt-space-md pt-space-sm flex flex-wrap items-center gap-space-xs text-on-surface-variant">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Populer:</span>
-<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-variant font-label-sm text-label-sm text-on-surface transition-colors" onclick="document.querySelector('#heroFilterForm input').value='Gatot Subroto';">Gatot Subroto JKT</button>
-<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-variant font-label-sm text-label-sm text-on-surface transition-colors" onclick="document.querySelector('#heroFilterForm input').value='Sipin Jambi';">Simpang Sipin Jambi</button>
-<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-variant font-label-sm text-label-sm text-on-surface transition-colors" onclick="document.querySelector('#heroFilterForm input').value='Raya Darmo';">Raya Darmo SBY</button>
-<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-variant font-label-sm text-label-sm text-on-surface transition-colors" onclick="document.querySelector('#heroFilterForm input').value='Medan Merdeka';">Medan Kota</button>
-</div>
-</div>
-<!-- Key Metrics Counters -->
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-md">
-<div class="p-space-md rounded-xl bg-surface-container-lowest/80 backdrop-blur shadow-sm flex items-center gap-space-md">
-<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-[28px]">ad_units</span>
-</div>
-<div>
-<div class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">800+</div>
-<div class="font-label-md text-label-md text-on-surface-variant">Titik Lokasi Aktif</div>
-</div>
-</div>
-<div class="p-space-md rounded-xl bg-surface-container-lowest/80 backdrop-blur shadow-sm flex items-center gap-space-md">
-<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface">
-<span class="material-symbols-outlined text-[28px]">map</span>
-</div>
-<div>
-<div class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">34+</div>
-<div class="font-label-md text-label-md text-on-surface-variant">Provinsi Terjangkau</div>
-</div>
-</div>
-<div class="p-space-md rounded-xl bg-surface-container-lowest/80 backdrop-blur shadow-sm flex items-center gap-space-md">
-<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-[28px]">bolt</span>
-</div>
-<div>
-<div class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">99.8%</div>
-<div class="font-label-md text-label-md text-on-surface-variant">Display &amp; Light Uptime</div>
-</div>
-</div>
-<div class="p-space-md rounded-xl bg-surface-container-lowest/80 backdrop-blur shadow-sm flex items-center gap-space-md">
-<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-container">
-<span class="material-symbols-outlined text-[28px]">corporate_fare</span>
-</div>
-<div>
-<div class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">150+</div>
-<div class="font-label-md text-label-md text-on-surface-variant">Top Brand Nasional</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CLIENT & BRAND SHOWCASE -->
-<section class="w-full bg-surface-container-lowest py-space-lg shadow-sm">
-<div class="w-full px-margin-mobile md:px-margin mx-auto max-w-7xl flex flex-col items-center gap-space-md">
-<div class="text-center">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Kepercayaan Industri</span>
-<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Dipercaya oleh Puluhan Brand Terkemuka di Indonesia</h2>
-</div>
-<!-- Clean Minimal Brand Ticker Grid -->
-<div class="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-space-sm items-center justify-center opacity-80 pt-space-xs">
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">TELKOMSEL</div>
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">BCA</div>
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">PERTAMINA</div>
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">TOKOPEDIA</div>
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">INDOFOOD</div>
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">ASTRA</div>
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">SAMSUNG</div>
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">GOTO</div>
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">DJARUM</div>
-<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm font-bold text-on-surface-variant/70 tracking-wider">TRAVELOKA</div>
-</div>
-</div>
-</section>
-<!-- VALUE PROPOSITION & 4 PILAR KEUNGGULAN -->
-<section class="w-full py-space-xl bg-surface">
-<div class="w-full px-margin-mobile md:px-margin mx-auto max-w-7xl flex flex-col gap-space-xl">
-<!-- Section Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
-<div class="max-w-2xl flex flex-col gap-space-xs">
-<span class="font-label-md text-label-md text-secondary uppercase tracking-wider font-semibold">Mengapa Biantara Media</span>
-<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
-            Keunggulan Eksekusi OOH dengan Standar Korporasi Nasional
-          </h2>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-          Kami mengombinasikan keandalan konstruksi fisik, akurasi perizinan, dan analisis lalu lintas mendalam untuk memberikan jangkauan impresi maksimal.
-        </p>
-</div>
-<!-- 4 Pillars Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
-<!-- Pilar 1 -->
-<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-md group hover:-translate-y-1 transition-transform">
-<div class="w-14 h-14 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-[32px]">traffic</span>
-</div>
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">01. Lokasi &amp; Trafik</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Super Strategis &amp; Traffic Tinggi</h3>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            Dianalisis berdasarkan volume kendaraan harian, kecepatan laju rambu, dan visibilitas sudut pandang langsung (sight-line) bagi pengendara maupun pejalan kaki.
+<h1 class="font-display text-display text-on-surface leading-tight tracking-tight">
+            Mentransformasi Ambisi Bisnis Menjadi Solusi Teknologi <span class="text-primary">Skala Global</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            MDT Solution Indonesia menghadirkan rekayasa perangkat lunak presisi tinggi, adopsi AI terpadu, dan strategi transformasi digital untuk enterprise yang siap memimpin industri.
           </p>
-<div class="mt-auto pt-space-sm flex items-center gap-space-xs text-secondary font-label-md text-label-md">
-<span>Audit Sudut Pandang 100% Bebas Rintangan</span>
-</div>
-</div>
-<!-- Pilar 2 -->
-<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-md group hover:-translate-y-1 transition-transform">
-<div class="w-14 h-14 rounded-xl bg-surface-container flex items-center justify-center text-on-surface">
-<span class="material-symbols-outlined text-[32px]">gavel</span>
-</div>
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">02. Kepatuhan Regulasi</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Perizinan Resmi &amp; Pajak Terjamin</h3>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            Seluruh titik memiliki izin resmi Pemda, IMB/PBG konstruksi reklame, kepatuhan zonasi ketat, serta pelunasan Pajak Reklame yang aman dan bebas sengketa.
-          </p>
-<div class="mt-auto pt-space-sm flex items-center gap-space-xs text-secondary font-label-md text-label-md">
-<span>Garansi Keamanan Materi Kampanye</span>
-</div>
-</div>
-<!-- Pilar 3 -->
-<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-md group hover:-translate-y-1 transition-transform">
-<div class="w-14 h-14 rounded-xl bg-surface-variant flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-[32px]">engineering</span>
-</div>
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">03. Teknis &amp; Pemeliharaan</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Pemeliharaan &amp; Monitoring Rutin</h3>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            Tim teknis lapangan yang standby memastikan sistem penerangan frontlight/backlight, kestabilan modul LED videotron, dan kebersihan visual 24 jam sehari.
-          </p>
-<div class="mt-auto pt-space-sm flex items-center gap-space-xs text-secondary font-label-md text-label-md">
-<span>SLA Penanganan Kendala &lt; 4 Jam</span>
-</div>
-</div>
-<!-- Pilar 4 -->
-<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-md group hover:-translate-y-1 transition-transform">
-<div class="w-14 h-14 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-container">
-<span class="material-symbols-outlined text-[32px]">quick_reference_all</span>
-</div>
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">04. Respon Transparan</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Proses Cepat &amp; Flier Spesifikasi</h3>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            Dapatkan flier titik lengkap dengan foto aktual, ukuran presisi, traffic count, peta koordinat GPS, dan rate card transparan dalam hitungan menit via Account Executive.
-          </p>
-<div class="mt-auto pt-space-sm flex items-center gap-space-xs text-secondary font-label-md text-label-md">
-<span>Respon Cepat Tim Sales &lt; 15 Menit</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- FEATURED OOH LOCATIONS -->
-<section class="w-full py-space-xl bg-surface-container-low">
-<div class="w-full px-margin-mobile md:px-margin mx-auto max-w-7xl flex flex-col gap-space-lg">
-<!-- Section Header -->
-<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md">
-<div>
-<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-bold mb-space-xs uppercase">
-            Rekomendasi Prime Spot
-          </div>
-<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">Katalog Titik Pilihan Terbaik</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Titik strategis dengan jangkauan impresi tertinggi minggu ini.</p>
-</div>
-<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-colors shadow-sm" data-path="katalog-lokasi-ooh" href="#">
-<span>Lihat Semua 800+ Titik</span>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary-container transition-all" href="#services">
+<span>Lihat Layanan</span>
 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </a>
-</div>
-<!-- 3 Featured Cards -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-<!-- CARD 1: Jakarta Gatsu Videotron -->
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md flex flex-col hover:shadow-xl transition-all">
-<div class="relative aspect-video w-full overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Megah LED Videotron DOOH raksasa di Jalan Gatot Subroto Jakarta Selatan pada sore hari menjelang magrib dengan arus lalu lintas mobil mewah padat merayap, gedung pencakar langit modern berlampu di latar belakang, display digital cerah menampilkan visual promosi tajam profesional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ySa9lvcEjnOCEDgu6513CltXv6FnDWVn98vpu9lir96v7biqBZNyZU0CakOd0uvP1DChwHALAwa2cB4zJXv-5Ek_-apcgVmmFceAyV7f8RvK2WKAjgknLhOUT8TS3YPV21-E44D26zke1XsEEVulD-xqER6n1zFIjs7RWaWh08oVIxkyi4ZfHPpvlUvDAb_niE3grqgimuh2KshRzs5qwwmlDwXn7RgP0LZxr13Zn3xVGyrMbkXfqw"/>
-<div class="absolute top-3 left-3 flex gap-space-xs">
-<span class="px-space-sm py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-bold shadow">
-                Videotron LED
-              </span>
-<span class="px-space-sm py-1 rounded bg-emerald-600 text-on-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow">
-<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Tersedia
-              </span>
-</div>
-<div class="absolute bottom-3 right-3 px-space-sm py-0.5 rounded bg-on-surface/80 backdrop-blur text-on-primary font-label-sm text-label-sm">
-              180.000+ Kendaraan/Hari
-            </div>
-</div>
-<div class="p-space-lg flex flex-col flex-1 gap-space-md">
-<div>
-<div class="font-label-sm text-label-sm text-secondary font-bold tracking-wider">KODE: BG_JKT_GATSU_01</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Jl. Gatot Subroto Kav. 38, Jakarta</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Arah Kuningan menuju Semanggi &amp; Senayan. Sudut pandang frontal 150 meter bebas hambatan.</p>
-</div>
-<!-- Specs Grid -->
-<div class="grid grid-cols-2 gap-space-xs p-space-sm rounded-lg bg-surface-container-low font-body-sm text-body-sm">
-<div>
-<span class="text-outline block text-[11px]">Dimensi Layar</span>
-<span class="font-semibold text-on-surface">8m (T) x 16m (L)</span>
-</div>
-<div>
-<span class="text-outline block text-[11px]">Tipe Display</span>
-<span class="font-semibold text-on-surface">DIP P10 High Nit LED</span>
-</div>
-<div class="mt-1">
-<span class="text-outline block text-[11px]">Durasi Operasional</span>
-<span class="font-semibold text-on-surface">06:00 - 24:00 WIB (18 Jam)</span>
-</div>
-<div class="mt-1">
-<span class="text-outline block text-[11px]">Slot Loop</span>
-<span class="font-semibold text-on-surface">15 Detik / Loop 3 Menit</span>
-</div>
-</div>
-<!-- Card Actions -->
-<div class="mt-auto pt-space-xs flex items-center gap-space-sm">
-<a class="flex-1 h-10 inline-flex items-center justify-center gap-space-xs rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container font-label-md text-label-md transition-colors" href="https://wa.me/6281288997700?text=Halo%20Biantara%20Media,%20saya%20tertarik%20flier%20dan%20rate%20card%20titik%20BG_JKT_GATSU_01" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">chat</span>
-<span>Tanya Ketersediaan</span>
+<a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all" href="#portfolio">
+<span>Lihat Portfolio</span>
+<span class="material-symbols-outlined text-[18px]">layers</span>
 </a>
-<button class="h-10 px-space-md inline-flex items-center justify-center gap-space-xs rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors" onclick="alert('Flier spesifikasi titik BG_JKT_GATSU_01 siap diunduh. Menghubungi sales WhatsApp untuk dokumen PDF lengkap.'); window.open('https://wa.me/6281288997700?text=Kirimkan%20PDF%20Flier%20BG_JKT_GATSU_01', '_blank');" title="Lihat Flier Spesifikasi">
-<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
-<span class="hidden sm:inline">Flier</span>
-</button>
+</div>
+<!-- Trust Badges Under Buttons -->
+<div class="pt-6 flex flex-wrap items-center gap-6 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<span>SOC2 Type II Certified</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+<span>Sub-millisecond Latency</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">cloud_done</span>
+<span>Tier-4 Cloud Native</span>
 </div>
 </div>
 </div>
-<!-- CARD 2: Surabaya Darmo Billboard Frontlight -->
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md flex flex-col hover:shadow-xl transition-all">
-<div class="relative aspect-video w-full overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Papan reklame billboard frontlight horizontal raksasa yang berdiri kokoh di persimpangan jalan protokol Raya Darmo Surabaya Jawa Timur di siang hari yang cerah dengan pepohonan hijau kota, kendaraan sepeda motor dan mobil melintas ramai, visual iklan billboard kontras dan bersih." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQhXMRmidkkkXrFLq7qfb0LRgT8j9GgJZyi4gV0iJgcNIkylegS5pW85BiJPHstOZCyayWzTxyNLIWfbV63mbIBEqdsDDGpvK8aiGXSwq0tZZ_xODSQCm87-jMY8vu7rPLxvr34gzMo2rb5mOjVI_7h4LLabU4xs_JINtkxn_9BTXcCffNidg7tGfeATeNfU-UJQXDCA7Pa5jOJdoY98cqr7HQ8QueLKYFXedmFPVndwmE9xrWB7OuJw"/>
-<div class="absolute top-3 left-3 flex gap-space-xs">
-<span class="px-space-sm py-1 rounded bg-surface-variant text-secondary font-label-sm text-label-sm font-bold shadow">
-                Billboard Frontlight
-              </span>
-<span class="px-space-sm py-1 rounded bg-emerald-600 text-on-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow">
-<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Tersedia
-              </span>
+<!-- Right Bento Card Assembly Visual -->
+<div class="lg:col-span-5 relative">
+<div class="relative bg-surface-container-lowest/80 backdrop-blur-xl rounded-xl p-6 shadow-xl">
+<!-- Header bar of visual mockup -->
+<div class="flex items-center justify-between pb-5">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error/60"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="w-3 h-3 rounded-full bg-primary/70"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant ml-2 font-medium">mdtsolution-mesh-node-01</span>
 </div>
-<div class="absolute bottom-3 right-3 px-space-sm py-0.5 rounded bg-on-surface/80 backdrop-blur text-on-primary font-label-sm text-label-sm">
-              145.000+ Kendaraan/Hari
-            </div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary">LIVE</span>
 </div>
-<div class="p-space-lg flex flex-col flex-1 gap-space-md">
-<div>
-<div class="font-label-sm text-label-sm text-secondary font-bold tracking-wider">KODE: BG_SBY_DARMO_04</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Jl. Raya Darmo, Surabaya</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Simpang strategis pusat kota Surabaya arah Wonokromo dan Basuki Rahmat. Sangat prestisius.</p>
+<!-- Mini visual chart / status widget -->
+<div class="p-4 rounded-lg bg-surface-container-low mb-4">
+<div class="flex items-center justify-between text-on-surface mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Real-Time Core Throughput</span>
+<span class="font-code-sm text-code-sm font-semibold text-primary">128,490 req/s</span>
 </div>
-<!-- Specs Grid -->
-<div class="grid grid-cols-2 gap-space-xs p-space-sm rounded-lg bg-surface-container-low font-body-sm text-body-sm">
-<div>
-<span class="text-outline block text-[11px]">Dimensi Reklame</span>
-<span class="font-semibold text-on-surface">6m (T) x 12m (L)</span>
-</div>
-<div>
-<span class="text-outline block text-[11px]">Sistem Lampu</span>
-<span class="font-semibold text-on-surface">Frontlight 400W x 4 Titik</span>
-</div>
-<div class="mt-1">
-<span class="text-outline block text-[11px]">Arah Hadap</span>
-<span class="font-semibold text-on-surface">2 Muka (Horizontal)</span>
-</div>
-<div class="mt-1">
-<span class="text-outline block text-[11px]">Jarak Pandang</span>
-<span class="font-semibold text-on-surface">200m Jelas Terbaca</span>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[84%] transition-all duration-1000"></div>
 </div>
 </div>
-<!-- Card Actions -->
-<div class="mt-auto pt-space-xs flex items-center gap-space-sm">
-<a class="flex-1 h-10 inline-flex items-center justify-center gap-space-xs rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container font-label-md text-label-md transition-colors" href="https://wa.me/6281288997700?text=Halo%20Biantara%20Media,%20saya%20tertarik%20flier%20dan%20rate%20card%20titik%20BG_SBY_DARMO_04" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">chat</span>
-<span>Tanya Ketersediaan</span>
-</a>
-<button class="h-10 px-space-md inline-flex items-center justify-center gap-space-xs rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors" onclick="alert('Flier spesifikasi titik BG_SBY_DARMO_04 siap diunduh. Menghubungi sales WhatsApp untuk dokumen PDF lengkap.'); window.open('https://wa.me/6281288997700?text=Kirimkan%20PDF%20Flier%20BG_SBY_DARMO_04', '_blank');" title="Lihat Flier Spesifikasi">
-<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
-<span class="hidden sm:inline">Flier</span>
-</button>
+<!-- Metrics grid inside visual -->
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="p-3.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant block">System SLA</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">99.98%</span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> High Availability
+                </span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant block">AI Inference</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">12ms</span>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">speed</span> Tensor Parallel
+                </span>
 </div>
 </div>
+<!-- Tech Stack Tags -->
+<div class="pt-2 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded bg-secondary-container/60 font-code-sm text-code-sm text-on-surface">Kubernetes v1.30</span>
+<span class="px-3 py-1 rounded bg-secondary-container/60 font-code-sm text-code-sm text-on-surface">PyTorch Core</span>
+<span class="px-3 py-1 rounded bg-secondary-container/60 font-code-sm text-code-sm text-on-surface">Rust Engine</span>
+<span class="px-3 py-1 rounded bg-secondary-container/60 font-code-sm text-code-sm text-on-surface">Kafka Pipeline</span>
 </div>
-<!-- CARD 3: Jambi Sipin Frontlight Billboard -->
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-md flex flex-col hover:shadow-xl transition-all">
-<div class="relative aspect-video w-full overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sebuah billboard OOH vertikal horizontal besar di bundaran persimpangan utama Simpang Sipin Jalan Kolonel Abunjani Kota Jambi Sumatera dengan ruko pertokoan ramai, lalu lintas sore hari yang padat, sorot lampu frontlight menyinari papan iklan dengan terang." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB5YV8WzumOLCiTDJEi-CN9JBd0YVYazaI7jmZHRK6FyGI47RpooTU_n29I9C3mDhDpVdI7uczqWyUiRKlZ4xQNKT-3K_MlyPY5um5aV2l0GqdDDzuMrlI8KIdcA_l5fIEOmoEtSoZDH-kE3quIqxFRmPImym--trPDv3t_JK_f3cBQ4d_qu0JIUFfZtY4rSbJ9etliyb4SyGUlOv_TqSXVVorzGL_GXdhAqlo8IntvMqVXFu9XDtY9A"/>
-<div class="absolute top-3 left-3 flex gap-space-xs">
-<span class="px-space-sm py-1 rounded bg-surface-variant text-secondary font-label-sm text-label-sm font-bold shadow">
-                Billboard Frontlight
-              </span>
-<span class="px-space-sm py-1 rounded bg-emerald-600 text-on-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow">
-<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Tersedia
-              </span>
-</div>
-<div class="absolute bottom-3 right-3 px-space-sm py-0.5 rounded bg-on-surface/80 backdrop-blur text-on-primary font-label-sm text-label-sm">
-              95.000+ Kendaraan/Hari
-            </div>
-</div>
-<div class="p-space-lg flex flex-col flex-1 gap-space-md">
-<div>
-<div class="font-label-sm text-label-sm text-secondary font-bold tracking-wider">KODE: BG_JAMBI_SIPIN_01</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Simpang Sipin Jl. Kol. Abunjani, Jambi</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Jantung distrik perdagangan, retail, dan perbankan Kota Jambi. Dominasi visual di persimpangan lampu merah.</p>
-</div>
-<!-- Specs Grid -->
-<div class="grid grid-cols-2 gap-space-xs p-space-sm rounded-lg bg-surface-container-low font-body-sm text-body-sm">
-<div>
-<span class="text-outline block text-[11px]">Dimensi Reklame</span>
-<span class="font-semibold text-on-surface">4m (T) x 8m (L)</span>
+<!-- Floating Badge Overlay -->
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest/90 backdrop-blur-md rounded-lg p-3.5 shadow-lg hidden sm:flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">format_image_left</span>
 </div>
 <div>
-<span class="text-outline block text-[11px]">Sistem Lampu</span>
-<span class="font-semibold text-on-surface">Frontlight LED 250W x 3</span>
-</div>
-<div class="mt-1">
-<span class="text-outline block text-[11px]">Target Audience</span>
-<span class="font-semibold text-on-surface">Keluarga, Eksekutif &amp; Komersil</span>
-</div>
-<div class="mt-1">
-<span class="text-outline block text-[11px]">Perizinan</span>
-<span class="font-semibold text-on-surface">Izin Pemda Resmi Aktif</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface block">Enterprise Grade Security</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Zero-Trust End-to-End</span>
 </div>
 </div>
-<!-- Card Actions -->
-<div class="mt-auto pt-space-xs flex items-center gap-space-sm">
-<a class="flex-1 h-10 inline-flex items-center justify-center gap-space-xs rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container font-label-md text-label-md transition-colors" href="https://wa.me/6281288997700?text=Halo%20Biantara%20Media,%20saya%20tertarik%20flier%20dan%20rate%20card%20titik%20BG_JAMBI_SIPIN_01" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">chat</span>
-<span>Tanya Ketersediaan</span>
-</a>
-<button class="h-10 px-space-md inline-flex items-center justify-center gap-space-xs rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors" onclick="alert('Flier spesifikasi titik BG_JAMBI_SIPIN_01 siap diunduh. Menghubungi sales WhatsApp untuk dokumen PDF lengkap.'); window.open('https://wa.me/6281288997700?text=Kirimkan%20PDF%20Flier%20BG_JAMBI_SIPIN_01', '_blank');" title="Lihat Flier Spesifikasi">
-<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
-<span class="hidden sm:inline">Flier</span>
-</button>
 </div>
 </div>
+</div>
+<!-- Client Brand Trust Ticker Banner -->
+<div class="mt-20 pt-10 border-none bg-surface-container-low/70 rounded-xl p-8 backdrop-blur-md">
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-6">
+          Dipercaya oleh Pemimpin Industri dan Ekosistem Enterprise Terkemuka
+        </p>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center opacity-80">
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[28px]">account_balance</span> Bank Mandiri Digital
+          </div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[28px]">cell_tower</span> TelcoCorp ID
+          </div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[28px]">local_shipping</span> Astra Logistics
+          </div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[28px]">currency_exchange</span> FinTech Global
+          </div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[28px]">health_and_safety</span> BioHealth ID
+          </div>
 </div>
 </div>
 </div>
 </section>
-<!-- COVERAGE AREA INDONESIA: MAP & REGIONAL BREAKDOWN -->
-<section class="w-full py-space-xl bg-surface">
-<div class="w-full px-margin-mobile md:px-margin mx-auto max-w-7xl flex flex-col gap-space-lg">
-<div class="flex flex-col gap-space-xs text-center max-w-3xl mx-auto">
-<span class="font-label-md text-label-md text-secondary uppercase tracking-widest font-bold">Jangkauan Geografis</span>
-<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">Cakupan Titik OOH Nasional di 3 Wilayah Utama</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
-          Didukung jaringan tim lapangan lokal dan perwakilan operasional di pulau-pulau besar Indonesia untuk memastikan kampanye serentak berjalan tepat waktu.
+<!-- ABOUT US SECTION (#about) -->
+<section class="w-full py-20 bg-surface" id="about">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="max-w-3xl mb-14">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/50 mb-3">
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Tentang MDT Solution Indonesia</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Membangun Fondasi Masa Depan Digital Berkelanjutan
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
+          Kami memadukan kecakapan rekayasa mendalam dengan wawasan bisnis strategis untuk menciptakan platform yang andal, aman, dan berdaya saing jangka panjang.
         </p>
 </div>
-<!-- Interactive Map Presentation Box -->
-<div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-highest p-space-md md:p-space-lg shadow-sm">
-<div class="w-full h-80 md:h-96 rounded-xl bg-cover bg-center relative overflow-hidden flex items-center justify-center shadow-inner" data-location="Indonesia" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuPlwAcOB8EwYBXJoImj6ingQ9hV04ACqKu1samcOqisyunFgoCNpVeUZfhNOb7xRV05OSCj-8MWwoy7fD12EMwQpVVzEmiRi-4fo1h5kx4kRvGn2ZvrQnRCOKt5J5c6xU1hecATybwg6oSYE6HQpMOISg2zmHbVSV8fk_uC8AEhYVRM0fShSEssXtSQuXPgErL-7XoKurDk2tvYvMbbRQfFUODjEqcbWxVOlx1_D2XQAbPbHz7eusGg');">
-<!-- Ambient Overlay -->
-<div class="absolute inset-0 bg-primary-container/30 backdrop-blur-[1px]"></div>
-<!-- Interactive Map Pin Badges -->
-<div class="relative z-10 w-full h-full p-4 flex flex-col justify-between">
-<div class="flex justify-between items-start">
-<div class="px-space-md py-space-xs rounded-lg bg-surface-container-lowest/90 backdrop-blur font-label-md text-label-md text-on-surface shadow">
-                Peta Kerapatan Media OOH Biantara Gemilang
-              </div>
-<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm shadow">
-<span class="material-symbols-outlined text-[16px]">radar</span>
-<span>Live Monitoring Active</span>
+<!-- Bento Grid (6 Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+<!-- Card 1 (Span 8 col) -->
+<div class="lg:col-span-8 p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[28px]">hub</span>
 </div>
-</div>
-<!-- Visual Pin Overlays on Strategic Points -->
-<div class="grid grid-cols-3 md:grid-cols-4 gap-2 max-w-xl mx-auto text-center">
-<div class="bg-surface-container-lowest/95 p-2 rounded-lg shadow-md">
-<span class="font-label-md text-label-md text-secondary font-bold block">Sumatera</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">210+ Titik Billboard</span>
-</div>
-<div class="bg-surface-container-lowest/95 p-2 rounded-lg shadow-md">
-<span class="font-label-md text-label-md text-secondary font-bold block">Jawa &amp; Bali</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">450+ Titik Strategis</span>
-</div>
-<div class="bg-surface-container-lowest/95 p-2 rounded-lg shadow-md">
-<span class="font-label-md text-label-md text-secondary font-bold block">Kalimantan</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">85+ Titik Arterial</span>
-</div>
-<div class="hidden md:block bg-surface-container-lowest/95 p-2 rounded-lg shadow-md">
-<span class="font-label-md text-label-md text-secondary font-bold block">Sulawesi</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">75+ Titik Komersial</span>
-</div>
-</div>
-<div class="text-right">
-<span class="font-label-sm text-label-sm text-on-secondary bg-primary/70 px-space-sm py-1 rounded backdrop-blur">
-                *Data terverifikasi kuartal berjalan 2025
-              </span>
-</div>
-</div>
-</div>
-<!-- Regional Breakdown Cards -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md">
-<!-- Region 1: Sumatera -->
-<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
-<div class="flex items-center gap-space-xs text-secondary font-headline-sm text-headline-sm font-bold">
-<span class="material-symbols-outlined text-[24px]">explore</span>
-              Sumatera Coverage
-            </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-              Koneksi jalur Lintas Sumatera, bandara, serta pusat kota metropolitan di wilayah barat:
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-4">
+              Rekayasa Perangkat Lunak Presisi &amp; Kemitraan Strategis
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+              MDT Solution Indonesia berdiri sebagai konsultan dan mitra rekayasa teknologi terpercaya yang memadukan keahlian teknis kelas dunia dengan pemahaman mendalam tentang lanskap bisnis modern. Kami tidak sekadar membangun aplikasi; kami merancang ekosistem komputasi adaptif yang memungkinkan perusahaan beroperasi tanpa hambatan di era ketidakpastian pasar.
             </p>
-<div class="flex flex-wrap gap-1.5 pt-space-xs">
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Medan</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Kota Jambi</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Pekanbaru</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Palembang</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Bandar Lampung</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Batam</span>
-</div>
-</div>
-<!-- Region 2: Jawa & Bali -->
-<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
-<div class="flex items-center gap-space-xs text-secondary font-headline-sm text-headline-sm font-bold">
-<span class="material-symbols-outlined text-[24px]">domain</span>
-              Jawa &amp; Bali Core
-            </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-              Sentra ekonomi utama, jalan protokol ring 1, dan koridor tol trans jawa dengan kepadatan tinggi:
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Mulai dari modernisasi sistem monolitik hingga penerapan orkestrasi microservices dan pipeline data AI berkecepatan tinggi, seluruh solusi kami dibangun berdasarkan standar kepatuhan tata kelola industri terketat.
             </p>
-<div class="flex flex-wrap gap-1.5 pt-space-xs">
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">DKI Jakarta</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Bandung</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Semarang</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Yogyakarta</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Surabaya</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Denpasar</span>
+</div>
+<div class="pt-6 flex flex-wrap items-center gap-4">
+<span class="px-3.5 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Enterprise Architecture</span>
+<span class="px-3.5 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Cloud Migration Governance</span>
+<span class="px-3.5 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Cyber Resilience</span>
 </div>
 </div>
-<!-- Region 3: Kalimantan & Sulawesi -->
-<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
-<div class="flex items-center gap-space-xs text-secondary font-headline-sm text-headline-sm font-bold">
-<span class="material-symbols-outlined text-[24px]">hub</span>
-              Kalimantan &amp; Sulawesi
-            </div>
+<!-- Card 2: 10+ Years Experience (Span 4 col) -->
+<div class="lg:col-span-4 p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm flex flex-col justify-center items-start">
+<span class="material-symbols-outlined text-primary text-[40px] mb-4">history_edu</span>
+<span class="font-display text-display text-primary font-bold">10+</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-2 mb-2">Years of Proven Experience</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">
-              Pusat pertumbuhan industri energi, pertambangan, dan hub logistik gerbang Indonesia Timur:
-            </p>
-<div class="flex flex-wrap gap-1.5 pt-space-xs">
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Balikpapan</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Samarinda</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Banjarmasin</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Makassar</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Manado</span>
-<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">IKN Corridor</span>
+            Rekam jejak terbukti memandu evolusi digital lintas industri finansial, telekomunikasi, ritel, dan logistik multinasional.
+          </p>
+</div>
+<!-- Card 3: 50+ Projects (Span 4 col) -->
+<div class="lg:col-span-4 p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm flex flex-col justify-center items-start">
+<span class="material-symbols-outlined text-primary text-[40px] mb-4">task_alt</span>
+<span class="font-display text-display text-primary font-bold">50+</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-2 mb-2">Mission-Critical Projects</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Solusi end-to-end arsitektur terdistribusi sukses di-deploy ke lingkungan produksi dengan uptime terjamin.
+          </p>
+</div>
+<!-- Card 4: 30+ Enterprise Clients (Span 4 col) -->
+<div class="lg:col-span-4 p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm flex flex-col justify-center items-start">
+<span class="material-symbols-outlined text-primary text-[40px] mb-4">handshake</span>
+<span class="font-display text-display text-primary font-bold">30+</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-2 mb-2">Enterprise Clients</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Kemitraan jangka panjang dengan konglomerasi terkemuka, BUMN teratas, dan perusahaan rintisan skala global.
+          </p>
+</div>
+<!-- Card 5: 95% Client Satisfaction (Span 4 col) -->
+<div class="lg:col-span-4 p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm flex flex-col justify-center items-start">
+<span class="material-symbols-outlined text-primary text-[40px] mb-4">sentiment_very_satisfied</span>
+<span class="font-display text-display text-primary font-bold">95%</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-2 mb-2">Client Satisfaction SLA</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Tingkat retensi dan kepuasan mitra berbasis kepatuhan service-level agreement dan dampak value bisnis nyata.
+          </p>
+</div>
+<!-- Card 6: Nilai Inti Perusahaan (Span 12 col) -->
+<div class="lg:col-span-12 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-lg shadow-sm">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-6">Pilar Nilai Inti MDT Solution Indonesia</h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Trust &amp; Transparency</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Integritas kode, pelaporan transparan, dan kepatuhan data governance menjadi fondasi setiap lini keterlibatan kami.</p>
+</div>
+<div class="p-5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-primary text-[24px]">precision_manufacturing</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Technological Precision</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Standar penulisan kode yang ketat, otomatisasi CI/CD berstandar tinggi, dan optimasi arsitektur tanpa kompromi.</p>
+</div>
+<div class="p-5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-primary text-[24px]">psychology</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Human-Centric Innovation</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Teknologi mutakhir harus melayani efisiensi pengguna manusia, menghasilkan adopsi yang alami dan berkelanjutan.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- CTA BANNER & QUICK INQUIRY SECTION -->
-<section class="w-full py-space-xl bg-surface-container-lowest">
-<div class="w-full px-margin-mobile md:px-margin mx-auto max-w-7xl">
-<div class="rounded-2xl bg-gradient-to-r from-primary-container via-surface-tint to-secondary-container p-space-lg md:p-space-xl text-on-primary flex flex-col lg:flex-row items-center justify-between gap-space-lg shadow-xl">
-<div class="flex flex-col gap-space-sm max-w-2xl">
-<span class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-on-primary/20 backdrop-blur font-label-sm text-label-sm uppercase tracking-wider text-on-primary w-fit">
-            Konsultasi Media Plan Bebas Biaya
-          </span>
-<h2 class="font-headline-xl text-headline-xl text-on-primary font-bold">
-            Siap Meluncurkan Campaign Iklan Luar Ruang Anda?
-          </h2>
-<p class="font-body-md text-body-md text-on-primary/90 leading-relaxed">
-            Konsultasikan kebutuhan titik, rencana rute terintegrasi, dan dapatkan flier penawaran terbaik dari Account Executive kami dalam waktu singkat.
-          </p>
+<!-- SERVICES SECTION (#services) -->
+<section class="w-full py-20 bg-surface-container-low/50" id="services">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="max-w-3xl mb-14">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Layanan Terpadu</span>
 </div>
-<div class="flex flex-col sm:flex-row items-center gap-space-md w-full lg:w-auto">
-<a class="w-full sm:w-auto h-12 px-space-lg inline-flex items-center justify-center gap-space-sm rounded-lg bg-surface-container-lowest text-secondary hover:bg-surface-container font-label-lg text-label-lg transition-all shadow-md" href="https://wa.me/6281288997700?text=Halo%20PT%20Biantara%20Gemilang%20Media,%20saya%20ingin%20konsultasi%20titik%20OOH%20dan%20penawaran%20rate%20card." rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[20px] text-emerald-600">chat</span>
-<span>Konsultasi WhatsApp Sekarang</span>
-</a>
-<button class="w-full sm:w-auto h-12 px-space-lg inline-flex items-center justify-center gap-space-sm rounded-lg bg-on-primary/10 hover:bg-on-primary/20 text-on-primary font-label-lg text-label-lg backdrop-blur transition-all border-none" onclick="window.open('https://wa.me/6281288997700?text=Halo,%20mohon%20kirimkan%20dokumen%20Company%20Profile%20dan%20Katalog%20OOH%20Biantara%20Media%20(PDF)', '_blank');">
-<span class="material-symbols-outlined text-[20px]">download</span>
-<span>Unduh Company Profile (PDF)</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Keahlian Rekayasa dan Inovasi Digital untuk Akselerasi Bisnis
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
+          Portofolio layanan komprehensif yang dirancang untuk mendukung setiap fase pertumbuhan dan modernisasi infrastruktur teknologi Anda.
+        </p>
+</div>
+<!-- Bento Grid (6 Service Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Service 01: Web Development -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">code</span>
+</div>
+<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">01</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Web Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Pembangunan platform dan web application skala enterprise dengan arsitektur mikro, ketahanan tinggi, dan skalabilitas masif berkinerja optimal.
+            </p>
+</div>
+<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('web')" type="button">
+<span>Pelajari Lebih Lanjut</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 02: UI/UX Design -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">design_services</span>
+</div>
+<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">02</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">UI/UX Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Desain antarmuka manusiawi yang didasarkan pada riset pengguna mendalam, design system modular, dan arsitektur informasi ergonomis.
+            </p>
+</div>
+<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('uiux')" type="button">
+<span>Pelajari Lebih Lanjut</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 03: AI Solution -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">smart_toy</span>
+</div>
+<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">03</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">AI Solution</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Implementasi Large Language Models privat, agen cerdas operasional, computer vision, dan pipeline data analitik prediktif terintegrasi.
+            </p>
+</div>
+<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('ai')" type="button">
+<span>Pelajari Lebih Lanjut</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 04: Digital Transformation -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">transform</span>
+</div>
+<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">04</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Digital Transformation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Modernisasi menyeluruh terhadap legacy systems, migrasi arsitektur cloud AWS/GCP, dan otomatisasi alur kerja digital lintas divisi.
+            </p>
+</div>
+<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('transformation')" type="button">
+<span>Pelajari Lebih Lanjut</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 05: Mobile Application -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">smartphone</span>
+</div>
+<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">05</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Mobile Application</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Rekayasa aplikasi mobile native (Swift/Kotlin) dan hybrid berkualitas tinggi dengan interaksi mulus, keamanan perbankan, dan konsumsi baterai efisien.
+            </p>
+</div>
+<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('mobile')" type="button">
+<span>Pelajari Lebih Lanjut</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 06: IT Consulting -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">insights</span>
+</div>
+<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">06</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">IT Consulting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Audit menyeluruh arsitektur teknologi, evaluasi postur cyber security, serta penyusunan roadmap strategis teknologi informasi bagi dewan direksi.
+            </p>
+</div>
+<button class="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openServiceModal('consulting')" type="button">
+<span>Pelajari Lebih Lanjut</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
 </button>
 </div>
 </div>
 </div>
 </section>
+<!-- PORTFOLIO SECTION (#portfolio) -->
+<section class="w-full py-20 bg-surface" id="portfolio">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header & Filter Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Portfolio Unggulan</span>
 </div>
-@endsection
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            Studi Kasus Solusi Berdampak Nyata
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+            Jelajahi implementasi nyata solusi teknologi MDT Solution Indonesia yang telah menghasilkan peningkatan efisiensi operasional terukur.
+          </p>
+</div>
+<!-- Filter Tab Buttons -->
+<div class="flex flex-wrap gap-2 p-1.5 rounded-lg bg-surface-container">
+<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all" onclick="filterPortfolio('all', this)" type="button">All</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('website', this)" type="button">Website</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('mobile', this)" type="button">Mobile</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('uiux', this)" type="button">UI/UX</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('ai', this)" type="button">AI</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('transformation', this)" type="button">Digital Transformation</button>
+</div>
+</div>
+<!-- Bento Grid Projects -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6" id="portfolio-grid">
+<!-- Project 1: Featured (Large 8 col) -->
+<div class="portfolio-item lg:col-span-8 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="transformation website">
+<div>
+<div class="w-full h-64 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cutting-edge modern financial banking dashboard on an ultra-wide curved monitor inside a luminous glass corporate command center. Minimalist data visualization widgets with blue and cyan accents, clean typography, soft light reflection, cinematic studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcchcjdGoM5LF-xBbrChCS0U207hfqYMfXp7svTZzVYD4toJWXhAQkj_29OnVcCKcO0jG_PEC7u-xWUXPkdicBLjjVnPbkkyCbe9m7_UYL6BsOe-8Oeeqe1GYIT3Et-1oyRqeJPCcmYOpcUmyzPsibWcVapGok4hLLUvaU09uEF0JieivXJQttjKPyZ8dOKim-lOp4phIERQRObMwieWKrn6AwBFBVxV_yGX5fvheqVyf2awWJFOcn"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Digital Transformation &amp; Web</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-2">Aura Banking Next-Gen Core Platform</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+              Rekayasa ulang menyeluruh sistem core banking perbankan komersial menuju arsitektur event-driven terdistribusi untuk melayani 12+ juta nasabah aktif secara real-time.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-4 border-none">
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-secondary-container/50 font-code-sm text-code-sm text-on-surface-variant">Apache Kafka</span>
+<span class="px-2.5 py-1 rounded bg-secondary-container/50 font-code-sm text-code-sm text-on-surface-variant">Go Microservices</span>
+<span class="px-2.5 py-1 rounded bg-secondary-container/50 font-code-sm text-code-sm text-on-surface-variant">PostgreSQL Partition</span>
+</div>
+<button class="px-5 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-sm transition-all" onclick="openCaseStudyModal('aura')" type="button">Lihat Detail</button>
+</div>
+</div>
+<!-- Project 2: AetherHealth (Span 4 col) -->
+<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="ai mobile">
+<div>
+<div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic mobile healthcare application interface displayed on a sleek glass smartphone mockup with clean vital-signs telemetry, ambient cyan glow, minimalist medical AI diagnostic charts, neutral studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd3V2O-dKRCmSj9Ig5694QKXfktVcpu2OqCgWdyrERegxOyNch_KYx7_dL2uOUeopOKqyasx5TlB2E3AQ8ldO-KEv3dJ0Yj-6RDDx-We2oQSqX0pVyGliptwD0ZQoCg0qJCFmVCe-w9gg-1rw29iGfL8kY4GjcyUXUiPwHBFBFbtCzVaqGX4cQRiLwE9IEL2ME1epNjuIL35LdZvHiNWnRapN7wyuafaGjFilaTweuvll6Hlx138-0"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">AI &amp; Mobile</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">AetherHealth Telemedicine &amp; AI Triage</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+              Aplikasi mobile telemedicine dengan engine triage berbasis AI untuk klasifikasi gejala darurat dan integrasi rekam medis instan.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-4">
+<span class="font-code-sm text-code-sm text-primary font-semibold">+68% Diagnostic Speed</span>
+<button class="px-4 py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="openCaseStudyModal('aether')" type="button">Lihat Detail</button>
+</div>
+</div>
+<!-- Project 3: LogixSync (Span 4 col) -->
+<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="website uiux">
+<div>
+<div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sophisticated logistics control tower web application dashboard with global telemetry map, route optimization graph, clean glassmorphic panels, high contrast modern typography, muted blue and grey palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpFYMvXvZnf-iMeFELJ4nlyfm2qr8vJ5Dfdzn2pjbDL9wYdJffa5K--BRTutmMCSWUoqCbuBFrcSCx7KzPY9HbrC3UimMbrCgeFfo6bD7sbz1qESBmTBC_9g9_rSYxC4Tz3HvNgHmwm5PfoG697Dm1Z-rsthWCqRJ3ORjRdABNL2Y7OpEfFgRqkX4eHLkKXLwkyT0aAj0UIiEsdgzJm0dwSyF9epbJ74EN40nUP6sV9bhoctUGawha"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Website &amp; UI/UX</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">LogixSync Logistics Dashboard</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+              Dashboard analitik operasional armada multimodal dan rantai pasok dengan sistem dispatch otomatis dan visibilitas GPS real-time.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-4">
+<span class="font-code-sm text-code-sm text-primary font-semibold">-34% Idle Downtime</span>
+<button class="px-4 py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="openCaseStudyModal('logix')" type="button">Lihat Detail</button>
+</div>
+</div>
+<!-- Project 4: NexaFlow (Span 4 col) -->
+<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="ai">
+<div>
+<div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
+<div class="w-full h-full bg-gradient-to-br from-primary/10 via-surface-container-high to-tertiary/10 flex items-center justify-center p-6">
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-[48px] mb-2">neurology</span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">Autonomous Ops Model v2</span>
+</div>
+</div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">AI Platform</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">NexaFlow Autonomous Ops Agent</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+              Agen AI otonom untuk menyelesaikan 85% tiket kendala IT enterprise dan resolusi otomatis insiden infrastruktur cloud.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-4">
+<span class="font-code-sm text-code-sm text-primary font-semibold">85% Automated Res</span>
+<button class="px-4 py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="openCaseStudyModal('nexaflow')" type="button">Lihat Detail</button>
+</div>
+</div>
+<!-- Project 5: OmniPay (Span 4 col) -->
+<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="mobile uiux">
+<div>
+<div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
+<div class="w-full h-full bg-gradient-to-tr from-surface-container-high via-surface-container-low to-secondary-container flex items-center justify-center p-6">
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-[48px] mb-2">contactless</span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">Multi-Currency Engine</span>
+</div>
+</div>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Mobile &amp; UI/UX</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">OmniPay Cross-Border Wallet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+              Dompet digital multi-mata uang dengan kliring cepat antarnegara Asia Tenggara dan integrasi biometrik mutakhir.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-4">
+<span class="font-code-sm text-code-sm text-primary font-semibold">0.4s Settlement</span>
+<button class="px-4 py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="openCaseStudyModal('omnipay')" type="button">Lihat Detail</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NEWS & INSIGHTS SECTION (#news) -->
+<section class="w-full py-20 bg-surface-container-low/50" id="news">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Wawasan &amp; Berita</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            Analisis Tren Teknologi dan Transformasi Industri
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+            Pemikiran strategis dan riset mendalam dari para insinyur serta konsultan senior MDT Solution Indonesia.
+          </p>
+</div>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all" onclick="openNewsDrawer()" type="button">
+<span>Lihat Semua Berita</span>
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</button>
+</div>
+<!-- Bento Grid Layout for News (1 Large + 2 Small) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Featured Big Card (8 col) -->
+<div class="cursor-pointer lg:col-span-8 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group" onclick="openArticleModal('gen-ai')">
+<div>
+<div class="w-full h-72 rounded-lg bg-surface-container overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-tech enterprise trading floor illuminated with sophisticated blue data monitors, data scientists collaborating around a luminous holographic interface showing neural network graphs, polished architectural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsqao2hADZU7I9HXcUU6Kk0vaDrpy5AydSROuk3fWguha-S6qqkCojt3F5nbUp7G18-EDPo99z3UNL5EKjEcaSOGSrxol5Jcf9XJ0eZ1snjby85bQqEi-6RujlrAVH69zdJGcnK6yfhSkFDYyxYl1QZs-CRQvbaH9MSrEmNNBkewZEUxU7tTd0xUf-LWxLZ0uXqKbOWYK6eLrvgLsf0CNeX0TgIyVGjCqho6SEey1iYhzi4WNjNdkG"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow">Featured Article</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm mb-3">
+<span>15 Mei 2025</span>
+<span>•</span>
+<span>6 Menit Baca</span>
+<span>•</span>
+<span class="text-primary font-semibold">Generative AI Governance</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold group-hover:text-primary transition-colors mb-3">
+              Navigasi Implementasi Generative AI di Sektor Keuangan Berizin Resmi
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 leading-relaxed">
+              Penerapan AI generatif dalam lembaga keuangan membutuhkan kepatuhan ketat terhadap auditabilitas model, enkripsi end-to-end, dan isolasi data pelanggan. Kami membahas arsitektur referensi LLM privat on-premise yang telah teruji memenuhi regulasi Bank Indonesia dan OJK.
+            </p>
+</div>
+<div class="pt-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary font-label-sm">DR</div>
+<span class="font-label-md text-label-md text-on-surface font-medium">Dr. Dimas Raditya, Head of AI Research</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold group-hover:translate-x-1 transition-transform">
+              Baca Artikel <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- 2 Side News Cards (4 col) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Side Card 1 -->
+<div class="cursor-pointer p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group h-full" onclick="openArticleModal('microservices')">
+<div>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-sm text-label-sm mb-2">
+<span>28 April 2025</span>
+<span>•</span>
+<span>4 Min</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors mb-2">
+                Arsitektur Event-Driven Microservices untuk Transaksi Skala Miliaran
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Membedah strategi migrasi dari model monolith berat menuju sistem decoupled berbasis stream bus Apache Kafka untuk meniadakan bottleneck transaksi bersamaan.
+              </p>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold pt-4 group-hover:translate-x-1 transition-transform">
+              Baca Analisis <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+<!-- Side Card 2 -->
+<div class="cursor-pointer p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group h-full" onclick="openArticleModal('ux-ai')">
+<div>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-sm text-label-sm mb-2">
+<span>10 April 2025</span>
+<span>•</span>
+<span>5 Min</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors mb-2">
+                Prinsip Human-Centered UX dalam Era Antarmuka Berbasis AI Otomatis
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Bagaimana desainer produk enterprise menciptakan kontrol prediktif yang tetap memberikan kendali penuh di tangan operator manusia tanpa memicu cognitive overload.
+              </p>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold pt-4 group-hover:translate-x-1 transition-transform">
+              Baca Analisis <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WHY CHOOSE US SECTION (#why-us) -->
+<section class="w-full py-20 bg-surface" id="why-us">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="max-w-3xl mb-14">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Keunggulan Kami</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Mengapa Memilih MDT Solution Indonesia
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
+          Standar keunggulan, disiplin rekayasa, dan kematangan tata kelola yang membedakan kami dari agensi konvensional.
+        </p>
+</div>
+<!-- Bento Grid (6 Pillars) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Pillar 1: Strategic Approach -->
+<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined text-[26px]">strategy</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Strategic Approach</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Analisis kebutuhan bisnis mendalam dan permodelan domain sebelum merancang satu baris kode pun, memastikan keselarasan ROI dengan visi korporasi.
+          </p>
+</div>
+<!-- Pillar 2: Experienced Team -->
+<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined text-[26px]">groups</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Experienced Team</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Dikelola oleh tim insinyur senior, principal cloud architect tersertifikasi, dan peneliti AI terkemuka dengan pengalaman proyek lintas benua.
+          </p>
+</div>
+<!-- Pillar 3: Modern Technology -->
+<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined text-[26px]">memory</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Modern Technology</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Pemanfaatan ekosistem teknologi mutakhir: Rust, Go, Next.js, Kubernetes, Terraform, dan PyTorch untuk kecepatan, keamanan, dan efisiensi memori.
+          </p>
+</div>
+<!-- Pillar 4: User Focused -->
+<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined text-[26px]">person_check</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">User Focused</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Desain antarmuka intuitif dan ramah pengguna yang memaksimalkan tingkat adopsi operasional karyawan serta retensi pelanggan setia.
+          </p>
+</div>
+<!-- Pillar 5: Reliable Support -->
+<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined text-[26px]">support_agent</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Reliable Support</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Dukungan teknis 24/7/365 dengan jaminan SLA tingkat enterprise, observabilitas real-time, dan audit kerentanan keamanan secara berkala.
+          </p>
+</div>
+<!-- Pillar 6: Result Oriented -->
+<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
+<span class="material-symbols-outlined text-[26px]">trending_up</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Result Oriented</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Fokus teguh pada metrik keberhasilan konkret: efisiensi biaya komputasi, penurunan tingkat churn, serta peningkatan throughput bisnis mitra.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS SECTION (#testimonials) -->
+<section class="w-full py-20 bg-surface-container-low/50 overflow-hidden" id="testimonials">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Testimoni Klien</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            Apa Kata Para Pemimpin Bisnis
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+            Kemitraan strategis yang menghasilkan pertumbuhan berkelanjutan dan stabilitas sistem enterprise.
+          </p>
+</div>
+<!-- Carousel Navigation Controls -->
+<div class="flex items-center gap-3">
+<button aria-label="Previous Testimonial" class="w-11 h-11 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" onclick="prevTestimonial()" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button aria-label="Next Testimonial" class="w-11 h-11 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" onclick="nextTestimonial()" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Testimonial Carousel Track Container -->
+<div class="relative overflow-hidden w-full">
+<div class="flex transition-transform duration-500 ease-out" id="testimonial-track">
+<!-- Slide 1 -->
+<div class="w-full flex-shrink-0 px-2">
+<div class="p-8 md:p-12 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-1 text-primary mb-6">
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+</div>
+<blockquote class="font-headline-md text-headline-md text-on-surface font-medium leading-relaxed mb-8">
+                “Kolaborasi dengan MDT Solution Indonesia mempercepat peluncuran platform perbankan digital kami hingga 4 bulan lebih cepat dengan keandalan tanpa celah. Arsitektur modular yang mereka bangun menjadi standar baru di institusi kami.”
+              </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-headline-sm">BS</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Budi Santoso</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chief Technology Officer, Bank Mandiri Digital</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="w-full flex-shrink-0 px-2">
+<div class="p-8 md:p-12 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-1 text-primary mb-6">
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+</div>
+<blockquote class="font-headline-md text-headline-md text-on-surface font-medium leading-relaxed mb-8">
+                “Pendekatan arsitektur AI dari MDT Solution Indonesia berhasil memangkas biaya pemrosesan klaim otomatis sebesar 42% dalam 6 bulan pertama. Ketelitian engineering mereka melampaui ekspektasi standar industri kami.”
+              </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-headline-sm">SJ</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Sarah Jenkins</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">VP of Engineering, Global Logistics Corp</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="w-full flex-shrink-0 px-2">
+<div class="p-8 md:p-12 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-1 text-primary mb-6">
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+<span class="material-symbols-outlined text-[22px]">star</span>
+</div>
+<blockquote class="font-headline-md text-headline-md text-on-surface font-medium leading-relaxed mb-8">
+                “MDT Solution Indonesia bukan sekadar vendor, melainkan konsultan strategis yang sungguh memahami denyut pertumbuhan bisnis kami. Transisi arsitektur omnichannel ritel kami berjalan tanpa satu detik pun downtime.”
+              </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-headline-sm">HP</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Hendra Pratama</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Managing Director, Astra Retail Group</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Dots Indicators -->
+<div class="flex justify-center items-center gap-2 mt-8">
+<button aria-label="Slide 1" class="testimonial-dot w-3 h-3 rounded-full bg-primary transition-all" onclick="goToTestimonial(0)" type="button"></button>
+<button aria-label="Slide 2" class="testimonial-dot w-3 h-3 rounded-full bg-surface-container-high transition-all" onclick="goToTestimonial(1)" type="button"></button>
+<button aria-label="Slide 3" class="testimonial-dot w-3 h-3 rounded-full bg-surface-container-high transition-all" onclick="goToTestimonial(2)" type="button"></button>
+</div>
+</div>
+</section>
+<!-- HIGH CONVERSION CTA SECTION -->
+<section class="w-full py-20 bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-surface-container-lowest via-surface-container-low to-secondary-container/40 p-10 lg:p-16 shadow-xl">
+<div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container mb-4">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide uppercase">Konsultasi Arsitektur Gratis</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mb-4">
+            Siap Mengembangkan Bisnis Anda Menuju Skala Berikutnya?
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+            Diskusikan visi Anda bersama tim arsitek teknologi kami dan dapatkan blueprint solusi digital yang disesuaikan dalam 48 jam.
+          </p>
+<div class="flex flex-wrap items-center gap-4 mb-8">
+<a class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-md hover:bg-primary-container transition-all" href="#contact">
+<span>Jadwalkan Sesi Strategi</span>
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" href="#portfolio">
+<span>Eksplorasi Studi Kasus</span>
+<span class="material-symbols-outlined text-[18px]">explore</span>
+</a>
+</div>
+<div class="flex flex-wrap items-center gap-6 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">timer</span> Respon Cepat &lt; 24 Jam
+            </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span> Penandatanganan NDA Terjamin
+            </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">handshake</span> Free Architecture Blueprint
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACT SECTION (#contact) -->
+<section class="w-full py-20 bg-surface-container-low/50" id="contact">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="max-w-3xl mb-14">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 mb-3">
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Mulai Kolaborasi</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Hubungi Tim Konsultan MDT Solution Indonesia
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
+          Kirimkan pesan Anda atau hubungi kantor pusat kami di SCBD Jakarta untuk mendiskusikan peluang proyek baru.
+        </p>
+</div>
+<!-- Bento Grid (Contact Info + Form) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Bento Column (Info cards, Span 5 col) -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<!-- Email Card -->
+<div class="p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[22px]">mail</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Email Resmi</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Tim kami akan merespons dalam 1x24 jam kerja.</p>
+<div class="font-code-sm text-code-sm text-primary font-semibold space-y-1">
+<a class="block hover:underline" href="mailto:contact@mdtsolution.id">contact@mdtsolution.id</a>
+<a class="block hover:underline" href="mailto:enterprise@mdtsolution.id">enterprise@mdtsolution.id</a>
+</div>
+</div>
+<!-- Phone Card -->
+<div class="p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[22px]">call</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Telepon &amp; Konsultasi Langsung</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Senin – Jumat, 09.00 – 18.00 WIB</p>
+<p class="font-code-sm text-code-sm text-primary font-semibold">+62 21 5088 9200</p>
+</div>
+<!-- Address Card -->
+<div class="p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-[22px]">location_on</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Kantor Pusat</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Nexa Tower Lt. 28, Kawasan SCBD Kav. 52-53, Jl. Jend. Sudirman, Jakarta Selatan 12190
+            </p>
+</div>
+<!-- Social Links Card -->
+<div class="p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Kanal Digital</h4>
+<div class="flex items-center gap-3">
+<a aria-label="LinkedIn" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://linkedin.com">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a aria-label="GitHub" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://github.com">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</a>
+<a aria-label="X Twitter" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://x.com">
+<span class="material-symbols-outlined text-[20px]">tag</span>
+</a>
+<a aria-label="Instagram" class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://instagram.com">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Right Bento Column: Form (Span 7 col) -->
+<div class="lg:col-span-7 p-8 md:p-10 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-2">Kirim Formulir Konsultasi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+            Lengkapi detail di bawah ini agar tim teknis kami dapat menyiapkan rekomendasi awal sebelum sesi diskusi.
+          </p>
+<form class="space-y-6" id="contact-form" onsubmit="handleContactSubmit(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="contact-name">Nama Lengkap *</label>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-none focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="contact-name" placeholder="cth: Arya Wiryawan" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="contact-email">Email Perusahaan *</label>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-none focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="contact-email" placeholder="cth: arya@perusahaan.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="contact-service">Layanan yang Diminati *</label>
+<select class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-none focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="contact-service" required="">
+<option disabled="" selected="" value="">Pilih Layanan</option>
+<option value="web">Web Development Skala Enterprise</option>
+<option value="uiux">UI/UX Design &amp; Design System</option>
+<option value="ai">AI Solution &amp; Large Language Model</option>
+<option value="transformation">Digital Transformation &amp; Cloud</option>
+<option value="mobile">Mobile Application (iOS &amp; Android)</option>
+<option value="consulting">IT Architecture &amp; Security Consulting</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="contact-budget">Estimasi Budget Investasi</label>
+<select class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-none focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="contact-budget">
+<option value="50-150jt">IDR 50 Juta – 150 Juta</option>
+<option selected="" value="150-500jt">IDR 150 Juta – 500 Juta</option>
+<option value="500jt-1m">IDR 500 Juta – 1 Miliar</option>
+<option value="1m+">&gt; IDR 1 Miliar (Enterprise Scale)</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2 font-medium" for="contact-message">Kebutuhan / Rencana Proyek *</label>
+<textarea class="w-full px-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-none focus:outline-none focus:ring-2 focus:ring-primary transition-all" id="contact-message" placeholder="Jelaskan gambaran proyek, target waktu, atau kendala sistem saat ini..." required="" rows="4"></textarea>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary" id="contact-nda" required="" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="contact-nda">
+                Saya menyetujui pengolahan informasi kontak ini untuk penjadwalan konsultasi dan penandatanganan NDA kerahasiaan.
+              </label>
+</div>
+<button class="w-full py-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container shadow-md transition-all flex items-center justify-center gap-2" type="submit">
+<span>Kirim Formulir Konsultasi</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+<!-- Interactive Toast Confirmation -->
+<div class="hidden mt-6 p-4 rounded-lg bg-surface-container-high flex items-center gap-3 animate-fade-in" id="contact-toast">
+<span class="material-symbols-outlined text-primary text-[24px]">check_circle</span>
+<div>
+<h5 class="font-headline-sm text-headline-sm text-on-surface font-bold">Pesan Berhasil Terkirim!</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Terima kasih atas kepercayaan Anda. Tim arsitek kami akan segera menghubungi dalam 1x24 jam kerja.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE MODALS & DRAWERS -->
+<!-- 1. SERVICE DETAIL MODAL -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-md flex items-center justify-center p-4" id="service-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+<button aria-label="Close Service Modal" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="closeServiceModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6" id="service-modal-icon">
+<span class="material-symbols-outlined text-[28px]">code</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary font-semibold" id="service-modal-code">SERVICE 01</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mt-1 mb-4" id="service-modal-title">Web Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6" id="service-modal-desc">
+        Detail deskripsi layanan mendalam akan dimuat secara dinamis melalui interaksi pengguna.
+      </p>
+<div class="p-4 rounded-lg bg-surface-container-low mb-6">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold mb-3">Deliverable &amp; Ruang Lingkup Utama:</h4>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant" id="service-modal-bullets">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]">check</span> Arsitektur micro-frontend modular</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]">check</span> High availability cloud deployment</li>
+</ul>
+</div>
+<div class="flex items-center justify-end gap-3">
+<button class="px-5 py-2.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface" onclick="closeServiceModal()" type="button">Tutup</button>
+<a class="px-6 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-sm transition-all" href="#contact" onclick="closeServiceModal()">Konsultasikan Sekarang</a>
+</div>
+</div>
+</div>
+<!-- 2. CASE STUDY DETAIL MODAL -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-md flex items-center justify-center p-4" id="case-study-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-3xl w-full p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+<button aria-label="Close Case Study Modal" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="closeCaseStudyModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<span class="px-3 py-1 rounded-full bg-secondary-container/60 font-label-sm text-label-sm text-primary font-semibold" id="cs-modal-category">Digital Transformation</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-3 mb-2" id="cs-modal-title">Aura Banking Next-Gen Core Platform</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6" id="cs-modal-subtitle">Modernisasi arsitektur perbankan komersial menuju sistem event-driven berkecepatan ultra tinggi.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="p-4 rounded-lg bg-surface-container-low">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold mb-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-[18px]">report_problem</span> Tantangan Klien
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="cs-modal-problem">
+            Sistem monolith lama mengalami bottleneck saat jam sibuk transaksi gaji awal bulan, menyebabkan latensi mencapai 4.2 detik dan SLA turun di bawah target regulasi.
+          </p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold mb-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">architecture</span> Solusi Rekayasa MDT Solution Indonesia
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="cs-modal-solution">
+            Implementasi distributed core berbasis Kafka cluster dengan microservices Go berkecepatan tinggi, database sharding otomatis, dan failover multi-region.
+          </p>
+</div>
+</div>
+<div class="p-5 rounded-lg bg-surface-container mb-6">
+<h4 class="font-label-md text-label-md text-on-surface font-semibold mb-3">Dampak Bisnis Terukur (Delivered Outcomes)</h4>
+<div class="grid grid-cols-3 gap-4 text-center" id="cs-modal-metrics">
+<div class="p-3 bg-surface-container-lowest rounded-lg">
+<span class="font-headline-sm text-headline-sm font-bold text-primary block">+240%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Throughput Kapasitas</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg">
+<span class="font-headline-sm text-headline-sm font-bold text-primary block">38ms</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Average Latency</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg">
+<span class="font-headline-sm text-headline-sm font-bold text-primary block">99.995%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Production SLA</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex flex-wrap gap-2" id="cs-modal-tags">
+<span class="px-2.5 py-1 rounded bg-secondary-container/50 font-code-sm text-code-sm text-on-surface-variant">Kafka</span>
+<span class="px-2.5 py-1 rounded bg-secondary-container/50 font-code-sm text-code-sm text-on-surface-variant">Kubernetes</span>
+</div>
+<button class="px-6 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-sm transition-all" onclick="closeCaseStudyModal()" type="button">Tutup Pratinjau</button>
+</div>
+</div>
+</div>
+<!-- 3. ARTICLE FULL-SCREEN / RICH MODAL -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-md flex items-center justify-center p-4" id="article-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-4xl w-full p-8 md:p-12 shadow-2xl relative max-h-[92vh] overflow-y-auto">
+<button aria-label="Close Article Reader" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="closeArticleModal()" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-sm text-label-sm mb-4">
+<span class="px-2.5 py-1 rounded bg-primary/10 text-primary font-semibold" id="article-modal-tag">Deep Dive</span>
+<span id="article-modal-date">15 Mei 2025</span>
+<span>•</span>
+<span id="article-modal-readtime">6 Menit Baca</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mb-6 leading-tight" id="article-modal-title">
+        Navigasi Implementasi Generative AI di Sektor Keuangan Berizin Resmi
+      </h2>
+<div class="flex items-center gap-3 pb-8 mb-8 border-none bg-surface-container-low p-4 rounded-lg">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary font-headline-sm">DR</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Dr. Dimas Raditya</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Principal AI Research Architect • MDT Solution Indonesia Laboratory</p>
+</div>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4 leading-relaxed" id="article-modal-body">
+<p>Integrasi teknologi Generative AI dan Large Language Models (LLM) di sektor perbankan dan asuransi menuntut ketelitian ganda. Tidak seperti implementasi konsumen terbuka, perbankan di Indonesia terikat oleh regulasi privasi data yang ketat dan standar audit kelayakan algoritma dari otoritas berwenang.</p>
+<p>Dalam artikel ini, kami menjabarkan framework penerapan <em>air-gapped retrieval-augmented generation (RAG)</em> yang berjalan di atas private cloud terisolasi. Arsitektur ini memastikan tidak ada data nasabah sensitif yang terpapar ke model publik dari vendor pihak ketiga.</p>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold pt-4">Tiga Pilar Kunci Tata Kelola AI Enterprise:</h4>
+<ul class="space-y-2 list-disc list-inside pl-2">
+<li><strong>Isolasi Model &amp; Data Embeddings:</strong> Vektor database disimpan secara terenkripsi menggunakan kunci KMS yang dikontrol langsung oleh tim sekuriti internal bank.</li>
+<li><strong>Explainability &amp; Hallucination Guardrails:</strong> Setiap inferensi dilengkapi penanda sumber rujukan dokumen resmi untuk meniadakan risiko kesalahan faktual hukum keuangan.</li>
+<li><strong>Real-time Compliance Audit Trail:</strong> Logging komprehensif pada level prompt-response yang siap diaudit kapan pun oleh auditor eksternal.</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 flex justify-end">
+<button class="px-6 py-2.5 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="closeArticleModal()" type="button">Tutup Artikel</button>
+</div>
+</div>
+</div>
+<!-- 4. SIDE DRAWER FOR ALL NEWS ARCHIVE -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-sm flex justify-end" id="news-drawer">
+<div class="bg-surface-container-lowest w-full max-w-md h-full p-8 shadow-2xl flex flex-col justify-between overflow-y-auto">
+<div>
+<div class="flex items-center justify-between pb-6 mb-6">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Arsip Berita &amp; Wawasan</h3>
+<button aria-label="Close Archive Drawer" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="closeNewsDrawer()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-4">
+<div class="cursor-pointer p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors" onclick="openArticleModal('gen-ai'); closeNewsDrawer();">
+<span class="font-code-sm text-code-sm text-primary font-semibold">15 Mei 2025</span>
+<h4 class="font-label-md text-label-md text-on-surface font-bold mt-1">Navigasi Implementasi Generative AI di Sektor Keuangan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Standar kepatuhan LLM privat untuk institusi perbankan resmi.</p>
+</div>
+<div class="cursor-pointer p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors" onclick="openArticleModal('microservices'); closeNewsDrawer();">
+<span class="font-code-sm text-code-sm text-primary font-semibold">28 April 2025</span>
+<h4 class="font-label-md text-label-md text-on-surface font-bold mt-1">Arsitektur Event-Driven Microservices Skala Miliaran</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Penerapan Apache Kafka untuk throughput masif dan decoupling sistem.</p>
+</div>
+<div class="cursor-pointer p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors" onclick="openArticleModal('ux-ai'); closeNewsDrawer();">
+<span class="font-code-sm text-code-sm text-primary font-semibold">10 April 2025</span>
+<h4 class="font-label-md text-label-md text-on-surface font-bold mt-1">Prinsip Human-Centered UX Era AI Otomatis</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Merancang kendali human-in-the-loop yang mulus dan bebas friksi.</p>
+</div>
+<div class="cursor-pointer p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors" onclick="openArticleModal('zero-trust'); closeNewsDrawer();">
+<span class="font-code-sm text-code-sm text-primary font-semibold">22 Maret 2025</span>
+<h4 class="font-label-md text-label-md text-on-surface font-bold mt-1">Migrasi Praktis Zero-Trust Security untuk Hybrid Cloud</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">Mencegah pergerakan lateral ancaman keamanan siber pada multi-cluster.</p>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<button class="w-full py-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="closeNewsDrawer()" type="button">
+          Tutup Panel Arsip
+        </button>
+</div>
+</div>
+</div>
+<!-- INTERACTION LOGIC & MICRO-SCRIPTS -->
+<script>
+    // 1. PORTFOLIO FILTER
+    function filterPortfolio(category, btnElement) {
+      // Update button active state
+      document.querySelectorAll('.portfolio-filter-btn').forEach(b => {
+        b.className = 'portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+      });
+      btnElement.className = 'portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all';
+
+      // Filter card items
+      const items = document.querySelectorAll('.portfolio-item');
+      items.forEach(item => {
+        const itemCategories = item.getAttribute('data-categories') || '';
+        if (category === 'all' || itemCategories.includes(category)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    // 2. TESTIMONIAL CAROUSEL
+    let currentTestimonial = 0;
+    const totalTestimonials = 3;
+
+    function updateTestimonialSlider() {
+      const track = document.getElementById('testimonial-track');
+      if (track) {
+        track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+      }
+      const dots = document.querySelectorAll('.testimonial-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentTestimonial) {
+          dot.className = 'testimonial-dot w-3 h-3 rounded-full bg-primary transition-all';
+        } else {
+          dot.className = 'testimonial-dot w-3 h-3 rounded-full bg-surface-container-high transition-all';
+        }
+      });
+    }
+
+    function nextTestimonial() {
+      currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+      updateTestimonialSlider();
+    }
+
+    function prevTestimonial() {
+      currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+      updateTestimonialSlider();
+    }
+
+    function goToTestimonial(index) {
+      currentTestimonial = index;
+      updateTestimonialSlider();
+    }
+
+    // 3. SERVICE MODAL DATA
+    const serviceData = {
+      web: {
+        code: 'SERVICE 01',
+        title: 'Web Development Skala Enterprise',
+        icon: 'code',
+        desc: 'Kami membangun arsitektur web aplikasi skala besar dengan fokus pada performa sub-detik, isolasi domain microservices, dan keandalan tinggi menghadapi jutaan traffic serentak.',
+        bullets: [
+          'Arsitektur Micro-Frontend terisolasi & teruji',
+          'Optimasi Server-Side Rendering (SSR) & Edge Computing',
+          'Pipeline CI/CD otomatis dengan Zero-Downtime Deployment',
+          'Audit keamanan web menyeluruh (OWASP Top 10 Compliance)'
+        ]
+      },
+      uiux: {
+        code: 'SERVICE 02',
+        title: 'UI/UX Design & Design System',
+        icon: 'design_services',
+        desc: 'Pendekatan riset pengguna berorientasi metrik bisnis yang menghasilkan antarmuka fungsional, elegan, dan siap diadopsi oleh ribuan pengguna internal maupun eksternal tanpa friksi belajar.',
+        bullets: [
+          'Audit ergonomis dan riset kebutuhan pengguna enterprise',
+          'Penyusunan Design System terstandarisasi berbasis token Figma & code',
+          'Pengujian prototipe interaktif beresolusi tinggi',
+          'Aksesibilitas WCAG 2.1 Level AA terjamin'
+        ]
+      },
+      ai: {
+        code: 'SERVICE 03',
+        title: 'Enterprise AI & Machine Learning Solution',
+        icon: 'smart_toy',
+        desc: 'Integrasi kapabilitas kecerdasan buatan terapan langsung ke dalam alur kerja sistem operasional Anda. Mulai dari model LLM lokal berkeamanan tinggi hingga analitik data prediktif real-time.',
+        bullets: [
+          'Implementasi Private LLM & RAG Pipeline terenkripsi',
+          'Computer Vision untuk inspeksi visual otomatis industri',
+          'Otomatisasi pemrosesan dokumen cerdas (Intelligent Document Processing)',
+          'Monitoring drift model dan kepatuhan etika regulasi data'
+        ]
+      },
+      transformation: {
+        code: 'SERVICE 04',
+        title: 'Digital Transformation & Cloud Modernization',
+        icon: 'transform',
+        desc: 'Membimbing evolusi sistem enterprise warisan (legacy) menjadi ekosistem digital cloud native adaptif tanpa mengganggu kelangsungan operasional harian.',
+        bullets: [
+          'Refactoring arsitektur monolitik ke microservices',
+          'Migrasi terkontrol menuju AWS, Google Cloud, atau Hybrid Cloud',
+          'Implementasi Infrastructure as Code (Terraform & Ansible)',
+          'FinOps: optimasi biaya konsumsi komputasi awan'
+        ]
+      },
+      mobile: {
+        code: 'SERVICE 05',
+        title: 'Mobile Application Engineering',
+        icon: 'smartphone',
+        desc: 'Pengembangan aplikasi mobile native (Swift untuk iOS, Kotlin untuk Android) serta hybrid berefisiensi tinggi yang menghadirkan respons secepat kilat dan proteksi biometrik standar finansial.',
+        bullets: [
+          'Dukungan penuh offline-first data synchronization',
+          'Enkripsi lokal database SQLCipher & secure enclave storage',
+          'Integrasi biometrik multi-faktor & proteksi anti-tamper',
+          'Testing otomatis lintas ratusan matriks tipe perangkat'
+        ]
+      },
+      consulting: {
+        code: 'SERVICE 06',
+        title: 'IT Architecture & Security Consulting',
+        icon: 'insights',
+        desc: 'Konsultansi strategis level C-Suite untuk merumuskan peta jalan transformasi teknologi, audit postur ketahanan siber, dan penjaminan kelayakan arsitektur perangkat lunak skala nasional.',
+        bullets: [
+          'Penilaian postur keamanan siber & simulasi penetration testing',
+          'Penyusunan Roadmap Teknologi 3-5 Tahun bersama Dewan Direksi',
+          'Sertifikasi & Kepatuhan Standar ISO 27001 dan SOC2',
+          'Evaluasi arsitektur perangkat lunak & pemilihan stack vendor independen'
+        ]
+      }
+    };
+
+    function openServiceModal(key) {
+      const data = serviceData[key];
+      if (!data) return;
+      document.getElementById('service-modal-code').innerText = data.code;
+      document.getElementById('service-modal-title').innerText = data.title;
+      document.getElementById('service-modal-desc').innerText = data.desc;
+      document.getElementById('service-modal-icon').innerHTML = `<span class="material-symbols-outlined text-[28px]">${data.icon}</span>`;
+      
+      const bulletsContainer = document.getElementById('service-modal-bullets');
+      bulletsContainer.innerHTML = data.bullets.map(b => `
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[16px]">check</span> ${b}</li>
+      `).join('');
+
+      document.getElementById('service-modal').classList.remove('hidden');
+    }
+
+    function closeServiceModal() {
+      document.getElementById('service-modal').classList.add('hidden');
+    }
+
+    // 4. CASE STUDY MODAL DATA
+    const caseStudies = {
+      aura: {
+        category: 'Digital Transformation & Web',
+        title: 'Aura Banking Next-Gen Core Platform',
+        subtitle: 'Modernisasi arsitektur perbankan komersial menuju sistem event-driven berkecepatan ultra tinggi.',
+        problem: 'Sistem monolith lama mengalami bottleneck saat jam sibuk transaksi gaji awal bulan, menyebabkan latensi mencapai 4.2 detik dan SLA turun di bawah target regulasi.',
+        solution: 'Implementasi distributed core berbasis Kafka cluster dengan microservices Go berkecepatan tinggi, database sharding otomatis, dan failover multi-region.',
+        metrics: [
+          { val: '+240%', label: 'Throughput Kapasitas' },
+          { val: '38ms', label: 'Average Latency' },
+          { val: '99.995%', label: 'Production SLA' }
+        ],
+        tags: ['Apache Kafka', 'Go Microservices', 'PostgreSQL', 'Kubernetes']
+      },
+      aether: {
+        category: 'AI & Mobile',
+        title: 'AetherHealth Telemedicine & AI Triage',
+        subtitle: 'Solusi konsultasi medis mobile terpadu dengan asisten triase bertenaga kecerdasan buatan.',
+        problem: 'Waktu tunggu triase darurat pasien mencapai 28 menit pada jam puncak, membebani tim medis klinik dan meningkatkan risiko penanganan terlambat.',
+        solution: 'Pembangunan aplikasi native mobile dengan modul AI lokal terenkripsi yang mampu menyortir tingkat kegawatan medis dan mendisposisi dokter spesialis instan.',
+        metrics: [
+          { val: '+68%', label: 'Diagnostic Speed' },
+          { val: '-55%', label: 'Waktu Tunggu Pasien' },
+          { val: '4.9/5', label: 'Rating Kepuasan' }
+        ],
+        tags: ['Swift', 'Kotlin', 'PyTorch Mobile', 'HIPAA Secure Cloud']
+      },
+      logix: {
+        category: 'Website & UI/UX',
+        title: 'LogixSync Intelligent Logistics Dashboard',
+        subtitle: 'Sistem komando armada dan rantai pasok cerdas dengan perutean dinamis waktu nyata.',
+        problem: 'Kurangnya visibilitas terpadu antara 4,500 armada kargo dan gudang menyebabkan inefisiensi rute dan konsumsi bahan bakar berlebih hingga 23%.',
+        solution: 'Rancang bangun web platform pemantauan armada berbasis peta telemetri interaktif dengan algoritma perutean dinamis berbasis cuaca dan kepadatan jalur.',
+        metrics: [
+          { val: '-34%', label: 'Idle Downtime' },
+          { val: '+45%', label: 'On-Time Delivery' },
+          { val: '1.2 Juta', label: 'Paket / Hari' }
+        ],
+        tags: ['Next.js', 'WebSockets', 'Mapbox GL', 'Node.js Cluster']
+      },
+      nexaflow: {
+        category: 'AI Platform',
+        title: 'NexaFlow Autonomous Customer Ops Agent',
+        subtitle: 'Agen kecerdasan buatan otonom untuk otomasi penanganan keluhan IT dan operasional sistem.',
+        problem: 'Lonjakan 40,000+ tiket keluhan per bulan menumpuk di meja helpdesk, menyebabkan waktu penyelesaian rata-rata mencapai lebih dari 14 jam.',
+        solution: 'Penyebaran agen LLM terintegrasi ke sistem pemantauan server dan ticketing, menyelesaikan diagnosis dan patch script secara otomatis tanpa intervensi manual.',
+        metrics: [
+          { val: '85%', label: 'Tiket Selesai Otomatis' },
+          { val: '4.2 Menit', label: 'Rata-rata Resolusi' },
+          { val: '42%', label: 'Penghematan Biaya Ops' }
+        ],
+        tags: ['LangChain', 'Llama 3 Enterprise', 'Vector DB', 'FastAPI']
+      },
+      omnipay: {
+        category: 'Mobile & UI/UX',
+        title: 'OmniPay Seamless Cross-Border Wallet',
+        subtitle: 'Dompet digital multi-mata uang untuk transfer instan dengan kliring langsung se-Asia Tenggara.',
+        problem: 'Proses kliring transfer dana lintas negara membutuhkan waktu 2-3 hari kerja dengan biaya konversi nilai valuta asing yang tinggi.',
+        solution: 'Aplikasi dompet digital dengan arsitektur settlement mikro berbasis ledger terdistribusi dan antarmuka ramah pengguna dengan verifikasi wajah instan.',
+        metrics: [
+          { val: '0.4s', label: 'Waktu Settlement' },
+          { val: '-60%', label: 'Biaya Transaksi' },
+          { val: '3.5 Juta', label: 'Nasabah Aktif' }
+        ],
+        tags: ['Flutter Native Engine', 'Distributed Ledger', 'Biometric Enclave']
+      }
+    };
+
+    function openCaseStudyModal(key) {
+      const data = caseStudies[key];
+      if (!data) return;
+      document.getElementById('cs-modal-category').innerText = data.category;
+      document.getElementById('cs-modal-title').innerText = data.title;
+      document.getElementById('cs-modal-subtitle').innerText = data.subtitle;
+      document.getElementById('cs-modal-problem').innerText = data.problem;
+      document.getElementById('cs-modal-solution').innerText = data.solution;
+      
+      const metricsContainer = document.getElementById('cs-modal-metrics');
+      metricsContainer.innerHTML = data.metrics.map(m => `
+        <div class="p-3 bg-surface-container-lowest rounded-lg">
+          <span class="font-headline-sm text-headline-sm font-bold text-primary block">${m.val}</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">${m.label}</span>
+        </div>
+      `).join('');
+
+      const tagsContainer = document.getElementById('cs-modal-tags');
+      tagsContainer.innerHTML = data.tags.map(t => `
+        <span class="px-2.5 py-1 rounded bg-secondary-container/50 font-code-sm text-code-sm text-on-surface-variant">${t}</span>
+      `).join('');
+
+      document.getElementById('case-study-modal').classList.remove('hidden');
+    }
+
+    function closeCaseStudyModal() {
+      document.getElementById('case-study-modal').classList.add('hidden');
+    }
+
+    // 5. ARTICLE MODAL
+    const articleData = {
+      'gen-ai': {
+        tag: 'AI Governance',
+        date: '15 Mei 2025',
+        read: '6 Menit Baca',
+        title: 'Navigasi Implementasi Generative AI di Sektor Keuangan Berizin Resmi',
+        author: 'Dr. Dimas Raditya',
+        role: 'Principal AI Research Architect • MDT Solution Indonesia Laboratory',
+        body: `<p>Integrasi teknologi Generative AI dan Large Language Models (LLM) di sektor perbankan dan asuransi menuntut ketelitian ganda. Tidak seperti implementasi konsumen terbuka, perbankan di Indonesia terikat oleh regulasi privasi data yang ketat dan standar audit kelayakan algoritma dari otoritas berwenang.</p>
+        <p>Dalam artikel ini, kami menjabarkan framework penerapan air-gapped retrieval-augmented generation (RAG) yang berjalan di atas private cloud terisolasi. Arsitektur ini memastikan tidak ada data nasabah sensitif yang terpapar ke model publik dari vendor pihak ketiga.</p>
+        <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold pt-4">Tiga Pilar Kunci Tata Kelola AI Enterprise:</h4>
+        <ul class="space-y-2 list-disc list-inside pl-2">
+          <li><strong>Isolasi Model & Data Embeddings:</strong> Vektor database disimpan secara terenkripsi menggunakan kunci KMS yang dikontrol langsung oleh tim sekuriti internal bank.</li>
+          <li><strong>Explainability & Hallucination Guardrails:</strong> Setiap inferensi dilengkapi penanda sumber rujukan dokumen resmi untuk meniadakan risiko kesalahan faktual hukum keuangan.</li>
+          <li><strong>Real-time Compliance Audit Trail:</strong> Logging komprehensif pada level prompt-response yang siap diaudit kapan pun oleh auditor eksternal.</li>
+        </ul>`
+      },
+      'microservices': {
+        tag: 'Distributed Systems',
+        date: '28 April 2025',
+        read: '4 Menit Baca',
+        title: 'Arsitektur Event-Driven Microservices untuk Transaksi Skala Miliaran',
+        author: 'Arif Hidayat',
+        role: 'Head of Distributed Core Infrastructure • MDT Solution Indonesia',
+        body: `<p>Banyak organisasi menghadapi hambatan skalabilitas saat sistem monolitik database mereka mengalami deadlock transaksi di momen peak volume. Beralih ke arsitektur decoupled berbasis event-driven bukan sekadar tren teknologi, melainkan keputusan kelangsungan hidup bisnis perbankan dan e-commerce modern.</p>
+        <p>Dengan memanfaatkan Apache Kafka sebagai single source of truth log stream, komponen inventori, pembayaran, dan pencatatan audit dapat membaca event secara asinkron tanpa saling mengunci tabel database relational.</p>
+        <h4 class="font-headline-sm text-headline-sm text-on-surface font-bold pt-4">Strategi Penjaminan Data Consistency:</h4>
+        <p>Penerapan pola Saga Orchestration dikombinasikan dengan transactional outbox pattern memastikan konsistensi eventual-consistency tetap tercapai 100%, bahkan dalam skenario jaringan partition terburuk sekalipun.</p>`
+      },
+      'ux-ai': {
+        tag: 'Design & Human Factors',
+        date: '10 April 2025',
+        read: '5 Menit Baca',
+        title: 'Prinsip Human-Centered UX dalam Era Antarmuka Berbasis AI Otomatis',
+        author: 'Maya Salsabila',
+        role: 'Director of Experience Design • MDT Solution Indonesia',
+        body: `<p>Ketika kecerdasan buatan mengambil alih keputusan operasional rutin, tantangan utama desainer bukan lagi mempermudah klik antarmuka, melainkan merancang sistem <em>human-in-the-loop</em> yang mempertahankan kepercayaan dan kendali manusia.</p>
+        <p>Kami menemukan bahwa antarmuka AI yang terlalu agresif mengaburkan transparansi justru memicu resistensi pengguna korporat. Memberikan indikator confidence score visual serta tombol 'override manual' satu langkah terbukti meningkatkan tingkat adopsi sistem cerdas hingga 82%.</p>`
+      },
+      'zero-trust': {
+        tag: 'Cyber Security',
+        date: '22 Maret 2025',
+        read: '7 Menit Baca',
+        title: 'Migrasi Praktis Zero-Trust Security untuk Hybrid Cloud',
+        author: 'Bambang Kusuma',
+        role: 'Chief Information Security Advisor • MDT Solution Indonesia',
+        body: `<p>Membangun perimeter perlindungan tradisional tidak lagi relevan ketika beban kerja server terdistribusi antara on-premise data center dan multi-cloud AWS serta GCP. Filosofi 'Never Trust, Always Verify' harus diterjemahkan ke dalam kebijakan micro-segmentation jaringan dan identitas mTLS otomatis di setiap kontainer aplikasi.</p>`
+      }
+    };
+
+    function openArticleModal(key) {
+      const data = articleData[key];
+      if (!data) return;
+      document.getElementById('article-modal-tag').innerText = data.tag;
+      document.getElementById('article-modal-date').innerText = data.date;
+      document.getElementById('article-modal-readtime').innerText = data.read;
+      document.getElementById('article-modal-title').innerText = data.title;
+      document.getElementById('article-modal-body').innerHTML = data.body;
+      document.getElementById('article-modal').classList.remove('hidden');
+    }
+
+    function closeArticleModal() {
+      document.getElementById('article-modal').classList.add('hidden');
+    }
+
+    // 6. NEWS DRAWER
+    function openNewsDrawer() {
+      document.getElementById('news-drawer').classList.remove('hidden');
+    }
+
+    function closeNewsDrawer() {
+      document.getElementById('news-drawer').classList.add('hidden');
+    }
+
+    // 7. CONTACT FORM SUBMISSION
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const toast = document.getElementById('contact-toast');
+      toast.classList.remove('hidden');
+      document.getElementById('contact-form').reset();
+      setTimeout(() => {
+        toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+
+    // Close modals on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeServiceModal();
+        closeCaseStudyModal();
+        closeArticleModal();
+        closeNewsDrawer();
+      }
+    });
+
+    // Close modals on clicking backdrop
+    ['service-modal', 'case-study-modal', 'article-modal', 'news-drawer'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('click', (e) => {
+          if (e.target === el) {
+            el.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-16"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-3"><img alt="MDT Solution Indonesia Corporate Logo" class="h-8 w-auto object-contain" src="/assets/media/logos/logo2.png"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">MDT Solution Indonesia</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Menghadirkan arsitektur teknologi generasi berikutnya untuk mendukung akselerasi transformasi digital perusahaan, komputasi awan berkinerja tinggi, dan tata kelola sistem cerdas.</p><div class="flex items-center gap-3 pt-2"><a aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://linkedin.com"><span class="material-symbols-outlined text-[18px]">share</span></a><a aria-label="GitHub" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://github.com"><span class="material-symbols-outlined text-[18px]">terminal</span></a><a aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://instagram.com"><span class="material-symbols-outlined text-[18px]">photo_camera</span></a><a aria-label="X Platform" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://x.com"><span class="material-symbols-outlined text-[18px]">tag</span></a></div></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Navigasi</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#home">Home</a></li><li><a class="hover:text-on-surface transition-colors" href="#about">Tentang Kami</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Layanan Unggulan</a></li><li><a class="hover:text-on-surface transition-colors" href="#portfolio">Portofolio Solusi</a></li><li><a class="hover:text-on-surface transition-colors" href="#news">Berita &amp; Wawasan</a></li><li><a class="hover:text-on-surface transition-colors" href="#contact">Kontak Kami</a></li></ul></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Layanan</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#services">Cloud Architecture</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Enterprise AI Engine</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Cyber Security Audit</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Distributed Systems</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">API Gateway Infra</a></li></ul></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Legalitas &amp; Kebijakan</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li><li><a class="hover:text-on-surface transition-colors" data-path="security-framework" href="#">Security &amp; Compliance</a></li><li><a class="hover:text-on-surface transition-colors" data-path="cookie-policy" href="#">Cookie Preferences</a></li></ul></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 MDT Solution Indonesia Nusantara Mandiri. All rights reserved.</p><div class="flex items-center gap-6 font-body-sm text-body-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span>System Operational</span><span>Jakarta • Singapore • Global</span></div></div></div></footer></body></html>

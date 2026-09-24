@@ -25,7 +25,7 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Metronic by Keenthemes" />
 		<link rel="canonical" href="http://preview.keenthemes.comdashboards/marketing.html" />
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="assets/media/logos/logo2.png" />
 		<!--begin::Fonts(mandatory for all pages)-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 		<!--end::Fonts-->
@@ -43,7 +43,7 @@ License: For each use you must have a valid license purchased only from above li
 	<!--begin::Body-->
 	<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 		<!--begin::Theme mode setup on page load-->
-		<script>var defaultThemeMode = "light"; var themeMode; if ( document.documentElement ) { if ( document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if ( localStorage.getItem("data-bs-theme") !== null ) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
+		<script>var defaultThemeMode = "dark"; var themeMode; if ( document.documentElement ) { if ( document.documentElement.hasAttribute("data-bs-theme-mode")) { themeMode = document.documentElement.getAttribute("data-bs-theme-mode"); } else { if ( localStorage.getItem("data-bs-theme") !== null ) { themeMode = localStorage.getItem("data-bs-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
 		<!--end::Theme mode setup on page load-->
 		<!--begin::App-->
 		<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
@@ -66,7 +66,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Mobile logo-->
 						<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
 							<a href="index.html" class="d-lg-none">
-								<img alt="Logo" src="assets/media/logos/default-small.svg" class="h-30px" />
+								<img alt="Logo" src="assets/media/logos/logo2.png" class="h-30px" />
 							</a>
 						</div>
 						<!--end::Mobile logo-->
@@ -4965,8 +4965,8 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
 							<!--begin::Logo image-->
 							<a href="index.html">
-								<img alt="Logo" src="assets/media/logos/default-dark.svg" class="h-25px app-sidebar-logo-default" />
-								<img alt="Logo" src="assets/media/logos/default-small.svg" class="h-20px app-sidebar-logo-minimize" />
+								<img alt="Logo" src="assets/media/logos/logo2.png" class="h-25px app-sidebar-logo-default" />
+								<img alt="Logo" src="assets/media/logos/logo2.png" class="h-20px app-sidebar-logo-minimize" />
 							</a>
 							<!--end::Logo image-->
 							<!--begin::Sidebar toggle-->
