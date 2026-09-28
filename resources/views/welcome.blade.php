@@ -5,10 +5,10 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="web_standard" name="shell-type"/>
-    <title>MDT Solution Indonesia - Jasa Pembuatan Website, Aplikasi Mobile &amp; CCTV Medan</title>
+    <title>{{ $company->nama_profil ?? "MDT Solution" }} - Solusi IT Terbaik</title>
     
     <!-- Primary Meta Tags -->
-    <meta name="title" content="MDT Solution Indonesia - Jasa Pembuatan Website, Aplikasi Mobile &amp; CCTV Medan" />
+    <meta name="title" content="{{ $company->nama_profil ?? "MDT Solution" }} - Solusi IT Terbaik" />
     <meta name="description" content="MDT Solution Indonesia menghadirkan layanan rekayasa perangkat lunak presisi tinggi, pembuatan aplikasi berbasis website, aplikasi mobile, website company profile, dan instalasi CCTV profesional di Medan." />
     <meta name="keywords" content="MDT Solution Indonesia, pembuatan aplikasi website, aplikasi mobile, website company profile, instalasi CCTV, CCTV Medan, jasa website Medan, konsultan IT Medan, transformasi digital, software house Medan" />
     <meta name="author" content="MDTSolutionIndonesia" />
@@ -140,7 +140,7 @@
   --color-primary-container: #143ee4;
 }
 </style>
-</head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 left-0 w-full z-50 bg-surface/75 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="MDT Solution Indonesia Corporate Logo" class="h-8 w-auto object-contain" src="/assets/media/logos/logo2.png"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">MDT Solution Indonesia</span></div><nav class="hidden lg:flex items-center gap-8" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="one-page-home" href="#home">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#about">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#services">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="portfolio" href="#portfolio">Portfolio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="news" href="#news">News</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#contact">Contact</a></nav><div class="flex items-center gap-4"><div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant font-code-sm text-code-sm shadow-sm"><span class="material-symbols-outlined text-[16px] text-primary">monitoring</span><span class="font-semibold">{{ number_format(\App\Models\Visitor::count(), 0, ',', '.') }} Visitors</span></div><button aria-label="Toggle Light/Dark Theme" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark'); this.querySelector('span').textContent = document.documentElement.classList.contains('dark') ? 'dark_mode' : 'light_mode';" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><a class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-[0_2px_8px_rgba(59,91,253,0.24)]" href="#contact">Hubungi Kami</a></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+</head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 left-0 w-full z-50 bg-surface/75 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-3"><img alt="MDT Solution Indonesia Corporate Logo" class="h-8 w-auto object-contain" src="/assets/media/logos/logo2.png"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">MDT Solution Indonesia</span></div><nav class="hidden lg:flex items-center gap-8" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="one-page-home" href="#home">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#about">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#services">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="portfolio" href="#portfolio">Portfolio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="news" href="{{ route('front.berita') }}">News</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#contact">Contact</a></nav><div class="flex items-center gap-4"><div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant font-code-sm text-code-sm shadow-sm"><span class="material-symbols-outlined text-[16px] text-primary">monitoring</span><span class="font-semibold">{{ number_format(\App\Models\Visitor::count(), 0, ',', '.') }} Visitors</span></div><button aria-label="Toggle Light/Dark Theme" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark'); this.querySelector('span').textContent = document.documentElement.classList.contains('dark') ? 'dark_mode' : 'light_mode';" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><a class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-[0_2px_8px_rgba(59,91,253,0.24)]" href="#contact">Hubungi Kami</a></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
 <!-- HERO SECTION (#home) -->
 <section class="relative w-full overflow-hidden py-16 lg:py-24" id="home">
 <!-- Atmospheric Ambient Glows -->
@@ -291,7 +291,7 @@
               Rekayasa Perangkat Lunak Presisi &amp; Kemitraan Strategis
             </h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
-              MDT Solution Indonesia berdiri sebagai konsultan dan mitra rekayasa teknologi terpercaya yang memadukan keahlian teknis kelas dunia dengan pemahaman mendalam tentang lanskap bisnis modern. Kami tidak sekadar membangun aplikasi; kami merancang ekosistem komputasi adaptif yang memungkinkan perusahaan beroperasi tanpa hambatan di era ketidakpastian pasar.
+              {{ $about->keterangan_tentang ?? "MDT Solution berdiri sebagai konsultan..." }}
             </p>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
               Mulai dari modernisasi sistem monolitik hingga penerapan orkestrasi microservices berkecepatan tinggi, seluruh solusi kami dibangun berdasarkan standar kepatuhan tata kelola industri terketat.
@@ -385,67 +385,18 @@
         </p>
 </div>
 <!-- Bento Grid (4 Service Cards) -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Service 01: Pembuatan Aplikasi Berbasis Website -->
-<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-6">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-[26px]">language</span>
-</div>
-<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">01</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Pembuatan Aplikasi Berbasis Website</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Pembangunan platform dan aplikasi web skala enterprise dengan arsitektur mikro, ketahanan tinggi, dan skalabilitas masif.
-            </p>
-</div>
-</div>
-<!-- Service 02: Aplikasi Berbasis Mobile -->
-<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-6">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-[26px]">smartphone</span>
-</div>
-<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">02</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Aplikasi Berbasis Mobile</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Rekayasa aplikasi mobile berkualitas tinggi dengan interaksi mulus, keamanan terjamin, dan konsumsi sumber daya yang efisien.
-            </p>
-</div>
-</div>
-<!-- Service 03: Website Company Profile -->
-<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-6">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-[26px]">contact_page</span>
-</div>
-<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">03</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Website Company Profile</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Pembuatan website company profile yang profesional, modern, dan informatif untuk meningkatkan citra digital perusahaan Anda.
-            </p>
-</div>
-</div>
-<!-- Service 04: CCTV -->
-<div class="group p-8 rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-6">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-<span class="material-symbols-outlined text-[26px]">videocam</span>
-</div>
-<span class="font-code-sm text-code-sm font-bold text-on-surface-variant/50">04</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">CCTV</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-              Layanan instalasi dan pemeliharaan sistem keamanan CCTV cerdas untuk pengawasan area bisnis secara real-time dan andal.
-            </p>
-</div>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14">
+    @foreach($jasas as $jasa)
+    <div class="group relative overflow-hidden rounded-2xl bg-surface-container-low/80 backdrop-blur-md p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-outline-variant/30 flex flex-col h-full">
+        <div class="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[32px]">devices</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">{{ $jasa->namaJasa }}</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-8 flex-grow">
+            {{ $jasa->keteranganJasa }}
+        </p>
+    </div>
+    @endforeach
 </div>
 </div>
 </section>
@@ -468,112 +419,38 @@
 <!-- Filter Tab Buttons -->
 <div class="flex flex-wrap gap-2 p-1.5 rounded-lg bg-surface-container">
 <button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all" onclick="filterPortfolio('all', this)" type="button">All</button>
-<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('website', this)" type="button">Website</button>
-<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('mobile', this)" type="button">Mobile</button>
-<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('cctv', this)" type="button">CCTV</button>
+@foreach($projectTypes as $ptype)
+<button class="portfolio-filter-btn px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" onclick="filterPortfolio('{{ $ptype->uuid }}', this)" type="button">{{ $ptype->nama_jenis }}</button>
+@endforeach
 </div>
 </div>
 <!-- Bento Grid Projects -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6" id="portfolio-grid">
-<!-- Project 1: Featured (Large 8 col) -->
-<div class="portfolio-item lg:col-span-8 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="transformation website">
-<div>
-<div class="w-full h-64 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cutting-edge modern financial banking dashboard on an ultra-wide curved monitor inside a luminous glass corporate command center. Minimalist data visualization widgets with blue and cyan accents, clean typography, soft light reflection, cinematic studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcchcjdGoM5LF-xBbrChCS0U207hfqYMfXp7svTZzVYD4toJWXhAQkj_29OnVcCKcO0jG_PEC7u-xWUXPkdicBLjjVnPbkkyCbe9m7_UYL6BsOe-8Oeeqe1GYIT3Et-1oyRqeJPCcmYOpcUmyzPsibWcVapGok4hLLUvaU09uEF0JieivXJQttjKPyZ8dOKim-lOp4phIERQRObMwieWKrn6AwBFBVxV_yGX5fvheqVyf2awWJFOcn"/>
-<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Digital Transformation &amp; Web</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface font-bold mb-2">Aura Banking Next-Gen Core Platform</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">
-              Rekayasa ulang menyeluruh sistem core banking perbankan komersial menuju arsitektur event-driven terdistribusi untuk melayani 12+ juta nasabah aktif secara real-time.
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    @foreach($portfolios as $portfolio)
+    <div class="portfolio-item group relative rounded-2xl overflow-hidden bg-surface-container-low/50 border border-outline-variant/30 shadow-sm hover:shadow-xl transition-all duration-300" data-categories="{{ $portfolio->jenis_project }}">
+        <div class="aspect-video bg-surface-container overflow-hidden">
+            @if(!empty($portfolio->gambar))
+                <img alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset($portfolio->gambar[0]) }}"/>
+            @else
+                <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-500">No Image</div>
+            @endif
+        </div>
+        <div class="p-6">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm mb-3">
+                <span>{{ $portfolio->type->nama_jenis ?? $portfolio->jenis_project }}</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">{{ $portfolio->nama_project }}</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mb-4 line-clamp-2">
+                {{ $portfolio->keterangan_project }}
             </p>
-</div>
-<div class="flex items-center justify-between pt-4 border-none">
-<div class="flex flex-wrap gap-2">
-<span class="px-2.5 py-1 rounded bg-secondary-container/50 font-code-sm text-code-sm text-on-surface-variant">Apache Kafka</span>
-<span class="px-2.5 py-1 rounded bg-secondary-container/50 font-code-sm text-code-sm text-on-surface-variant">Go Microservices</span>
-<span class="px-2.5 py-1 rounded bg-secondary-container/50 font-code-sm text-code-sm text-on-surface-variant">PostgreSQL Partition</span>
-</div>
-<button class="px-5 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container shadow-sm transition-all" onclick="openCaseStudyModal('aura')" type="button">Lihat Detail</button>
-</div>
-</div>
-<!-- Project 2: AetherHealth (Span 4 col) -->
-<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="mobile">
-<div>
-<div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic mobile healthcare application interface displayed on a sleek glass smartphone mockup with clean vital-signs telemetry, ambient cyan glow, minimalist medical AI diagnostic charts, neutral studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd3V2O-dKRCmSj9Ig5694QKXfktVcpu2OqCgWdyrERegxOyNch_KYx7_dL2uOUeopOKqyasx5TlB2E3AQ8ldO-KEv3dJ0Yj-6RDDx-We2oQSqX0pVyGliptwD0ZQoCg0qJCFmVCe-w9gg-1rw29iGfL8kY4GjcyUXUiPwHBFBFbtCzVaqGX4cQRiLwE9IEL2ME1epNjuIL35LdZvHiNWnRapN7wyuafaGjFilaTweuvll6Hlx138-0"/>
-<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Mobile</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">AetherHealth Telemedicine</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
-              Aplikasi mobile telemedicine dengan engine terpadu untuk klasifikasi gejala darurat dan integrasi rekam medis instan.
-            </p>
-</div>
-<div class="flex items-center justify-between pt-4">
-<span class="font-code-sm text-code-sm text-primary font-semibold">+68% Diagnostic Speed</span>
-<button class="px-4 py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="openCaseStudyModal('aether')" type="button">Lihat Detail</button>
-</div>
-</div>
-<!-- Project 3: LogixSync (Span 4 col) -->
-<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="website uiux">
-<div>
-<div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sophisticated logistics control tower web application dashboard with global telemetry map, route optimization graph, clean glassmorphic panels, high contrast modern typography, muted blue and grey palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpFYMvXvZnf-iMeFELJ4nlyfm2qr8vJ5Dfdzn2pjbDL9wYdJffa5K--BRTutmMCSWUoqCbuBFrcSCx7KzPY9HbrC3UimMbrCgeFfo6bD7sbz1qESBmTBC_9g9_rSYxC4Tz3HvNgHmwm5PfoG697Dm1Z-rsthWCqRJ3ORjRdABNL2Y7OpEfFgRqkX4eHLkKXLwkyT0aAj0UIiEsdgzJm0dwSyF9epbJ74EN40nUP6sV9bhoctUGawha"/>
-<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Website &amp; UI/UX</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">LogixSync Logistics Dashboard</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
-              Dashboard analitik operasional armada multimodal dan rantai pasok dengan sistem dispatch otomatis dan visibilitas GPS real-time.
-            </p>
-</div>
-<div class="flex items-center justify-between pt-4">
-<span class="font-code-sm text-code-sm text-primary font-semibold">-34% Idle Downtime</span>
-<button class="px-4 py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="openCaseStudyModal('logix')" type="button">Lihat Detail</button>
-</div>
-</div>
-<!-- Project 4: NexaFlow (Span 4 col) -->
-<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="website">
-<div>
-<div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
-<div class="w-full h-full bg-gradient-to-br from-primary/10 via-surface-container-high to-tertiary/10 flex items-center justify-center p-6">
-<div class="flex flex-col items-center text-center">
-<span class="material-symbols-outlined text-primary text-[48px] mb-2">neurology</span>
-<span class="font-code-sm text-code-sm text-on-surface font-semibold">Autonomous Ops Model v2</span>
-</div>
-</div>
-<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Platform</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">NexaFlow Autonomous Ops Agent</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
-              Sistem otonom untuk menyelesaikan 85% tiket kendala IT enterprise dan resolusi otomatis insiden infrastruktur cloud.
-            </p>
-</div>
-<div class="flex items-center justify-between pt-4">
-<span class="font-code-sm text-code-sm text-primary font-semibold">85% Automated Res</span>
-<button class="px-4 py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="openCaseStudyModal('nexaflow')" type="button">Lihat Detail</button>
-</div>
-</div>
-<!-- Project 5: OmniPay (Span 4 col) -->
-<div class="portfolio-item lg:col-span-4 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between" data-categories="mobile uiux">
-<div>
-<div class="w-full h-48 rounded-lg bg-surface-container overflow-hidden mb-6 relative group">
-<div class="w-full h-full bg-gradient-to-tr from-surface-container-high via-surface-container-low to-secondary-container flex items-center justify-center p-6">
-<div class="flex flex-col items-center text-center">
-<span class="material-symbols-outlined text-primary text-[48px] mb-2">contactless</span>
-<span class="font-code-sm text-code-sm text-on-surface font-semibold">Multi-Currency Engine</span>
-</div>
-</div>
-<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm text-primary font-semibold shadow-sm">Mobile &amp; UI/UX</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">OmniPay Cross-Border Wallet</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
-              Dompet digital multi-mata uang dengan kliring cepat antarnegara Asia Tenggara dan integrasi biometrik mutakhir.
-            </p>
-</div>
-<div class="flex items-center justify-between pt-4">
-<span class="font-code-sm text-code-sm text-primary font-semibold">0.4s Settlement</span>
-<button class="px-4 py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="openCaseStudyModal('omnipay')" type="button">Lihat Detail</button>
-</div>
-</div>
+            @if($portfolio->link_project)
+            <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors" href="{{ $portfolio->link_project }}" target="_blank">
+                Lihat Case Study <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+            @endif
+        </div>
+    </div>
+    @endforeach
 </div>
 </div>
 </section>
@@ -599,79 +476,25 @@
 </button>
 </div>
 <!-- Bento Grid Layout for News (1 Large + 2 Small) -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-<!-- Featured Big Card (8 col) -->
-<div class="cursor-pointer lg:col-span-8 p-8 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group" onclick="openArticleModal('gen-ai')">
-<div>
-<div class="w-full h-72 rounded-lg bg-surface-container overflow-hidden mb-6 relative">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-tech enterprise trading floor illuminated with sophisticated blue data monitors, data scientists collaborating around a luminous holographic interface showing neural network graphs, polished architectural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsqao2hADZU7I9HXcUU6Kk0vaDrpy5AydSROuk3fWguha-S6qqkCojt3F5nbUp7G18-EDPo99z3UNL5EKjEcaSOGSrxol5Jcf9XJ0eZ1snjby85bQqEi-6RujlrAVH69zdJGcnK6yfhSkFDYyxYl1QZs-CRQvbaH9MSrEmNNBkewZEUxU7tTd0xUf-LWxLZ0uXqKbOWYK6eLrvgLsf0CNeX0TgIyVGjCqho6SEey1iYhzi4WNjNdkG"/>
-<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow">Featured Article</span>
-</div>
-<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm mb-3">
-<span>15 Mei 2025</span>
-<span>•</span>
-<span>6 Menit Baca</span>
-<span>•</span>
-<span class="text-primary font-semibold">Generative AI Governance</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface font-bold group-hover:text-primary transition-colors mb-3">
-              Navigasi Implementasi Generative AI di Sektor Keuangan Berizin Resmi
-            </h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 leading-relaxed">
-              Penerapan AI generatif dalam lembaga keuangan membutuhkan kepatuhan ketat terhadap auditabilitas model, enkripsi end-to-end, dan isolasi data pelanggan. Kami membahas arsitektur referensi LLM privat on-premise yang telah teruji memenuhi regulasi Bank Indonesia dan OJK.
-            </p>
-</div>
-<div class="pt-6 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary font-label-sm">DR</div>
-<span class="font-label-md text-label-md text-on-surface font-medium">Dr. Dimas Raditya, Head of AI Research</span>
-</div>
-<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold group-hover:translate-x-1 transition-transform">
-              Baca Artikel <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</span>
-</div>
-</div>
-<!-- 2 Side News Cards (4 col) -->
-<div class="lg:col-span-4 flex flex-col gap-6">
-<!-- Side Card 1 -->
-<div class="cursor-pointer p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group h-full" onclick="openArticleModal('microservices')">
-<div>
-<div class="flex items-center gap-3 text-on-surface-variant font-label-sm text-label-sm mb-2">
-<span>28 April 2025</span>
-<span>•</span>
-<span>4 Min</span>
-</div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors mb-2">
-                Arsitektur Event-Driven Microservices untuk Transaksi Skala Miliaran
-              </h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
-                Membedah strategi migrasi dari model monolith berat menuju sistem decoupled berbasis stream bus Apache Kafka untuk meniadakan bottleneck transaksi bersamaan.
-              </p>
-</div>
-<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold pt-4 group-hover:translate-x-1 transition-transform">
-              Baca Analisis <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-<!-- Side Card 2 -->
-<div class="cursor-pointer p-6 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group h-full" onclick="openArticleModal('ux-ai')">
-<div>
-<div class="flex items-center gap-3 text-on-surface-variant font-label-sm text-label-sm mb-2">
-<span>10 April 2025</span>
-<span>•</span>
-<span>5 Min</span>
-</div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors mb-2">
-                Prinsip Human-Centered UX dalam Era Antarmuka Berbasis AI Otomatis
-              </h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
-                Bagaimana desainer produk enterprise menciptakan kontrol prediktif yang tetap memberikan kendali penuh di tangan operator manusia tanpa memicu cognitive overload.
-              </p>
-</div>
-<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold pt-4 group-hover:translate-x-1 transition-transform">
-              Baca Analisis <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-</span>
-</div>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    @foreach($beritas as $berita)
+    <a href="{{ route('front.berita.detail', $berita->slugBerita) }}" class="group block bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-outline-variant/30">
+        <div class="aspect-video bg-surface-container overflow-hidden">
+            @if(!empty($berita->gambar))
+                <img alt="Berita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset($berita->gambar[0]) }}"/>
+            @else
+                <div class="w-full h-full bg-gray-200"></div>
+            @endif
+        </div>
+        <div class="p-6">
+            <div class="flex items-center gap-3 font-label-sm text-label-sm text-on-surface-variant mb-3">
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> {{ $berita->created_at->format('d M Y') }}</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">{{ $berita->namaBerita }}</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">{{ Str::limit($berita->keteranganBerita, 100) }}</p>
+        </div>
+    </a>
+    @endforeach
 </div>
 </div>
 </section>
@@ -692,67 +515,17 @@
 </div>
 <!-- Bento Grid (6 Pillars) -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Pillar 1: Strategic Approach -->
-<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
-<span class="material-symbols-outlined text-[26px]">strategy</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Strategic Approach</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-            Analisis kebutuhan bisnis mendalam dan permodelan domain sebelum merancang satu baris kode pun, memastikan keselarasan ROI dengan visi korporasi.
-          </p>
-</div>
-<!-- Pillar 2: Experienced Team -->
-<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
-<span class="material-symbols-outlined text-[26px]">groups</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Experienced Team</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-            Dikelola oleh tim insinyur senior, principal cloud architect tersertifikasi, dan peneliti AI terkemuka dengan pengalaman proyek lintas benua.
-          </p>
-</div>
-<!-- Pillar 3: Modern Technology -->
-<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
-<span class="material-symbols-outlined text-[26px]">memory</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Modern Technology</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-            Pemanfaatan ekosistem teknologi mutakhir: Rust, Go, Next.js, Kubernetes, Terraform, dan PyTorch untuk kecepatan, keamanan, dan efisiensi memori.
-          </p>
-</div>
-<!-- Pillar 4: User Focused -->
-<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
-<span class="material-symbols-outlined text-[26px]">person_check</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">User Focused</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-            Desain antarmuka intuitif dan ramah pengguna yang memaksimalkan tingkat adopsi operasional karyawan serta retensi pelanggan setia.
-          </p>
-</div>
-<!-- Pillar 5: Reliable Support -->
-<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
-<span class="material-symbols-outlined text-[26px]">support_agent</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Reliable Support</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-            Dukungan teknis 24/7/365 dengan jaminan SLA tingkat enterprise, observabilitas real-time, dan audit kerentanan keamanan secara berkala.
-          </p>
-</div>
-<!-- Pillar 6: Result Oriented -->
-<div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
-<span class="material-symbols-outlined text-[26px]">trending_up</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Result Oriented</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-            Fokus teguh pada metrik keberhasilan konkret: efisiensi biaya komputasi, penurunan tingkat churn, serta peningkatan throughput bisnis mitra.
-          </p>
-</div>
-</div>
+    @foreach($keunggulans as $keunggulan)
+    <div class="p-8 rounded-xl bg-surface-container-low/70 backdrop-blur-md shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
+            <span class="material-symbols-outlined text-[26px]">star</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">{{ $keunggulan->namaUnggulan }}</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            {{ $keunggulan->keteranganUnggulan }}
+        </p>
+    </div>
+    @endforeach
 </div>
 </section>
 <!-- TESTIMONIALS SECTION (#testimonials) -->
@@ -782,81 +555,28 @@
 </div>
 </div>
 <!-- Testimonial Carousel Track Container -->
-<div class="relative overflow-hidden w-full">
 <div class="flex transition-transform duration-500 ease-out" id="testimonial-track">
-<!-- Slide 1 -->
-<div class="w-full flex-shrink-0 px-2">
-<div class="p-8 md:p-12 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
-<div class="flex items-center gap-1 text-primary mb-6">
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-</div>
-<blockquote class="font-headline-md text-headline-md text-on-surface font-medium leading-relaxed mb-8">
-                “Kolaborasi dengan MDT Solution Indonesia mempercepat peluncuran platform perbankan digital kami hingga 4 bulan lebih cepat dengan keandalan tanpa celah. Arsitektur modular yang mereka bangun menjadi standar baru di institusi kami.”
-              </blockquote>
-<div class="flex items-center gap-4">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-headline-sm">BS</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Budi Santoso</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Chief Technology Officer, Bank Mandiri Digital</p>
+    @foreach($testimonials as $testi)
+    <div class="min-w-full px-4 lg:px-12 flex-shrink-0">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="flex-1 space-y-6">
+                <p class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-on-surface font-medium leading-relaxed italic">
+                    "{{ $testi->keterangan_testimoni }}"
+                </p>
+                <div>
+                    <h4 class="font-label-md text-label-md text-on-surface font-bold">{{ $testi->nama_testimoni }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
 </div>
 </div>
-</div>
-</div>
-<!-- Slide 2 -->
-<div class="w-full flex-shrink-0 px-2">
-<div class="p-8 md:p-12 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
-<div class="flex items-center gap-1 text-primary mb-6">
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-</div>
-<blockquote class="font-headline-md text-headline-md text-on-surface font-medium leading-relaxed mb-8">
-                “Pendekatan arsitektur AI dari MDT Solution Indonesia berhasil memangkas biaya pemrosesan klaim otomatis sebesar 42% dalam 6 bulan pertama. Ketelitian engineering mereka melampaui ekspektasi standar industri kami.”
-              </blockquote>
-<div class="flex items-center gap-4">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-headline-sm">SJ</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Sarah Jenkins</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">VP of Engineering, Global Logistics Corp</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 3 -->
-<div class="w-full flex-shrink-0 px-2">
-<div class="p-8 md:p-12 rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-sm">
-<div class="flex items-center gap-1 text-primary mb-6">
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-<span class="material-symbols-outlined text-[22px]">star</span>
-</div>
-<blockquote class="font-headline-md text-headline-md text-on-surface font-medium leading-relaxed mb-8">
-                “MDT Solution Indonesia bukan sekadar vendor, melainkan konsultan strategis yang sungguh memahami denyut pertumbuhan bisnis kami. Transisi arsitektur omnichannel ritel kami berjalan tanpa satu detik pun downtime.”
-              </blockquote>
-<div class="flex items-center gap-4">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold font-headline-sm">HP</div>
-<div>
-<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Hendra Pratama</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Managing Director, Astra Retail Group</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Dots Indicators -->
-<div class="flex justify-center items-center gap-2 mt-8">
-<button aria-label="Slide 1" class="testimonial-dot w-3 h-3 rounded-full bg-primary transition-all" onclick="goToTestimonial(0)" type="button"></button>
-<button aria-label="Slide 2" class="testimonial-dot w-3 h-3 rounded-full bg-surface-container-high transition-all" onclick="goToTestimonial(1)" type="button"></button>
-<button aria-label="Slide 3" class="testimonial-dot w-3 h-3 rounded-full bg-surface-container-high transition-all" onclick="goToTestimonial(2)" type="button"></button>
+<!-- Nav Dots -->
+<div class="flex items-center justify-center gap-3 mt-12">
+    @foreach($testimonials as $index => $testi)
+    <button aria-label="Slide {{ $index + 1 }}" class="testimonial-dot w-3 h-3 rounded-full {{ $index == 0 ? 'bg-primary' : 'bg-surface-container-high' }} transition-all" onclick="goToTestimonial({{ $index }})" type="button"></button>
+    @endforeach
 </div>
 </div>
 </section>
@@ -1547,4 +1267,4 @@
       }
     });
   </script>
-</div></main><footer class="w-full bg-surface-container-low"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-16"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-3"><img alt="MDT Solution Indonesia Corporate Logo" class="h-8 w-auto object-contain" src="/assets/media/logos/logo2.png"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">MDT Solution Indonesia</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Menghadirkan arsitektur teknologi generasi berikutnya untuk mendukung akselerasi transformasi digital perusahaan, komputasi awan berkinerja tinggi, dan tata kelola sistem cerdas.</p><div class="flex items-center gap-3 pt-2"><a aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://linkedin.com"><span class="material-symbols-outlined text-[18px]">share</span></a><a aria-label="GitHub" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://github.com"><span class="material-symbols-outlined text-[18px]">terminal</span></a><a aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://instagram.com/mdt_si"><span class="material-symbols-outlined text-[18px]">photo_camera</span></a><a aria-label="X Platform" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://x.com"><span class="material-symbols-outlined text-[18px]">tag</span></a></div></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Navigasi</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#home">Home</a></li><li><a class="hover:text-on-surface transition-colors" href="#about">Tentang Kami</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Layanan Unggulan</a></li><li><a class="hover:text-on-surface transition-colors" href="#portfolio">Portofolio Solusi</a></li><li><a class="hover:text-on-surface transition-colors" href="#news">Berita &amp; Wawasan</a></li><li><a class="hover:text-on-surface transition-colors" href="#contact">Kontak Kami</a></li></ul></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Layanan</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#services">Pembuatan Aplikasi Berbasis Website</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Aplikasi Berbasis Mobile</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Website Company Profile</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">CCTV</a></li></ul></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Legalitas &amp; Kebijakan</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li><li><a class="hover:text-on-surface transition-colors" data-path="security-framework" href="#">Security &amp; Compliance</a></li><li><a class="hover:text-on-surface transition-colors" data-path="cookie-policy" href="#">Cookie Preferences</a></li></ul></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-on-surface-variant">&copy; {{ date('Y') }} MDTSolutionIndonesia. All Rights Reserved.</p><div class="flex items-center gap-6 font-body-sm text-body-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span>System Operational</span><span>Jakarta • Singapore • Global</span></div></div></div></footer></body></html>
+</div></main><footer class="w-full bg-surface-container-low"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-16"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-3"><img alt="MDT Solution Indonesia Corporate Logo" class="h-8 w-auto object-contain" src="/assets/media/logos/logo2.png"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">MDT Solution Indonesia</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Menghadirkan arsitektur teknologi generasi berikutnya untuk mendukung akselerasi transformasi digital perusahaan, komputasi awan berkinerja tinggi, dan tata kelola sistem cerdas.</p><div class="flex items-center gap-3 pt-2"><a aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://linkedin.com"><span class="material-symbols-outlined text-[18px]">share</span></a><a aria-label="GitHub" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://github.com"><span class="material-symbols-outlined text-[18px]">terminal</span></a><a aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://instagram.com/mdt_si"><span class="material-symbols-outlined text-[18px]">photo_camera</span></a><a aria-label="X Platform" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://x.com"><span class="material-symbols-outlined text-[18px]">tag</span></a></div></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Navigasi</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#home">Home</a></li><li><a class="hover:text-on-surface transition-colors" href="#about">Tentang Kami</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Layanan Unggulan</a></li><li><a class="hover:text-on-surface transition-colors" href="#portfolio">Portofolio Solusi</a></li><li><a class="hover:text-on-surface transition-colors" href="{{ route('front.berita') }}">Berita &amp; Wawasan</a></li><li><a class="hover:text-on-surface transition-colors" href="#contact">Kontak Kami</a></li></ul></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Layanan</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" href="#services">Pembuatan Aplikasi Berbasis Website</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Aplikasi Berbasis Mobile</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">Website Company Profile</a></li><li><a class="hover:text-on-surface transition-colors" href="#services">CCTV</a></li></ul></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Legalitas &amp; Kebijakan</h4><ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li><li><a class="hover:text-on-surface transition-colors" data-path="security-framework" href="#">Security &amp; Compliance</a></li><li><a class="hover:text-on-surface transition-colors" data-path="cookie-policy" href="#">Cookie Preferences</a></li></ul></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-on-surface-variant">&copy; {{ date('Y') }} MDTSolutionIndonesia. All Rights Reserved.</p><div class="flex items-center gap-6 font-body-sm text-body-sm text-on-surface-variant"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span>System Operational</span><span>Jakarta • Singapore • Global</span></div></div></div></footer></body></html>
