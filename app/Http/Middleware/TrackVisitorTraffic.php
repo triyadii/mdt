@@ -21,6 +21,12 @@ class TrackVisitorTraffic
             $ipAddress = $request->ip();
             $today = now()->toDateString();
             
+            \Illuminate\Support\Facades\Log::info('Visitor Access', [
+                'ip' => $ipAddress,
+                'ips' => $request->ips(),
+                'headers' => $request->headers->all(),
+            ]);
+            
             // Catat visitor, hanya jika IP belum tercatat hari ini
             try {
                 Visitor::firstOrCreate([
@@ -28,7 +34,11 @@ class TrackVisitorTraffic
                     'visited_date' => $today
                 ]);
             } catch (\Exception $e) {
-                // Abaikan error misal terjadi race condition unique constraint
+                // Catat error jika terjadi masalah (misal constraint)
+                \Illuminate\Support\Facades\Log::error('Gagal mencatat visitor', [
+                    'ip' => $ipAddress,
+                    'error' => $e->getMessage(),
+                ]);
             }
         }
 
