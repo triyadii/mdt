@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situs Sedang Dalam Perbaikan</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .icon-container {
+            font-size: 64px;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Countdown Timer Style */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .time-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 15px;
+            border-radius: 12px;
+            min-width: 75px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #38bdf8;
+        }
+
+        .time-box label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Newsletter / Contact Form */
+        .notify-form {
+            display: flex;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .notify-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.8);
+            color: #fff;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .notify-form input:focus {
+            border-color: #38bdf8;
+        }
+
+        .notify-form button {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            background: #38bdf8;
+            color: #0f172a;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .notify-form button:hover {
+            background: #0ea5e9;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .countdown { gap: 8px; }
+            .time-box { min-width: 60px; padding: 10px; }
+            .time-box span { font-size: 1.4rem; }
+            .notify-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="icon-container">
+            <i class="fa-solid fa-gears"></i>
+        </div>
+        <h1>Segera Kembali!</h1>
+        <p>Kami sedang melakukan pemeliharaan sistem untuk meningkatkan pengalaman Anda. Situs web akan segera aktif kembali dalam waktu dekat.</p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <label>Hari</label>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <label>Jam</label>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <label>Menit</label>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <label>Detik</label>
+            </div>
+        </div>
+
+        <!-- Opsional: Form Berlangganan / Notifikasi -->
+        <form class="notify-form" onsubmit="event.preventDefault(); alert('Terima kasih! Kami akan memberi tahu Anda saat situs sudah aktif.');">
+            <input type="email" placeholder="Masukkan email Anda..." required>
+            <button type="submit">Kabari Saya</button>
+        </form>
+
+        <div class="footer">
+            &copy; 2026 NamaWebsite Anda. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // Atur waktu target hitung mundur (Contoh: 3 hari dari sekarang)
+        const countDownDate = new Date().getTime() + (3 * 24 * 60 * 60 * 1000);
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".countdown").innerHTML = "<p>Segera online kembali...</p>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

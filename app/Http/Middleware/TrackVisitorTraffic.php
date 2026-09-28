@@ -18,7 +18,14 @@ class TrackVisitorTraffic
     {
         // Hanya record GET request
         if ($request->isMethod('GET')) {
-            $ipAddress = $request->ip();
+            $ipAddress = $request->header('CF-Connecting-IP') 
+                        ?? $request->header('X-Forwarded-For') 
+                        ?? $request->ip();
+            
+            if (str_contains($ipAddress, ',')) {
+                $ipAddress = explode(',', $ipAddress)[0];
+            }
+            $ipAddress = trim($ipAddress);
             $today = now()->toDateString();
             
             \Illuminate\Support\Facades\Log::info('Visitor Access', [
