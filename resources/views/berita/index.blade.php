@@ -11,7 +11,7 @@
         @foreach($beritas as $berita)
         <a href="{{ route('front.berita.detail', $berita->slugBerita) }}" class="group block bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-outline-variant/30 flex flex-col h-full">
             <div class="aspect-video bg-surface-container overflow-hidden">
-                @if(!empty($berita->gambar))
+                @if(!empty($berita->gambar) && is_array($berita->gambar) && count($berita->gambar) > 0)
                     <img alt="Berita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset($berita->gambar[0]) }}"/>
                 @else
                     <div class="w-full h-full bg-gray-200"></div>

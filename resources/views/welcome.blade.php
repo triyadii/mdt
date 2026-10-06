@@ -429,8 +429,8 @@
     @foreach($portfolios as $portfolio)
     <div class="portfolio-item group relative rounded-2xl overflow-hidden bg-surface-container-low/50 border border-outline-variant/30 shadow-sm hover:shadow-xl transition-all duration-300" data-categories="{{ $portfolio->jenis_project }}">
         <div class="aspect-video bg-surface-container overflow-hidden">
-            @if(!empty($portfolio->gambar))
-                <img alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset($portfolio->gambar[0]) }}"/>
+            @if(!empty($portfolio->gambar) && is_array($portfolio->gambar) && count($portfolio->gambar) > 0)
+                <img alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset('storage/' . $portfolio->gambar[0]) }}"/>
             @else
                 <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-500">No Image</div>
             @endif
@@ -480,7 +480,7 @@
     @foreach($beritas as $berita)
     <a href="{{ route('front.berita.detail', $berita->slugBerita) }}" class="group block bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-outline-variant/30">
         <div class="aspect-video bg-surface-container overflow-hidden">
-            @if(!empty($berita->gambar))
+            @if(!empty($berita->gambar) && is_array($berita->gambar) && count($berita->gambar) > 0)
                 <img alt="Berita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset($berita->gambar[0]) }}"/>
             @else
                 <div class="w-full h-full bg-gray-200"></div>

@@ -23,7 +23,7 @@
     </div>
 
     <!-- Featured Image -->
-    @if(!empty($berita->gambar))
+    @if(!empty($berita->gambar) && is_array($berita->gambar) && count($berita->gambar) > 0)
         <div class="w-full aspect-video rounded-2xl overflow-hidden bg-surface-container mb-12 shadow-sm">
             <img src="{{ asset($berita->gambar[0]) }}" alt="{{ $berita->namaBerita }}" class="w-full h-full object-cover" />
         </div>
@@ -33,7 +33,7 @@
     <article class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed space-y-6 bg-surface-container-low/50 p-8 md:p-12 rounded-3xl" style="text-align: justify; white-space: pre-line;">{{ trim($berita->keteranganBerita) }}</article>
 
     <!-- Other Images Gallery (If multiple) -->
-    @if(!empty($berita->gambar) && count($berita->gambar) > 1)
+    @if(!empty($berita->gambar) && is_array($berita->gambar) && count($berita->gambar) > 1)
         <div class="mt-12">
             <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-6">Galeri Gambar</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -59,7 +59,7 @@
             @foreach($otherBeritas as $other)
             <a href="{{ route('front.berita.detail', $other->slugBerita) }}" class="group block bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-outline-variant/30 flex flex-col h-full">
                 <div class="aspect-video bg-surface-container overflow-hidden">
-                    @if(!empty($other->gambar))
+                    @if(!empty($other->gambar) && is_array($other->gambar) && count($other->gambar) > 0)
                         <img src="{{ asset($other->gambar[0]) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     @else
                         <div class="w-full h-full bg-gray-200"></div>
