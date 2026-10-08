@@ -24,7 +24,7 @@ class FrontController extends Controller
         $faqs = Faq::orderBy('created_at', 'asc')->get();
         $testimonials = Testimonial::orderBy('created_at', 'desc')->get();
         $jasas = Jasa::orderBy('created_at', 'asc')->get();
-        $portfolios = Portfolio::with('type')->orderBy('created_at', 'desc')->get();
+        $portfolios = Portfolio::with('type')->orderBy('created_at', 'desc')->take(5)->get();
         $projectTypes = \App\Models\ProjectType::orderBy('created_at', 'asc')->get();
         
         // 5 Berita teratas
@@ -41,6 +41,14 @@ class FrontController extends Controller
         $company = CompanyProfile::first();
         $beritas = Berita::orderBy('created_at', 'desc')->paginate(12);
         return view('berita.index', compact('company', 'beritas'));
+    }
+
+    public function portfolio()
+    {
+        $company = CompanyProfile::first();
+        $portfolios = Portfolio::with('type')->orderBy('created_at', 'desc')->get();
+        $projectTypes = \App\Models\ProjectType::orderBy('created_at', 'asc')->get();
+        return view('portfolio.index', compact('company', 'portfolios', 'projectTypes'));
     }
 
     public function beritaDetail($slug)

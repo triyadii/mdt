@@ -19,9 +19,7 @@ Route::get('KatalogDetail', function () {
 Route::get('TentangKami', function () {
     return view('tentangKami');
 });
-Route::get('Portfolio', function () {
-    return view('portfolio');
-});
+Route::get('/portfolio', [FrontController::class, 'portfolio'])->name('front.portfolio');
 Route::get('Kontak', function () {
     return view('kontak');
 });
