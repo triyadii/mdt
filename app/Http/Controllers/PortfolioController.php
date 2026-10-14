@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
+use App\Models\ProjectType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -10,8 +11,9 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        $portfolios = Portfolio::with('type')->orderBy('created_at', 'desc')->get();
-        $projectTypes = \App\Models\ProjectType::orderBy('nama_jenis', 'asc')->get();
+        $portfolios = Portfolio::with('type')->orderBy('created_at', 'desc')->paginate(10);
+        $projectTypes = ProjectType::orderBy('nama_jenis', 'asc')->get();
+
         return view('portfolios.index', compact('portfolios', 'projectTypes'));
     }
 
@@ -95,8 +97,8 @@ class PortfolioController extends Controller
     public function destroy($uuid)
     {
         $portfolio = Portfolio::where('uuid', $uuid)->firstOrFail();
-        
-        if (!empty($portfolio->gambar)) {
+
+        if (! empty($portfolio->gambar)) {
             foreach ($portfolio->gambar as $img) {
                 Storage::disk('public')->delete($img);
             }

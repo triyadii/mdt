@@ -11,6 +11,7 @@ class BeritaController extends Controller
     public function index()
     {
         $beritas = Berita::latest()->paginate(10);
+
         return view('beritas.index', compact('beritas'));
     }
 
@@ -25,12 +26,12 @@ class BeritaController extends Controller
 
         $data = $request->except('gambar');
         $data['slugBerita'] = Str::slug($request->namaBerita);
-        
+
         // Handle unique slug
         $originalSlug = $data['slugBerita'];
         $count = 1;
         while (Berita::where('slugBerita', $data['slugBerita'])->exists()) {
-            $data['slugBerita'] = $originalSlug . '-' . $count;
+            $data['slugBerita'] = $originalSlug.'-'.$count;
             $count++;
         }
 
@@ -39,11 +40,16 @@ class BeritaController extends Controller
             $files = $request->file('gambar');
             // Limit to 3 files max
             $files = array_slice($files, 0, 3);
-            
+
+            $targetDir = public_path('images/berita');
+            if (! file_exists($targetDir)) {
+                mkdir($targetDir, 0775, true);
+            }
+
             foreach ($files as $file) {
-                $filename = time() . '_' . $file->getClientOriginalName();
-                $file->move(public_path('images/berita'), $filename);
-                $gambarPaths[] = 'images/berita/' . $filename;
+                $filename = time().'_'.$file->getClientOriginalName();
+                $file->move($targetDir, $filename);
+                $gambarPaths[] = 'images/berita/'.$filename;
             }
         }
         $data['gambar'] = $gambarPaths;
@@ -68,14 +74,14 @@ class BeritaController extends Controller
         ]);
 
         $data = $request->except('gambar');
-        
+
         // Update slug if title changed
         if ($request->namaBerita !== $berita->namaBerita) {
             $data['slugBerita'] = Str::slug($request->namaBerita);
             $originalSlug = $data['slugBerita'];
             $count = 1;
             while (Berita::where('slugBerita', $data['slugBerita'])->where('id', '!=', $berita->id)->exists()) {
-                $data['slugBerita'] = $originalSlug . '-' . $count;
+                $data['slugBerita'] = $originalSlug.'-'.$count;
                 $count++;
             }
         }
@@ -87,11 +93,16 @@ class BeritaController extends Controller
             // Let's just replace all for simplicity or append. We will just overwrite here for simplicity.
             $files = array_slice($files, 0, 3);
             $gambarPaths = []; // reset images if new ones uploaded
-            
+
+            $targetDir = public_path('images/berita');
+            if (! file_exists($targetDir)) {
+                mkdir($targetDir, 0775, true);
+            }
+
             foreach ($files as $file) {
-                $filename = time() . '_' . $file->getClientOriginalName();
-                $file->move(public_path('images/berita'), $filename);
-                $gambarPaths[] = 'images/berita/' . $filename;
+                $filename = time().'_'.$file->getClientOriginalName();
+                $file->move($targetDir, $filename);
+                $gambarPaths[] = 'images/berita/'.$filename;
             }
             $data['gambar'] = $gambarPaths;
         }

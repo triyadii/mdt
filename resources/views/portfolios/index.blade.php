@@ -58,7 +58,7 @@
                     @forelse($portfolios as $key => $portfolio)
                     <tr>
                         <td>
-                            <span class="text-gray-900 fw-bold fs-6">{{ $key + 1 }}</span>
+                            <span class="text-gray-900 fw-bold fs-6">{{ $portfolios->firstItem() ? ($portfolios->firstItem() + $key) : ($key + 1) }}</span>
                         </td>
                         <td>
                             <div class="d-flex align-items-center">
@@ -278,6 +278,10 @@
                     @endforelse
                 </tbody>
             </table>
+
+            <div class="d-flex justify-content-end mt-5">
+                {{ $portfolios->links('pagination::bootstrap-5') }}
+            </div>
         </div>
     </div>
 </div>
