@@ -1,5 +1,39 @@
 @extends('layouts.front')
 
+@section('title', 'Portfolio Proyek & Solusi Digital - MDT Solution Indonesia')
+@section('meta_title', 'Portfolio Proyek & Solusi Digital - MDT Solution Indonesia')
+@section('meta_description', 'Jelajahi implementasi nyata proyek aplikasi website, mobile apps, sistem enterprise, dan instalasi CCTV oleh MDT Solution Indonesia.')
+@section('canonical_url', route('front.portfolio'))
+@section('og_url', route('front.portfolio'))
+@section('og_title', 'Portfolio Proyek & Solusi Digital - MDT Solution Indonesia')
+@section('og_description', 'Jelajahi implementasi nyata proyek aplikasi website, mobile apps, sistem enterprise, dan instalasi CCTV oleh MDT Solution Indonesia.')
+@section('twitter_url', route('front.portfolio'))
+@section('twitter_title', 'Portfolio Proyek & Solusi Digital - MDT Solution Indonesia')
+@section('twitter_description', 'Jelajahi implementasi nyata proyek aplikasi website, mobile apps, sistem enterprise, dan instalasi CCTV oleh MDT Solution Indonesia.')
+
+@section('schema_json')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ route('home') }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Portfolio",
+      "item": "{{ route('front.portfolio') }}"
+    }
+  ]
+}
+</script>
+@endsection
+
 @section('content')
 <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -22,7 +56,7 @@
         <div class="portfolio-item group relative rounded-2xl overflow-hidden bg-surface-container-low/50 border border-outline-variant/30 shadow-sm hover:shadow-xl transition-all duration-300" data-categories="{{ $portfolio->jenis_project }}">
             <div class="aspect-video bg-surface-container overflow-hidden">
                 @if(!empty($portfolio->gambar) && is_array($portfolio->gambar) && count($portfolio->gambar) > 0)
-                    <img alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset('storage/' . $portfolio->gambar[0]) }}"/>
+                    <img alt="{{ $portfolio->nama_project ?? 'Portfolio MDT Solution' }}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset('storage/' . $portfolio->gambar[0]) }}"/>
                 @else
                     <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-500">No Image</div>
                 @endif

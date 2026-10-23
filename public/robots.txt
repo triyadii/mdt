@@ -1,2 +1,10 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /dashboard
+Disallow: /roles
+Disallow: /users
+Disallow: /profile
+Disallow: /api/
+Disallow: /login
+
+Sitemap: https://mdtsolution.id/sitemap.xml

@@ -17,26 +17,22 @@ use App\Http\Controllers\ProjectTypeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TelegramWebhookController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\UserController;
 use App\Models\Visitor;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/berita', [FrontController::class, 'berita'])->name('front.berita');
 Route::get('/berita/{slug}', [FrontController::class, 'beritaDetail'])->name('front.berita.detail');
-Route::get('Katalog', function () {
-    return view('katalog');
-});
-Route::get('KatalogDetail', function () {
-    return view('katalogDetail');
-});
-Route::get('TentangKami', function () {
-    return view('tentangKami');
-});
 Route::get('/portfolio', [FrontController::class, 'portfolio'])->name('front.portfolio');
-Route::get('Kontak', function () {
-    return view('kontak');
-});
+
+// SEO 301 Redirects for Legacy / Unused Route Endpoints
+Route::get('Katalog', fn() => redirect()->to(route('home') . '#services', 301));
+Route::get('KatalogDetail', fn() => redirect()->to(route('home') . '#services', 301));
+Route::get('TentangKami', fn() => redirect()->to(route('home') . '#about', 301));
+Route::get('Kontak', fn() => redirect()->to(route('home') . '#contact', 301));
 
 Route::post('/api/chatbot/message', [ChatbotController::class, 'sendMessage'])->name('chatbot.message');
 Route::post('/api/telegram/webhook', [TelegramWebhookController::class, 'handle'])->name('telegram.webhook');

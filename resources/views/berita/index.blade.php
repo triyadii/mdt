@@ -1,9 +1,43 @@
 @extends('layouts.front')
 
+@section('title', 'Berita & Wawasan Teknologi - MDT Solution Indonesia')
+@section('meta_title', 'Berita & Wawasan Teknologi - MDT Solution Indonesia')
+@section('meta_description', 'Baca kumpulan artikel terbaru seputar transformasi digital, pengembangan aplikasi website, mobile apps, sistem keamanan CCTV, dan konsultasi IT Medan oleh MDT Solution Indonesia.')
+@section('canonical_url', route('front.berita'))
+@section('og_url', route('front.berita'))
+@section('og_title', 'Berita & Wawasan Teknologi - MDT Solution Indonesia')
+@section('og_description', 'Baca kumpulan artikel terbaru seputar transformasi digital, pengembangan aplikasi website, mobile apps, sistem keamanan CCTV, dan konsultasi IT Medan oleh MDT Solution Indonesia.')
+@section('twitter_url', route('front.berita'))
+@section('twitter_title', 'Berita & Wawasan Teknologi - MDT Solution Indonesia')
+@section('twitter_description', 'Baca kumpulan artikel terbaru seputar transformasi digital, pengembangan aplikasi website, mobile apps, sistem keamanan CCTV, dan konsultasi IT Medan oleh MDT Solution Indonesia.')
+
+@section('schema_json')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ route('home') }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Berita & Wawasan",
+      "item": "{{ route('front.berita') }}"
+    }
+  ]
+}
+</script>
+@endsection
+
 @section('content')
 <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
     <div class="mb-12">
-        <h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mb-4">Semua Berita & Wawasan</h1>
+        <h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mb-4">Semua Berita &amp; Wawasan</h1>
         <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Dapatkan informasi terbaru mengenai teknologi, layanan kami, dan perkembangan industri terkini.</p>
     </div>
 
@@ -12,7 +46,7 @@
         <a href="{{ route('front.berita.detail', $berita->slugBerita) }}" class="group block bg-surface-container-low rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-outline-variant/30 flex flex-col h-full">
             <div class="aspect-video bg-surface-container overflow-hidden">
                 @if(!empty($berita->gambar) && is_array($berita->gambar) && count($berita->gambar) > 0)
-                    <img alt="Berita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset($berita->gambar[0]) }}"/>
+                    <img alt="{{ $berita->namaBerita }}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset($berita->gambar[0]) }}"/>
                 @else
                     <div class="w-full h-full bg-gray-200"></div>
                 @endif
