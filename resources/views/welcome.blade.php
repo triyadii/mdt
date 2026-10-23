@@ -54,7 +54,7 @@
           "image": "{{ asset('assets/media/logos/logo2.png') }}",
           "description": "MDT Solution Indonesia menghadirkan layanan rekayasa perangkat lunak presisi tinggi, pembuatan aplikasi berbasis website, aplikasi mobile, website company profile, dan instalasi CCTV profesional di Medan.",
           "telephone": "{{ $company->nomor_telepon ?? '+628123456789' }}",
-          "email": "{{ $company->email ?? 'info@mdtsolution.id' }}",
+          "email": "{{ $company->email ?? 'info@mdt-solution.site' }}",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "{{ $company->alamat ?? 'Medan' }}",
