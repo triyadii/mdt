@@ -24,20 +24,24 @@ class ManagementSeeder extends Seeder
     public function run(): void
     {
         // 1. Seeder untuk Company Profile
-        CompanyProfile::create([
-            'nama_profil' => 'MDT Kreatif Digital',
-            'instagram' => 'https://instagram.com/mdt_kreatif',
-            'tiktok' => 'https://tiktok.com/@mdt_kreatif',
-            'thread' => 'https://threads.net/@mdt_kreatif',
-            'email' => 'halo@mdtkreatif.com',
-            'nomor_telepon' => '08111222333',
-            'alamat' => 'Jl. Teknologi Canggih No. 123, Jakarta Selatan',
-        ]);
+        CompanyProfile::firstOrCreate(
+            ['email' => 'halo@mdtkreatif.com'],
+            [
+                'nama_profil' => 'MDT Kreatif Digital',
+                'instagram' => 'https://instagram.com/mdt_kreatif',
+                'tiktok' => 'https://tiktok.com/@mdt_kreatif',
+                'thread' => 'https://threads.net/@mdt_kreatif',
+                'nomor_telepon' => '08111222333',
+                'alamat' => 'Jl. Teknologi Canggih No. 123, Jakarta Selatan',
+            ]
+        );
 
         // 2. Seeder untuk About
-        About::create([
-            'keterangan_tentang' => 'Kami adalah agensi digital inovatif yang berfokus pada transformasi digital. Berdiri sejak tahun 2020, kami telah membantu puluhan perusahaan dari skala UMKM hingga korporasi besar dalam membangun kehadiran digital yang kuat dan profesional.',
-        ]);
+        if (! About::exists()) {
+            About::create([
+                'keterangan_tentang' => 'Kami adalah agensi digital inovatif yang berfokus pada transformasi digital. Berdiri sejak tahun 2020, kami telah membantu puluhan perusahaan dari skala UMKM hingga korporasi besar dalam membangun kehadiran digital yang kuat dan profesional.',
+            ]);
+        }
 
         // 3. Seeder untuk FAQ
         $faqs = [
@@ -55,7 +59,7 @@ class ManagementSeeder extends Seeder
             ],
         ];
         foreach ($faqs as $faq) {
-            Faq::create($faq);
+            Faq::firstOrCreate(['pertanyaan' => $faq['pertanyaan']], $faq);
         }
 
         // 4. Seeder untuk Testimonial
@@ -70,7 +74,7 @@ class ManagementSeeder extends Seeder
             ],
         ];
         foreach ($testimonials as $testi) {
-            Testimonial::create($testi);
+            Testimonial::firstOrCreate(['nama_testimoni' => $testi['nama_testimoni']], $testi);
         }
 
         // 5. Seeder untuk Partner
@@ -81,7 +85,7 @@ class ManagementSeeder extends Seeder
             ['nama_perusahaan' => 'Telkom Indonesia'],
         ];
         foreach ($partners as $partner) {
-            Partner::create($partner);
+            Partner::firstOrCreate(['nama_perusahaan' => $partner['nama_perusahaan']], $partner);
         }
 
         // 6. Seeder untuk Project Type
@@ -94,7 +98,7 @@ class ManagementSeeder extends Seeder
 
         $projectTypeUuids = [];
         foreach ($projectTypesData as $type) {
-            $pt = ProjectType::create(['nama_jenis' => $type]);
+            $pt = ProjectType::firstOrCreate(['nama_jenis' => $type]);
             $projectTypeUuids[$type] = $pt->uuid;
         }
 
@@ -114,7 +118,7 @@ class ManagementSeeder extends Seeder
             ],
         ];
         foreach ($portfolios as $portfolio) {
-            Portfolio::create($portfolio);
+            Portfolio::firstOrCreate(['nama_project' => $portfolio['nama_project']], $portfolio);
         }
 
         // 8. Seeder untuk Jasa
@@ -145,7 +149,7 @@ class ManagementSeeder extends Seeder
             ],
         ];
         foreach ($jasas as $jasa) {
-            Jasa::create($jasa);
+            Jasa::firstOrCreate(['namaJasa' => $jasa['namaJasa']], $jasa);
         }
 
         // 9. Seeder untuk Keunggulan
@@ -168,7 +172,7 @@ class ManagementSeeder extends Seeder
             ],
         ];
         foreach ($keunggulans as $keunggulan) {
-            Keunggulan::create($keunggulan);
+            Keunggulan::firstOrCreate(['namaUnggulan' => $keunggulan['namaUnggulan']], $keunggulan);
         }
 
         // 10. Seeder untuk Permohonan
@@ -193,7 +197,10 @@ class ManagementSeeder extends Seeder
             ],
         ];
         foreach ($permohonans as $permohonan) {
-            Permohonan::create($permohonan);
+            Permohonan::firstOrCreate([
+                'namaPermohonan' => $permohonan['namaPermohonan'],
+                'nomorTelepon' => $permohonan['nomorTelepon'],
+            ], $permohonan);
         }
 
         // 11. Seeder untuk Berita
@@ -221,7 +228,7 @@ class ManagementSeeder extends Seeder
             ],
         ];
         foreach ($beritas as $berita) {
-            Berita::create($berita);
+            Berita::firstOrCreate(['slugBerita' => $berita['slugBerita']], $berita);
         }
     }
 }

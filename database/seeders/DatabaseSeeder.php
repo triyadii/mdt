@@ -18,31 +18,35 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Membuat Master Role
-        $adminRole = Role::create([
+        $adminRole = Role::firstOrCreate([
             'namaRole' => 'Admin',
         ]);
 
-        $userRole = Role::create([
+        $userRole = Role::firstOrCreate([
             'namaRole' => 'User',
         ]);
 
         // Membuat User Admin
-        User::create([
-            'username' => 'admin',
-            'password' => Hash::make('password'),
-            'nama' => 'Administrator',
-            'role' => $adminRole->uuid,
-            'status' => 'active',
-        ]);
+        User::firstOrCreate(
+            ['username' => 'admin'],
+            [
+                'password' => Hash::make('password'),
+                'nama' => 'Administrator',
+                'role' => $adminRole->uuid,
+                'status' => 'active',
+            ]
+        );
 
         // Membuat User Biasa
-        User::create([
-            'username' => 'user',
-            'password' => Hash::make('password'),
-            'nama' => 'User Default',
-            'role' => $userRole->uuid,
-            'status' => 'active',
-        ]);
+        User::firstOrCreate(
+            ['username' => 'user'],
+            [
+                'password' => Hash::make('password'),
+                'nama' => 'User Default',
+                'role' => $userRole->uuid,
+                'status' => 'active',
+            ]
+        );
 
         $this->call(ManagementSeeder::class);
     }
