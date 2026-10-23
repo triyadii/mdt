@@ -10,6 +10,7 @@ class AboutController extends Controller
     public function index()
     {
         $about = About::first();
+
         return view('abouts.index', compact('about'));
     }
 

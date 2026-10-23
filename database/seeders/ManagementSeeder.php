@@ -2,20 +2,19 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
-use App\Models\Jasa;
-use App\Models\Keunggulan;
-use App\Models\Permohonan;
+use App\Models\About;
 use App\Models\Berita;
 use App\Models\CompanyProfile;
-use App\Models\About;
 use App\Models\Faq;
-use App\Models\Testimonial;
+use App\Models\Jasa;
+use App\Models\Keunggulan;
 use App\Models\Partner;
-use App\Models\ProjectType;
+use App\Models\Permohonan;
 use App\Models\Portfolio;
+use App\Models\ProjectType;
+use App\Models\Testimonial;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class ManagementSeeder extends Seeder
 {
@@ -53,7 +52,7 @@ class ManagementSeeder extends Seeder
             [
                 'pertanyaan' => 'Bagaimana sistem pembayarannya?',
                 'jawaban' => 'Pembayaran dibagi menjadi 3 tahap: DP 30% di awal, 40% setelah desain disetujui, dan 30% setelah aplikasi siap live.',
-            ]
+            ],
         ];
         foreach ($faqs as $faq) {
             Faq::create($faq);
@@ -68,7 +67,7 @@ class ManagementSeeder extends Seeder
             [
                 'nama_testimoni' => 'Siti Aminah - Owner Butik Cantik',
                 'keterangan_testimoni' => 'Desain websitenya sangat cantik dan elegan. Omset penjualan online saya naik drastis!',
-            ]
+            ],
         ];
         foreach ($testimonials as $testi) {
             Testimonial::create($testi);
@@ -79,7 +78,7 @@ class ManagementSeeder extends Seeder
             ['nama_perusahaan' => 'Google Cloud Partner'],
             ['nama_perusahaan' => 'AWS Partner Network'],
             ['nama_perusahaan' => 'Midtrans Payment'],
-            ['nama_perusahaan' => 'Telkom Indonesia']
+            ['nama_perusahaan' => 'Telkom Indonesia'],
         ];
         foreach ($partners as $partner) {
             Partner::create($partner);
@@ -90,9 +89,9 @@ class ManagementSeeder extends Seeder
             'Company Profile',
             'E-Commerce / Toko Online',
             'Sistem Informasi (ERP/HRIS)',
-            'Mobile App (Android/iOS)'
+            'Mobile App (Android/iOS)',
         ];
-        
+
         $projectTypeUuids = [];
         foreach ($projectTypesData as $type) {
             $pt = ProjectType::create(['nama_jenis' => $type]);
@@ -112,7 +111,7 @@ class ManagementSeeder extends Seeder
                 'jenis_project' => $projectTypeUuids['Sistem Informasi (ERP/HRIS)'] ?? null,
                 'keterangan_project' => 'Sistem HRIS lengkap dengan fitur absensi face recognition berbasis GPS.',
                 'link_project' => null,
-            ]
+            ],
         ];
         foreach ($portfolios as $portfolio) {
             Portfolio::create($portfolio);
@@ -123,19 +122,27 @@ class ManagementSeeder extends Seeder
             [
                 'namaJasa' => 'Pengembangan Aplikasi Web',
                 'keteranganJasa' => 'Layanan pembuatan aplikasi berbasis web yang responsif dan scalable menggunakan teknologi modern.',
+                'harga_mulai' => 'Rp 3.500.000',
+                'estimasi_waktu' => '1 - 3 Minggu',
             ],
             [
                 'namaJasa' => 'Pembuatan Aplikasi Mobile',
                 'keteranganJasa' => 'Membangun aplikasi mobile untuk iOS dan Android dengan antarmuka yang user-friendly.',
+                'harga_mulai' => 'Rp 5.000.000',
+                'estimasi_waktu' => '3 - 6 Minggu',
             ],
             [
                 'namaJasa' => 'Konsultasi IT & Sistem',
                 'keteranganJasa' => 'Layanan konsultasi untuk memecahkan masalah IT dan meningkatkan efisiensi sistem perusahaan.',
+                'harga_mulai' => 'Gratis (Konsultasi Awal)',
+                'estimasi_waktu' => 'Fleksibel / Sesuai Kebutuhan',
             ],
             [
                 'namaJasa' => 'Optimasi UI/UX Desain',
                 'keteranganJasa' => 'Perancangan desain antarmuka dan pengalaman pengguna yang menarik dan intuitif.',
-            ]
+                'harga_mulai' => 'Rp 2.000.000',
+                'estimasi_waktu' => '1 - 2 Minggu',
+            ],
         ];
         foreach ($jasas as $jasa) {
             Jasa::create($jasa);
@@ -158,7 +165,7 @@ class ManagementSeeder extends Seeder
             [
                 'namaUnggulan' => 'Pengerjaan Cepat',
                 'keteranganUnggulan' => 'Proyek diselesaikan dengan tepat waktu sesuai dengan target yang telah disepakati.',
-            ]
+            ],
         ];
         foreach ($keunggulans as $keunggulan) {
             Keunggulan::create($keunggulan);
@@ -183,7 +190,7 @@ class ManagementSeeder extends Seeder
                 'nomorTelepon' => '089876543210',
                 'jenisJasa' => 'Optimasi UI/UX Desain',
                 'keteranganPermohonan' => 'Ingin meredesain website perusahaan agar lebih modern.',
-            ]
+            ],
         ];
         foreach ($permohonans as $permohonan) {
             Permohonan::create($permohonan);
@@ -196,22 +203,22 @@ class ManagementSeeder extends Seeder
                 'slugBerita' => Str::slug('Peluncuran Aplikasi Terbaru'),
                 'author' => 'Admin Utama',
                 'keteranganBerita' => 'Kami sangat antusias mengumumkan peluncuran aplikasi terbaru kami yang akan merevolusi cara Anda bekerja. Aplikasi ini dilengkapi dengan fitur AI terbaru yang dapat mengotomatisasi tugas-tugas repetitif Anda.',
-                'gambar' => null
+                'gambar' => null,
             ],
             [
                 'namaBerita' => 'Tips Memilih Jasa Pembuatan Website',
                 'slugBerita' => Str::slug('Tips Memilih Jasa Pembuatan Website'),
                 'author' => 'Tim Marketing',
                 'keteranganBerita' => 'Memilih jasa pembuatan website yang tepat sangat krusial bagi bisnis Anda. Pastikan Anda memperhatikan portofolio, testimoni klien, dan layanan purna jual yang mereka tawarkan.',
-                'gambar' => null
+                'gambar' => null,
             ],
             [
                 'namaBerita' => 'Pentingnya UI/UX Dalam Aplikasi',
                 'slugBerita' => Str::slug('Pentingnya UI/UX Dalam Aplikasi'),
                 'author' => 'Tim Desain',
                 'keteranganBerita' => 'Desain UI/UX bukan sekadar membuat aplikasi terlihat bagus, melainkan tentang bagaimana pengguna dapat mencapai tujuan mereka dengan mudah saat menggunakan aplikasi Anda.',
-                'gambar' => null
-            ]
+                'gambar' => null,
+            ],
         ];
         foreach ($beritas as $berita) {
             Berita::create($berita);

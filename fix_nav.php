@@ -1,5 +1,6 @@
 <?php
-$f = "/var/www/html/WebsiteBiantaraGemilangMedia/resources/views/layouts/app.blade.php";
+
+$f = '/var/www/html/WebsiteBiantaraGemilangMedia/resources/views/layouts/app.blade.php';
 $c = file_get_contents($f);
 
 // Find the <nav> block

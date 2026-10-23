@@ -18,31 +18,30 @@ $headerPart = preg_replace('/href="#"\s+data-path="tentang-kami"/', 'href="{{ ur
 $footerStart = strpos($welcome, '<footer');
 $footerPart = substr($welcome, $footerStart);
 
-$layout = $headerPart . "\n" . '<main class="w-full pt-20 bg-surface min-h-screen">' . "\n" . '@yield(\'content\')' . "\n" . '</main>' . "\n" . $footerPart;
+$layout = $headerPart."\n".'<main class="w-full pt-20 bg-surface min-h-screen">'."\n".'@yield(\'content\')'."\n".'</main>'."\n".$footerPart;
 
 file_put_contents("$dir/layouts/app.blade.php", $layout);
 
 foreach ($files as $file) {
     $content = file_get_contents("$dir/$file");
-    
+
     // Find <main ...> and extract inside it.
     // Some might have <main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
     $mainStart = strpos($content, '<main');
     $mainStart = strpos($content, '>', $mainStart) + 1;
-    
+
     $mainEnd = strrpos($content, '</main>');
-    
+
     $bodyPart = substr($content, $mainStart, $mainEnd - $mainStart);
-    
+
     if ($file === 'katalog.blade.php') {
         // Change detail links to point to KatalogDetail
         $bodyPart = preg_replace('/onclick="openModal\([^)]+\)"/', 'onclick="window.location.href=\'{{ url(\'/KatalogDetail\') }}\'"', $bodyPart);
         // Also look for any 'href="#" data-path="katalog-lokasi-ooh"' inside to just point to KatalogDetail
     }
-    
-    $newContent = "@extends('layouts.app')\n\n@section('content')\n" . trim($bodyPart) . "\n@endsection\n";
+
+    $newContent = "@extends('layouts.app')\n\n@section('content')\n".trim($bodyPart)."\n@endsection\n";
     file_put_contents("$dir/$file", $newContent);
 }
 
 echo "Done\n";
-

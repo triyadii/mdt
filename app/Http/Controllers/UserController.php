@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,12 +13,14 @@ class UserController extends Controller
     {
         $users = User::with('roleData')->orderBy('created_at', 'desc')->get();
         $roles = Role::orderBy('created_at', 'desc')->get();
+
         return view('users.index', compact('users', 'roles'));
     }
 
     public function create()
     {
         $roles = Role::all();
+
         return view('users.create', compact('roles'));
     }
 
@@ -46,6 +48,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $roles = Role::all();
+
         return view('users.edit', compact('user', 'roles'));
     }
 
@@ -78,6 +81,7 @@ class UserController extends Controller
     public function profile()
     {
         $user = auth()->user();
+
         return view('profile.index', compact('user'));
     }
 
@@ -90,15 +94,16 @@ class UserController extends Controller
 
         $user = auth()->user();
 
-        if (!Hash::check($request->current_password, $user->password)) {
+        if (! Hash::check($request->current_password, $user->password)) {
             return back()->withErrors(['current_password' => 'Password saat ini salah.']);
         }
 
         $user->update([
-            'password' => Hash::make($request->new_password)
+            'password' => Hash::make($request->new_password),
         ]);
 
         auth()->logout();
+
         return redirect()->route('login')->with('success', 'Password berhasil diubah. Silakan login kembali.');
     }
 }

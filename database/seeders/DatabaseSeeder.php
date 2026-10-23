@@ -19,11 +19,11 @@ class DatabaseSeeder extends Seeder
     {
         // Membuat Master Role
         $adminRole = Role::create([
-            'namaRole' => 'Admin'
+            'namaRole' => 'Admin',
         ]);
 
         $userRole = Role::create([
-            'namaRole' => 'User'
+            'namaRole' => 'User',
         ]);
 
         // Membuat User Admin
@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             'nama' => 'Administrator',
             'role' => $adminRole->uuid,
-            'status' => 'active'
+            'status' => 'active',
         ]);
 
         // Membuat User Biasa
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             'nama' => 'User Default',
             'role' => $userRole->uuid,
-            'status' => 'active'
+            'status' => 'active',
         ]);
 
         $this->call(ManagementSeeder::class);

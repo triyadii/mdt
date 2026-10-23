@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\TrackVisitorTraffic;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -14,7 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->trustProxies(at: '*');
         $middleware->web(append: [
-            \App\Http\Middleware\TrackVisitorTraffic::class,
+            TrackVisitorTraffic::class,
+        ]);
+        $middleware->validateCsrfTokens(except: [
+            'api/telegram/webhook',
+            'api/chatbot/message',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

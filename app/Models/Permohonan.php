@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Permohonan extends Model
 {
@@ -12,6 +13,10 @@ class Permohonan extends Model
         'nomorTelepon',
         'jenisJasa',
         'keteranganPermohonan',
+        'tanggal_konsultasi',
+        'jam_konsultasi',
+        'status',
+        'telegram_message_id',
     ];
 
     protected static function boot()
@@ -20,7 +25,7 @@ class Permohonan extends Model
 
         static::creating(function ($model) {
             if (empty($model->uuid)) {
-                $model->uuid = (string) \Illuminate\Support\Str::uuid();
+                $model->uuid = (string) Str::uuid();
             }
         });
     }

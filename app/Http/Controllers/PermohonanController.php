@@ -10,19 +10,23 @@ class PermohonanController extends Controller
     public function index()
     {
         $permohonans = Permohonan::latest()->paginate(10);
+
         return view('permohonans.index', compact('permohonans'));
     }
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'namaPermohonan' => 'required|string|max:255',
             'nomorTelepon' => 'required|string|max:20',
             'jenisJasa' => 'nullable|string|max:255',
             'keteranganPermohonan' => 'nullable|string',
+            'tanggal_konsultasi' => 'nullable|date',
+            'jam_konsultasi' => 'nullable|string|max:20',
+            'status' => 'nullable|string|in:pending,approved,rejected',
         ]);
 
-        Permohonan::create($request->all());
+        Permohonan::create($validated);
 
         return redirect()->route('permohonans.index')
             ->with('success', 'Permohonan berhasil ditambahkan.');
@@ -30,14 +34,17 @@ class PermohonanController extends Controller
 
     public function update(Request $request, Permohonan $permohonan)
     {
-        $request->validate([
+        $validated = $request->validate([
             'namaPermohonan' => 'required|string|max:255',
             'nomorTelepon' => 'required|string|max:20',
             'jenisJasa' => 'nullable|string|max:255',
             'keteranganPermohonan' => 'nullable|string',
+            'tanggal_konsultasi' => 'nullable|date',
+            'jam_konsultasi' => 'nullable|string|max:20',
+            'status' => 'nullable|string|in:pending,approved,rejected',
         ]);
 
-        $permohonan->update($request->all());
+        $permohonan->update($validated);
 
         return redirect()->route('permohonans.index')
             ->with('success', 'Permohonan berhasil diubah.');

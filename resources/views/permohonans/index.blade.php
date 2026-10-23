@@ -32,8 +32,9 @@
                     <tr class="fw-bold text-muted">
                         <th class="w-50px">No</th>
                         <th class="min-w-150px">Nama Permohonan</th>
-                        <th class="min-w-150px">No Telepon</th>
+                        <th class="min-w-150px">No Telepon / WA</th>
                         <th class="min-w-150px">Jenis Jasa</th>
+                        <th class="min-w-150px">Jadwal &amp; Status</th>
                         <th class="min-w-200px">Keterangan</th>
                         <th class="min-w-100px text-end">Aksi</th>
                     </tr>
@@ -48,10 +49,31 @@
                             <span class="text-gray-900 fw-bold d-block fs-6">{{ $permohonan->namaPermohonan }}</span>
                         </td>
                         <td>
-                            <span class="text-gray-900 fw-bold d-block fs-6">{{ $permohonan->nomorTelepon }}</span>
+                            <span class="text-gray-900 fw-semibold d-block fs-6">
+                                {{ $permohonan->nomorTelepon }}
+                                <a href="https://wa.me/{{ preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $permohonan->nomorTelepon)) }}" target="_blank" class="badge badge-light-success fs-8 ms-1">
+                                    WA <i class="ki-duotone ki-exit-right-corner fs-8 text-success"><span class="path1"></span><span class="path2"></span></i>
+                                </a>
+                            </span>
                         </td>
                         <td>
                             <span class="badge badge-light-primary fs-7 fw-bold">{{ $permohonan->jenisJasa ?? '-' }}</span>
+                        </td>
+                        <td>
+                            @if($permohonan->tanggal_konsultasi)
+                                <div class="fs-7 text-gray-800 fw-bold">{{ date('d M Y', strtotime($permohonan->tanggal_konsultasi)) }}</div>
+                                <div class="fs-8 text-muted">{{ $permohonan->jam_konsultasi ?? '-' }} WIB</div>
+                            @else
+                                <span class="text-muted fs-8">Tanpa Jadwal</span>
+                            @endif
+
+                            @if(($permohonan->status ?? 'pending') === 'approved')
+                                <span class="badge badge-light-success fs-8 fw-bold mt-1">Disetujui</span>
+                            @elseif(($permohonan->status ?? 'pending') === 'rejected')
+                                <span class="badge badge-light-danger fs-8 fw-bold mt-1">Ditolak</span>
+                            @else
+                                <span class="badge badge-light-warning fs-8 fw-bold mt-1">Pending</span>
+                            @endif
                         </td>
                         <td>
                             <span class="text-muted fw-semibold d-block fs-7">{{ Str::limit($permohonan->keteranganPermohonan, 50) }}</span>
@@ -87,6 +109,24 @@
                     <div class="d-flex flex-column mb-8 fv-row">
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">Jenis Jasa</label>
                         <input type="text" class="form-control form-control-solid" name="jenisJasa" value="{{ $permohonan->jenisJasa }}" />
+                    </div>
+                    <div class="row mb-8">
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-semibold mb-2">Tanggal Konsultasi</label>
+                            <input type="date" class="form-control form-control-solid" name="tanggal_konsultasi" value="{{ $permohonan->tanggal_konsultasi }}" />
+                        </div>
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-semibold mb-2">Jam Konsultasi</label>
+                            <input type="text" class="form-control form-control-solid" name="jam_konsultasi" placeholder="Contoh: 14:00" value="{{ $permohonan->jam_konsultasi }}" />
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <label class="fs-6 fw-semibold mb-2">Status Persetujuan</label>
+                        <select name="status" class="form-select form-select-solid">
+                            <option value="pending" {{ ($permohonan->status ?? 'pending') === 'pending' ? 'selected' : '' }}>Pending (Menunggu Persetujuan)</option>
+                            <option value="approved" {{ ($permohonan->status ?? '') === 'approved' ? 'selected' : '' }}>Disetujui (Approved)</option>
+                            <option value="rejected" {{ ($permohonan->status ?? '') === 'rejected' ? 'selected' : '' }}>Ditolak (Rejected)</option>
+                        </select>
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">Keterangan</label>
@@ -168,6 +208,24 @@
                     <div class="d-flex flex-column mb-8 fv-row">
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">Jenis Jasa</label>
                         <input type="text" class="form-control form-control-solid" name="jenisJasa" placeholder="Masukkan jenis jasa" />
+                    </div>
+                    <div class="row mb-8">
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-semibold mb-2">Tanggal Konsultasi</label>
+                            <input type="date" class="form-control form-control-solid" name="tanggal_konsultasi" />
+                        </div>
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-semibold mb-2">Jam Konsultasi</label>
+                            <input type="text" class="form-control form-control-solid" name="jam_konsultasi" placeholder="Contoh: 14:00" />
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <label class="fs-6 fw-semibold mb-2">Status Persetujuan</label>
+                        <select name="status" class="form-select form-select-solid">
+                            <option value="pending" selected>Pending (Menunggu Persetujuan)</option>
+                            <option value="approved">Disetujui (Approved)</option>
+                            <option value="rejected">Ditolak (Rejected)</option>
+                        </select>
                     </div>
                     <div class="d-flex flex-column mb-8 fv-row">
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">Keterangan</label>

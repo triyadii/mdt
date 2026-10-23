@@ -1,4 +1,5 @@
 <?php
+
 $file = '/var/www/html/WebsiteMDT/resources/views/layouts/admin.blade.php';
 $content = file_get_contents($file);
 
@@ -6,7 +7,7 @@ $crashedUrl = 'https://lh3.googleusercontent.com/aida/AEtjO1X5aX4ekhR87npjmAFgU7
 $newUrl = "{{ asset('assets/media/logos/mdt-logo.svg') }}";
 
 // Replace crashed URL with the new local asset URL
-$content = str_replace('src="' . $crashedUrl . '"', 'src="' . $newUrl . '"', $content);
+$content = str_replace('src="'.$crashedUrl.'"', 'src="'.$newUrl.'"', $content);
 
 file_put_contents($file, $content);
 echo "Replaced logos in admin layout\n";

@@ -11,7 +11,7 @@ class Role extends Model
     use HasFactory, HasUuids;
 
     protected $primaryKey = 'uuid';
-    
+
     protected $fillable = [
         'namaRole',
     ];

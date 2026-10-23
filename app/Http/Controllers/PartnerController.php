@@ -10,6 +10,7 @@ class PartnerController extends Controller
     public function index()
     {
         $partners = Partner::orderBy('created_at', 'desc')->get();
+
         return view('partners.index', compact('partners'));
     }
 

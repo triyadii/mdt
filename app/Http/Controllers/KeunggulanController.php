@@ -10,6 +10,7 @@ class KeunggulanController extends Controller
     public function index()
     {
         $keunggulans = Keunggulan::latest()->paginate(10);
+
         return view('keunggulans.index', compact('keunggulans'));
     }
 

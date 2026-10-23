@@ -10,6 +10,7 @@ class ProjectTypeController extends Controller
     public function index()
     {
         $projectTypes = ProjectType::orderBy('created_at', 'desc')->get();
+
         return view('project_types.index', compact('projectTypes'));
     }
 

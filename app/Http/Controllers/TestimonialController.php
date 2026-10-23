@@ -10,6 +10,7 @@ class TestimonialController extends Controller
     public function index()
     {
         $testimonials = Testimonial::orderBy('created_at', 'desc')->get();
+
         return view('testimonials.index', compact('testimonials'));
     }
 

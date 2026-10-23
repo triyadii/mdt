@@ -10,6 +10,7 @@ class CompanyProfileController extends Controller
     public function index()
     {
         $profile = CompanyProfile::first();
+
         return view('company_profiles.index', compact('profile'));
     }
 

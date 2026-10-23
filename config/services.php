@@ -35,4 +35,14 @@ return [
         ],
     ],
 
+    'groq' => [
+        'api_key' => env('GROQ_API_KEY'),
+        'model' => env('GROQ_MODEL', 'llama-3.3-70b-versatile'),
+    ],
+
+    'telegram' => [
+        'bot_token' => env('TELEGRAM_BOT_TOKEN'),
+        'admin_chat_id' => env('TELEGRAM_ADMIN_CHAT_ID'),
+    ],
+
 ];

@@ -13,6 +13,7 @@ class JasaController extends Controller
     public function index()
     {
         $jasas = Jasa::latest()->paginate(10);
+
         return view('jasas.index', compact('jasas'));
     }
 

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('ip_address', 45);
             $table->date('visited_date');
             $table->timestamps();
-            
+
             // Tambahkan index untuk mempercepat query pencarian berdasarkan IP dan tanggal
             $table->unique(['ip_address', 'visited_date']);
         });
