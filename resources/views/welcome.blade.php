@@ -40,71 +40,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
 
+    @php
+        $schemaData = [
+            '@context' => 'https://schema.org',
+            '@graph' => array_values(array_filter([
+                [
+                    '@type' => 'LocalBusiness',
+                    '@id' => url('/') . '#organization',
+                    'name' => $company->nama_profil ?? 'MDT Solution Indonesia',
+                    'url' => url('/'),
+                    'logo' => asset('assets/media/logos/logo2.png'),
+                    'image' => asset('assets/media/logos/logo2.png'),
+                    'description' => 'MDT Solution Indonesia menghadirkan layanan rekayasa perangkat lunak presisi tinggi, pembuatan aplikasi berbasis website, aplikasi mobile, website company profile, dan instalasi CCTV profesional di Medan.',
+                    'telephone' => $company->nomor_telepon ?? '+628123456789',
+                    'email' => $company->email ?? 'info@mdt-solution.site',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => $company->alamat ?? 'Medan',
+                        'addressLocality' => 'Medan',
+                        'addressRegion' => 'Sumatera Utara',
+                        'addressCountry' => 'ID',
+                    ],
+                    'geo' => [
+                        '@type' => 'GeoCoordinates',
+                        'latitude' => 3.5952,
+                        'longitude' => 98.6722,
+                    ],
+                    'sameAs' => array_values(array_filter([
+                        !empty($company->instagram) ? 'https://instagram.com/' . ltrim($company->instagram, '@') : null,
+                        !empty($company->tiktok) ? 'https://tiktok.com/@' . ltrim($company->tiktok, '@') : null,
+                        'https://github.com',
+                        'https://linkedin.com',
+                    ])),
+                ],
+                [
+                    '@type' => 'WebSite',
+                    '@id' => url('/') . '#website',
+                    'url' => url('/'),
+                    'name' => $company->nama_profil ?? 'MDT Solution Indonesia',
+                    'inLanguage' => 'id-ID',
+                    'description' => 'Jasa Pembuatan Website, Aplikasi Mobile & CCTV Medan',
+                    'publisher' => [
+                        '@id' => url('/') . '#organization',
+                    ],
+                ],
+                (!empty($faqs) && count($faqs) > 0) ? [
+                    '@type' => 'FAQPage',
+                    '@id' => url('/') . '#faq',
+                    'mainEntity' => $faqs->map(fn($faq) => [
+                        '@type' => 'Question',
+                        'name' => strip_tags($faq->pertanyaan),
+                        'acceptedAnswer' => [
+                            '@type' => 'Answer',
+                            'text' => strip_tags($faq->jawaban),
+                        ],
+                    ])->values()->all(),
+                ] : null,
+            ])),
+        ];
+    @endphp
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "LocalBusiness",
-          "@id": "{{ url('/') }}#organization",
-          "name": "{{ $company->nama_profil ?? 'MDT Solution Indonesia' }}",
-          "url": "{{ url('/') }}",
-          "logo": "{{ asset('assets/media/logos/logo2.png') }}",
-          "image": "{{ asset('assets/media/logos/logo2.png') }}",
-          "description": "MDT Solution Indonesia menghadirkan layanan rekayasa perangkat lunak presisi tinggi, pembuatan aplikasi berbasis website, aplikasi mobile, website company profile, dan instalasi CCTV profesional di Medan.",
-          "telephone": "{{ $company->nomor_telepon ?? '+628123456789' }}",
-          "email": "{{ $company->email ?? 'info@mdt-solution.site' }}",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "{{ $company->alamat ?? 'Medan' }}",
-            "addressLocality": "Medan",
-            "addressRegion": "Sumatera Utara",
-            "addressCountry": "ID"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 3.5952,
-            "longitude": 98.6722
-          },
-          "sameAs": [
-            @if(!empty($company->instagram)) "https://instagram.com/{{ ltrim($company->instagram, '@') }}", @endif
-            @if(!empty($company->tiktok)) "https://tiktok.com/@{{ ltrim($company->tiktok, '@') }}", @endif
-            "https://github.com",
-            "https://linkedin.com"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "{{ url('/') }}#website",
-          "url": "{{ url('/') }}",
-          "name": "{{ $company->nama_profil ?? 'MDT Solution Indonesia' }}",
-          "inLanguage": "id-ID",
-          "description": "Jasa Pembuatan Website, Aplikasi Mobile & CCTV Medan",
-          "publisher": {
-            "@id": "{{ url('/') }}#organization"
-          }
-        }
-        @if(isset($faqs) && count($faqs) > 0)
-        ,{
-          "@type": "FAQPage",
-          "@id": "{{ url('/') }}#faq",
-          "mainEntity": [
-            @foreach($faqs as $index => $faq)
-            {
-              "@type": "Question",
-              "name": "{{ addslashes(strip_tags($faq->pertanyaan)) }}",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "{{ addslashes(strip_tags($faq->jawaban)) }}"
-              }
-            }@if(!$loop->last),@endif
-            @endforeach
-          ]
-        }
-        @endif
-      ]
-    }
+    {!! json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) !!}
     </script><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background": "var(--color-background)", "surface-container-low": "var(--color-surface-container-low)", "secondary": "var(--color-secondary)", "error": "var(--color-error)", "tertiary-fixed": "var(--color-tertiary-fixed)", "surface-tint": "var(--color-surface-tint)", "on-tertiary-fixed": "var(--color-on-tertiary-fixed)", "on-secondary-fixed": "var(--color-on-secondary-fixed)", "secondary-fixed-dim": "var(--color-secondary-fixed-dim)", "surface-container-high": "var(--color-surface-container-high)", "inverse-primary": "var(--color-inverse-primary)", "on-secondary-container": "var(--color-on-secondary-container)", "error-container": "var(--color-error-container)", "primary-fixed": "var(--color-primary-fixed)", "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)", "surface-dim": "var(--color-surface-dim)", "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)", "primary-fixed-dim": "var(--color-primary-fixed-dim)", "primary": "var(--color-primary)", "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)", "inverse-on-surface": "var(--color-inverse-on-surface)", "secondary-container": "var(--color-secondary-container)", "secondary-fixed": "var(--color-secondary-fixed)", "surface-container-lowest": "var(--color-surface-container-lowest)", "on-secondary": "var(--color-on-secondary)", "on-primary-container": "var(--color-on-primary-container)", "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)", "inverse-surface": "var(--color-inverse-surface)", "surface-variant": "var(--color-surface-variant)", "outline": "var(--color-outline)", "on-tertiary-container": "var(--color-on-tertiary-container)", "on-tertiary": "var(--color-on-tertiary)", "on-primary-fixed": "var(--color-on-primary-fixed)", "surface-bright": "var(--color-surface-bright)", "surface-container": "var(--color-surface-container)", "on-surface-variant": "var(--color-on-surface-variant)", "tertiary-container": "var(--color-tertiary-container)", "surface-container-highest": "var(--color-surface-container-highest)", "outline-variant": "var(--color-outline-variant)", "on-primary": "var(--color-on-primary)", "tertiary": "var(--color-tertiary)", "on-background": "var(--color-on-background)", "on-error": "var(--color-on-error)", "on-surface": "var(--color-on-surface)", "surface": "var(--color-surface)", "on-error-container": "var(--color-on-error-container)", "primary-container": "var(--color-primary-container)"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-xl":"2.5rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem","margin":"2rem","space-lg":"1.5rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"body-md":["Inter"],"code-sm":["JetBrains Mono"],"label-md":["Inter"]},"fontSize":{"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"code-sm":["12px",{"lineHeight":"16px","letterSpacing":"0em","fontWeight":"500"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.005em","fontWeight":"500"}]}}}};</script>
 <style>
 :root {
