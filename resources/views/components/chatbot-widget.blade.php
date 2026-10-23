@@ -178,11 +178,28 @@
 
 <script>
 const MDT_CHAT_STORAGE_KEY = 'mdt_chat_history_v1';
+const MDT_CHAT_SESSION_KEY = 'mdt_chat_session_id_v1';
 let mdtChatHistory = [];
 let isMdtChatWaiting = false;
 
+function getMdtSessionId() {
+    let sessionId = localStorage.getItem(MDT_CHAT_SESSION_KEY);
+    if (!sessionId) {
+        sessionId = 'sess_' + Math.random().toString(36).substring(2, 15) + '_' + Date.now();
+        localStorage.setItem(MDT_CHAT_SESSION_KEY, sessionId);
+    }
+    return sessionId;
+}
+
+function resetMdtSessionId() {
+    const newSessionId = 'sess_' + Math.random().toString(36).substring(2, 15) + '_' + Date.now();
+    localStorage.setItem(MDT_CHAT_SESSION_KEY, newSessionId);
+    return newSessionId;
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
+    getMdtSessionId();
     loadMdtChatHistory();
     // Hide teaser after 7 seconds
     setTimeout(() => {
@@ -248,6 +265,7 @@ function saveMdtChatHistory() {
 function clearMdtChatHistory() {
     if (confirm('Hapus seluruh riwayat percakapan chatbot?')) {
         localStorage.removeItem(MDT_CHAT_STORAGE_KEY);
+        resetMdtSessionId();
         mdtChatHistory = [];
         loadMdtChatHistory();
     }
@@ -281,6 +299,7 @@ async function handleMdtChatSubmit(e) {
     setMdtChatState(true);
 
     try {
+        const sessionId = getMdtSessionId();
         const response = await fetch('/api/chatbot/message', {
             method: 'POST',
             headers: {
@@ -289,6 +308,7 @@ async function handleMdtChatSubmit(e) {
                 'X-Requested-With': 'XMLHttpRequest'
             },
             body: JSON.stringify({
+                session_id: sessionId,
                 message: userMessage,
                 history: mdtChatHistory.slice(0, -1) // exclude current to avoid duplicate
             })
@@ -296,6 +316,10 @@ async function handleMdtChatSubmit(e) {
 
         const data = await response.json();
         hideMdtTyping();
+
+        if (data.session_id) {
+            localStorage.setItem(MDT_CHAT_SESSION_KEY, data.session_id);
+        }
 
         if (data.success && data.reply) {
             appendBotMessage(data.reply);

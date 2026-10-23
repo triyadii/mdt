@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ChatbotController;
+use App\Http\Controllers\ChatHistoryController;
 use App\Http\Controllers\CompanyProfileController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\FrontController;
@@ -68,6 +69,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('permohonans', PermohonanController::class);
     Route::resource('beritas', BeritaController::class);
     Route::resource('abouts', AboutController::class)->only(['index', 'store', 'update']);
+    Route::resource('chat-histories', ChatHistoryController::class)->only(['index', 'show', 'destroy']);
 
     Route::get('/profile', [UserController::class, 'profile'])->name('profile.index');
     Route::post('/profile/change-password', [UserController::class, 'changePassword'])->name('profile.change-password');

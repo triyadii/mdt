@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ChatMessage;
+use App\Models\ChatSession;
 use App\Services\GroqAgentService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ChatbotController extends Controller
 {
@@ -19,9 +22,38 @@ class ChatbotController extends Controller
     {
         $validated = $request->validate([
             'message' => 'required|string|max:1500',
+            'session_id' => 'nullable|string|max:100',
             'history' => 'nullable|array',
             'history.*.role' => 'required_with:history|in:user,assistant',
             'history.*.content' => 'required_with:history|string',
+        ]);
+
+        $sessionId = $validated['session_id'] ?? (string) Str::uuid();
+        $ipAddress = $request->header('CF-Connecting-IP')
+                    ?? $request->header('X-Forwarded-For')
+                    ?? $request->ip();
+
+        if (str_contains($ipAddress, ',')) {
+            $ipAddress = explode(',', $ipAddress)[0];
+        }
+
+        // Simpan / dapatkan session chat
+        $chatSession = ChatSession::firstOrCreate(
+            ['session_id' => $sessionId],
+            [
+                'ip_address' => trim($ipAddress),
+                'user_agent' => substr((string) $request->userAgent(), 0, 500),
+                'last_activity_at' => now(),
+            ]
+        );
+
+        $chatSession->update(['last_activity_at' => now()]);
+
+        // Simpan pesan dari pengguna
+        ChatMessage::create([
+            'chat_session_id' => $chatSession->id,
+            'role' => 'user',
+            'content' => $validated['message'],
         ]);
 
         $history = $validated['history'] ?? [];
@@ -44,9 +76,17 @@ class ChatbotController extends Controller
             ], 500);
         }
 
+        // Simpan balasan bot ke riwayat
+        ChatMessage::create([
+            'chat_session_id' => $chatSession->id,
+            'role' => 'assistant',
+            'content' => $result['reply'],
+        ]);
+
         return response()->json([
             'success' => true,
             'reply' => $result['reply'],
+            'session_id' => $sessionId,
         ]);
     }
 }

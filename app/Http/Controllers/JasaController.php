@@ -30,15 +30,17 @@ class JasaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'namaJasa' => 'required|string|max:255',
+            'harga_mulai' => 'nullable|string|max:255',
+            'estimasi_waktu' => 'nullable|string|max:255',
             'keteranganJasa' => 'nullable|string',
         ]);
 
-        Jasa::create($request->all());
+        Jasa::create($validated);
 
         return redirect()->route('jasas.index')
-            ->with('success', 'Jasa created successfully.');
+            ->with('success', 'Jasa & harga project berhasil ditambahkan.');
     }
 
     /**
@@ -62,15 +64,17 @@ class JasaController extends Controller
      */
     public function update(Request $request, Jasa $jasa)
     {
-        $request->validate([
+        $validated = $request->validate([
             'namaJasa' => 'required|string|max:255',
+            'harga_mulai' => 'nullable|string|max:255',
+            'estimasi_waktu' => 'nullable|string|max:255',
             'keteranganJasa' => 'nullable|string',
         ]);
 
-        $jasa->update($request->all());
+        $jasa->update($validated);
 
         return redirect()->route('jasas.index')
-            ->with('success', 'Jasa updated successfully');
+            ->with('success', 'Jasa & harga project berhasil diperbarui.');
     }
 
     /**

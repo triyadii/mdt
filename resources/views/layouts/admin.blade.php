@@ -335,7 +335,7 @@ Website MDT Management System
                                                 <div class="menu-item">
                                                     <a class="menu-link {{ request()->routeIs('jasas.*') ? 'active' : '' }}" href="{{ route('jasas.index') }}">
                                                         <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-                                                        <span class="menu-title">Manajemen Jasa</span>
+                                                        <span class="menu-title">Jasa &amp; Harga Project</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item">
@@ -372,6 +372,24 @@ Website MDT Management System
                                                     <a class="menu-link {{ request()->routeIs('beritas.*') ? 'active' : '' }}" href="{{ route('beritas.index') }}">
                                                         <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
                                                         <span class="menu-title">Manajemen Berita</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end:Menu item-->
+
+                                        <!--begin:Menu item - Chatbot & AI-->
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('chat-histories.*') ? 'here show' : '' }}">
+                                            <span class="menu-link">
+                                                <span class="menu-icon"><i class="ki-duotone ki-message-text-2 fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span>
+                                                <span class="menu-title">Chatbot &amp; AI</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                            <div class="menu-sub menu-sub-accordion">
+                                                <div class="menu-item">
+                                                    <a class="menu-link {{ request()->routeIs('chat-histories.*') ? 'active' : '' }}" href="{{ route('chat-histories.index') }}">
+                                                        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                                                        <span class="menu-title">Riwayat Chat Pengunjung</span>
                                                     </a>
                                                 </div>
                                             </div>
