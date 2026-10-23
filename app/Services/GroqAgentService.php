@@ -32,10 +32,14 @@ class GroqAgentService
      */
     public function chat(array $conversationHistory): array
     {
+        $friendlyErrorMessage = 'Mohon maaf, saat ini sedang terjadi kendala teknis pada sistem kami. Tim kami sedang menanganinya. Anda juga dapat menghubungi kami langsung melalui WhatsApp untuk respon cepat.';
+
         if (empty($this->apiKey)) {
+            Log::error('Groq API Key belum dikonfigurasi di .env (GROQ_API_KEY).');
+
             return [
                 'success' => false,
-                'message' => 'API Key Groq belum dikonfigurasi di file .env (GROQ_API_KEY).',
+                'message' => $friendlyErrorMessage,
             ];
         }
 
@@ -55,7 +59,13 @@ Tugas dan Kemampuanmu:
 
 Panduan Interaksi:
 - Gunakan bahasa Indonesia yang santun, ramah, profesional, dan meyakinkan.
-- Gunakan format teks yang rapi dengan Markdown (bullet points, bold, dll).
+- ATURAN TAMPILAN FORMAT (SANGAT PENTING): JANGAN PERNAH membuat atau menampilkan data dalam bentuk TABEL markdown (| Header | Header |), karena tampilan jendela chat sangat ramping sehingga tabel tidak muat dan terpotong.
+- SELALU gunakan format DAFTAR / LIST terstruktur (gunakan bullet points •, penomoran 1., emoji seperti 🔹 atau 📌, dan cetak tebal).
+  Contoh format list layanan:
+  🔹 **Pengembangan Aplikasi Web**
+  • Estimasi Harga: Mulai Rp 3.500.000
+  • Estimasi Waktu: 1 - 3 Minggu
+  • Keterangan: Pembuatan aplikasi web modern dan responsif...
 - Selalu gunakan TOOLS yang tersedia untuk mengambil data faktual dari database perusahaan. Jangan mengarang harga atau portofolio.
 - Saat calon klien tertarik pada layanan atau ingin diskusi lebih lanjut, ajak dengan sopan untuk menjadwalkan konsultasi meeting gratis.
 - Untuk membuat jadwal meeting (tool `book_consultation`), kamu WAJIB menanyakan atau mengonfirmasi minimal 4 data:
@@ -97,7 +107,7 @@ EOT;
 
                 return [
                     'success' => false,
-                    'message' => 'Maaf, terjadi kendala saat menghubungi AI service: '.$response->json('error.message', 'Gagal memproses.'),
+                    'message' => $friendlyErrorMessage,
                 ];
             }
 
@@ -105,7 +115,10 @@ EOT;
             $choice = $responseData['choices'][0] ?? null;
 
             if (! $choice) {
-                return ['success' => false, 'message' => 'Tidak ada respon yang diterima dari AI.'];
+                return [
+                    'success' => false,
+                    'message' => $friendlyErrorMessage,
+                ];
             }
 
             $assistantMessage = $choice['message'];
@@ -142,7 +155,7 @@ EOT;
 
                     return [
                         'success' => false,
-                        'message' => 'Maaf, gagal memproses data hasil query.',
+                        'message' => $friendlyErrorMessage,
                     ];
                 }
 
@@ -164,7 +177,7 @@ EOT;
 
             return [
                 'success' => false,
-                'message' => 'Terjadi kesalahan sistem: '.$e->getMessage(),
+                'message' => $friendlyErrorMessage,
             ];
         }
     }

@@ -60,8 +60,15 @@ class TelegramWebhookController extends Controller
                     $updatedText .= "✨ <b>Status:</b> <b>DISETUJUI</b> (pada {$nowFormatted})\n";
                     $updatedText .= '<i>Silakan hubungi calon klien via WhatsApp untuk konfirmasi link Google Meet / lokasi.</i>';
 
-                    // Remove buttons by passing empty keyboard or null
+                    // Update existing message to remove buttons
                     $this->telegramService->editMessageText($chatId, $messageId, $updatedText, []);
+
+                    // Kirim notifikasi baru sebagai konfirmasi bahwa status sudah diupdate
+                    $confirmNotice = "🔔 <b>UPDATE STATUS: JADWAL KONSULTASI DISETUJUI ✅</b>\n\n";
+                    $confirmNotice .= "Jadwal konsultasi untuk klien <b>{$nama}</b> telah berhasil diupdate ke sistem dengan status <b>DISETUJUI</b>.\n\n";
+                    $confirmNotice .= "🗓 <b>Jadwal:</b> {$tanggal} ({$jam})\n";
+                    $confirmNotice .= '📱 <b>WhatsApp:</b> <a href="https://wa.me/'.preg_replace('/^0/', '62', preg_replace('/[^0-9]/', '', $telepon))."\">{$telepon}</a>";
+                    $this->telegramService->sendMessage($confirmNotice, null, $chatId);
                 } else {
                     $permohonan->update(['status' => 'rejected']);
                     $this->telegramService->answerCallbackQuery($callbackId, 'Jadwal konsultasi ditolak. ❌');
@@ -75,7 +82,14 @@ class TelegramWebhookController extends Controller
                     $updatedText .= "📝 <b>Catatan:</b> {$keterangan}\n\n";
                     $updatedText .= "⚠️ <b>Status:</b> <b>DITOLAK</b> (pada {$nowFormatted})";
 
+                    // Update existing message to remove buttons
                     $this->telegramService->editMessageText($chatId, $messageId, $updatedText, []);
+
+                    // Kirim notifikasi baru sebagai konfirmasi bahwa status sudah diupdate
+                    $confirmNotice = "🔔 <b>UPDATE STATUS: JADWAL KONSULTASI DITOLAK ❌</b>\n\n";
+                    $confirmNotice .= "Jadwal konsultasi untuk klien <b>{$nama}</b> telah berhasil diupdate ke sistem dengan status <b>DITOLAK</b>.\n\n";
+                    $confirmNotice .= "🗓 <b>Jadwal:</b> {$tanggal} ({$jam})";
+                    $this->telegramService->sendMessage($confirmNotice, null, $chatId);
                 }
 
                 return response()->json(['status' => 'success']);

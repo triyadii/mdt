@@ -40,7 +40,7 @@ class ChatbotController extends Controller
         if (! $result['success']) {
             return response()->json([
                 'success' => false,
-                'message' => $result['message'] ?? 'Gagal memproses pesan.',
+                'message' => $result['message'] ?? 'Mohon maaf, saat ini sedang ada kendala teknis pada sistem kami. Silakan coba beberapa saat lagi atau hubungi tim kami via WhatsApp.',
             ], 500);
         }
 

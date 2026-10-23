@@ -300,12 +300,12 @@ async function handleMdtChatSubmit(e) {
         if (data.success && data.reply) {
             appendBotMessage(data.reply);
         } else {
-            appendBotMessage("⚠️ " + (data.message || "Maaf, terjadi kendala saat memproses jawaban. Silakan coba kembali."));
+            appendBotMessage("Mohon maaf, saat ini sedang terjadi kendala teknis pada sistem kami. Tim kami sedang menanganinya. Anda juga dapat menghubungi tim kami langsung melalui WhatsApp untuk respon cepat.");
         }
     } catch (err) {
         hideMdtTyping();
         console.error(err);
-        appendBotMessage("⚠️ Maaf, koneksi ke server terputus. Pastikan koneksi internet Anda stabil dan coba lagi.");
+        appendBotMessage("Mohon maaf, koneksi ke sistem sedang mengalami kendala. Silakan coba beberapa saat lagi atau hubungi tim kami langsung via WhatsApp.");
     } finally {
         setMdtChatState(false);
         scrollMdtChatBottom();
