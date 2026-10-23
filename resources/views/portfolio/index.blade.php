@@ -11,26 +11,30 @@
 @section('twitter_title', 'Portfolio Proyek & Solusi Digital - MDT Solution Indonesia')
 @section('twitter_description', 'Jelajahi implementasi nyata proyek aplikasi website, mobile apps, sistem enterprise, dan instalasi CCTV oleh MDT Solution Indonesia.')
 
+@php
+    $schemaBreadcrumbs = [
+        '@context' => 'https://schema.org',
+        '@type' => 'BreadcrumbList',
+        'itemListElement' => [
+            [
+                '@type' => 'ListItem',
+                'position' => 1,
+                'name' => 'Home',
+                'item' => route('home'),
+            ],
+            [
+                '@type' => 'ListItem',
+                'position' => 2,
+                'name' => 'Portfolio',
+                'item' => route('front.portfolio'),
+            ],
+        ],
+    ];
+@endphp
+
 @section('schema_json')
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "{{ route('home') }}"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Portfolio",
-      "item": "{{ route('front.portfolio') }}"
-    }
-  ]
-}
+{!! json_encode($schemaBreadcrumbs, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) !!}
 </script>
 @endsection
 

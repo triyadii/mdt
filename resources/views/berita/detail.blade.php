@@ -3,6 +3,59 @@
 @php
     $coverImage = (!empty($berita->gambar) && is_array($berita->gambar) && count($berita->gambar) > 0) ? asset($berita->gambar[0]) : asset('assets/media/logos/logo2.png');
     $excerpt = Str::limit(trim(preg_replace('/\s+/', ' ', strip_tags($berita->keteranganBerita))), 155);
+
+    $schemaArticle = [
+        '@context' => 'https://schema.org',
+        '@graph' => [
+            [
+                '@type' => 'NewsArticle',
+                'headline' => $berita->namaBerita,
+                'image' => [$coverImage],
+                'datePublished' => $berita->created_at->toIso8601String(),
+                'dateModified' => $berita->updated_at->toIso8601String(),
+                'author' => [
+                    '@type' => 'Person',
+                    'name' => $berita->author ?? 'MDT Solution Indonesia',
+                ],
+                'publisher' => [
+                    '@type' => 'Organization',
+                    'name' => 'MDT Solution Indonesia',
+                    'logo' => [
+                        '@type' => 'ImageObject',
+                        'url' => asset('assets/media/logos/logo2.png'),
+                    ],
+                ],
+                'description' => $excerpt,
+                'mainEntityOfPage' => [
+                    '@type' => 'WebPage',
+                    '@id' => route('front.berita.detail', $berita->slugBerita),
+                ],
+            ],
+            [
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 1,
+                        'name' => 'Home',
+                        'item' => route('home'),
+                    ],
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 2,
+                        'name' => 'Berita',
+                        'item' => route('front.berita'),
+                    ],
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 3,
+                        'name' => $berita->namaBerita,
+                        'item' => route('front.berita.detail', $berita->slugBerita),
+                    ],
+                ],
+            ],
+        ],
+    ];
 @endphp
 
 @section('title', $berita->namaBerita . ' - MDT Solution Indonesia')
@@ -22,60 +75,7 @@
 
 @section('schema_json')
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "NewsArticle",
-      "headline": "{{ addslashes($berita->namaBerita) }}",
-      "image": [
-        "{{ $coverImage }}"
-      ],
-      "datePublished": "{{ $berita->created_at->toIso8601String() }}",
-      "dateModified": "{{ $berita->updated_at->toIso8601String() }}",
-      "author": {
-        "@type": "Person",
-        "name": "{{ addslashes($berita->author ?? 'MDT Solution Indonesia') }}"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "MDT Solution Indonesia",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "{{ asset('assets/media/logos/logo2.png') }}"
-        }
-      },
-      "description": "{{ addslashes($excerpt) }}",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ route('front.berita.detail', $berita->slugBerita) }}"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "{{ route('home') }}"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Berita",
-          "item": "{{ route('front.berita') }}"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "{{ addslashes($berita->namaBerita) }}",
-          "item": "{{ route('front.berita.detail', $berita->slugBerita) }}"
-        }
-      ]
-    }
-  ]
-}
+{!! json_encode($schemaArticle, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) !!}
 </script>
 @endsection
 
