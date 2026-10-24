@@ -93,7 +93,7 @@ class MapsScraperService
                     } elseif ($data['type'] === 'progress') {
                         $task->update([
                             'progress_percent' => $data['percent'] ?? 0,
-                            'current_step' => $data['step'] ?? null,
+                            'current_step' => isset($data['step']) ? Str::limit($data['step'], 250) : null,
                             'eta_seconds' => $data['etaSeconds'] ?? null,
                         ]);
                     } elseif ($data['type'] === 'status') {
@@ -124,7 +124,7 @@ class MapsScraperService
                 $cleanError = $fatalErrorMessage ?: ($errorOutput ? Str::limit($errorOutput, 500) : 'Proses scraper terhenti atau mengalami kesalahan.');
                 $task->update([
                     'status' => 'failed',
-                    'current_step' => 'Gagal dieksekusi: '.$cleanError,
+                    'current_step' => Str::limit('Gagal dieksekusi: '.$cleanError, 250),
                     'eta_seconds' => 0,
                     'log_message' => ($task->log_message ? $task->log_message."\n" : '').'['.now()->format('H:i:s').'] GAGAL: '.$cleanError,
                 ]);
@@ -134,6 +134,7 @@ class MapsScraperService
             Log::error('MapsScraperService Error: '.$e->getMessage());
             $task->update([
                 'status' => 'failed',
+                'current_step' => Str::limit('Error: '.$e->getMessage(), 250),
                 'log_message' => ($task->log_message ? $task->log_message."\n" : '').'['.now()->format('H:i:s').'] ERROR: '.$e->getMessage(),
             ]);
         }
