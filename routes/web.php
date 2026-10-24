@@ -15,6 +15,7 @@ use App\Http\Controllers\PermohonanController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProjectTypeController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ScraperController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\TelegramWebhookController;
 use App\Http\Controllers\TestimonialController;
@@ -89,6 +90,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}', [WhatsAppBlastController::class, 'show'])->name('show');
         Route::post('/{campaignId}/send/{recipientId}', [WhatsAppBlastController::class, 'sendSingle'])->name('send-single');
         Route::delete('/{id}', [WhatsAppBlastController::class, 'destroy'])->name('destroy');
+    });
+
+    // Google Maps UMKM Scraper
+    Route::prefix('scraper')->name('scraper.')->group(function () {
+        Route::get('/', [ScraperController::class, 'index'])->name('index');
+        Route::post('/start', [ScraperController::class, 'start'])->name('start');
+        Route::get('/schedules', [ScraperController::class, 'schedules'])->name('schedules');
+        Route::post('/schedules', [ScraperController::class, 'storeSchedule'])->name('schedules.store');
+        Route::delete('/tasks/{id}', [ScraperController::class, 'destroyTask'])->name('tasks.destroy');
+        Route::get('/leads', [ScraperController::class, 'leads'])->name('leads');
+        Route::post('/leads/push-to-blast', [ScraperController::class, 'pushToWaBlast'])->name('leads.push-to-blast');
+        Route::post('/leads/bulk-delete', [ScraperController::class, 'bulkDeleteLeads'])->name('leads.bulk-delete');
+        Route::delete('/leads/{id}', [ScraperController::class, 'destroyLead'])->name('leads.destroy');
+        Route::get('/tasks/{id}/status', [ScraperController::class, 'taskStatus'])->name('task-status');
     });
 
     Route::get('/profile', [UserController::class, 'profile'])->name('profile.index');

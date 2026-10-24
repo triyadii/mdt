@@ -422,6 +422,36 @@ Website MDT Management System
                                             </div>
                                         </div>
                                         <!--end:Menu item-->
+
+                                        <!--begin:Menu item - Scraper UMKM-->
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('scraper.*') ? 'here show' : '' }}">
+                                            <span class="menu-link">
+                                                <span class="menu-icon"><i class="ki-duotone ki-geolocation fs-2"><span class="path1"></span><span class="path2"></span></i></span>
+                                                <span class="menu-title">Scraper UMKM Maps</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                            <div class="menu-sub menu-sub-accordion">
+                                                <div class="menu-item">
+                                                    <a class="menu-link {{ request()->routeIs('scraper.index') ? 'active' : '' }}" href="{{ route('scraper.index') }}">
+                                                        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                                                        <span class="menu-title">Target & Scraping</span>
+                                                    </a>
+                                                </div>
+                                                <div class="menu-item">
+                                                    <a class="menu-link {{ request()->routeIs('scraper.schedules') ? 'active' : '' }}" href="{{ route('scraper.schedules') }}">
+                                                        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                                                        <span class="menu-title">Jadwal Otomatis</span>
+                                                    </a>
+                                                </div>
+                                                <div class="menu-item">
+                                                    <a class="menu-link {{ request()->routeIs('scraper.leads') ? 'active' : '' }}" href="{{ route('scraper.leads') }}">
+                                                        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                                                        <span class="menu-title">Data Leads UMKM</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end:Menu item-->
 									</div>
 									<!--end::Menu-->
 								</div>
