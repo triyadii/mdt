@@ -15,10 +15,12 @@ use App\Http\Controllers\PermohonanController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProjectTypeController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\TelegramWebhookController;
 use App\Http\Controllers\TestimonialController;
-use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WhatsAppBlastController;
+use App\Http\Controllers\WhatsAppChatController;
 use App\Models\Visitor;
 use Illuminate\Support\Facades\Route;
 
@@ -29,10 +31,10 @@ Route::get('/berita/{slug}', [FrontController::class, 'beritaDetail'])->name('fr
 Route::get('/portfolio', [FrontController::class, 'portfolio'])->name('front.portfolio');
 
 // SEO 301 Redirects for Legacy / Unused Route Endpoints
-Route::get('Katalog', fn() => redirect()->to(route('home') . '#services', 301));
-Route::get('KatalogDetail', fn() => redirect()->to(route('home') . '#services', 301));
-Route::get('TentangKami', fn() => redirect()->to(route('home') . '#about', 301));
-Route::get('Kontak', fn() => redirect()->to(route('home') . '#contact', 301));
+Route::get('Katalog', fn () => redirect()->to(route('home').'#services', 301));
+Route::get('KatalogDetail', fn () => redirect()->to(route('home').'#services', 301));
+Route::get('TentangKami', fn () => redirect()->to(route('home').'#about', 301));
+Route::get('Kontak', fn () => redirect()->to(route('home').'#contact', 301));
 
 Route::post('/api/chatbot/message', [ChatbotController::class, 'sendMessage'])->name('chatbot.message');
 Route::post('/api/telegram/webhook', [TelegramWebhookController::class, 'handle'])->name('telegram.webhook');
@@ -66,6 +68,28 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('beritas', BeritaController::class);
     Route::resource('abouts', AboutController::class)->only(['index', 'store', 'update']);
     Route::resource('chat-histories', ChatHistoryController::class)->only(['index', 'show', 'destroy']);
+
+    // WhatsApp Live Chat
+    Route::prefix('wa-chat')->name('wa-chat.')->group(function () {
+        Route::get('/', [WhatsAppChatController::class, 'index'])->name('index');
+        Route::get('/status', [WhatsAppChatController::class, 'status'])->name('status');
+        Route::post('/start', [WhatsAppChatController::class, 'startSession'])->name('start');
+        Route::get('/chats', [WhatsAppChatController::class, 'chats'])->name('chats');
+        Route::get('/chats/{id}', [WhatsAppChatController::class, 'messages'])->name('messages');
+        Route::delete('/chats/{id}', [WhatsAppChatController::class, 'destroyChat'])->name('destroy-chat');
+        Route::delete('/messages/{id}', [WhatsAppChatController::class, 'destroyMessage'])->name('destroy-message');
+        Route::post('/send', [WhatsAppChatController::class, 'send'])->name('send');
+    });
+
+    // WhatsApp Blast Promosi
+    Route::prefix('wa-blast')->name('wa-blast.')->group(function () {
+        Route::get('/', [WhatsAppBlastController::class, 'index'])->name('index');
+        Route::get('/create', [WhatsAppBlastController::class, 'create'])->name('create');
+        Route::post('/', [WhatsAppBlastController::class, 'store'])->name('store');
+        Route::get('/{id}', [WhatsAppBlastController::class, 'show'])->name('show');
+        Route::post('/{campaignId}/send/{recipientId}', [WhatsAppBlastController::class, 'sendSingle'])->name('send-single');
+        Route::delete('/{id}', [WhatsAppBlastController::class, 'destroy'])->name('destroy');
+    });
 
     Route::get('/profile', [UserController::class, 'profile'])->name('profile.index');
     Route::post('/profile/change-password', [UserController::class, 'changePassword'])->name('profile.change-password');

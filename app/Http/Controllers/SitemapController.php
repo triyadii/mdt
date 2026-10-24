@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
-use App\Models\Portfolio;
 use Illuminate\Http\Response;
 
 class SitemapController extends Controller

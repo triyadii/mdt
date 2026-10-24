@@ -9,6 +9,7 @@ Website MDT Management System
 		<title>Dashboard - Website MDT</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="canonical" href="http://preview.keenthemes.comdashboards/marketing.html" />
 		<link rel="shortcut icon" href="{{ asset('assets/media/logos/logo2.png') }}" />
 		<!--begin::Fonts(mandatory for all pages)-->
@@ -23,6 +24,8 @@ Website MDT Management System
 		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
 		<script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
+		@stack('styles')
+		@yield('styles')
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -390,6 +393,30 @@ Website MDT Management System
                                                     <a class="menu-link {{ request()->routeIs('chat-histories.*') ? 'active' : '' }}" href="{{ route('chat-histories.index') }}">
                                                         <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
                                                         <span class="menu-title">Riwayat Chat Pengunjung</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end:Menu item-->
+
+                                        <!--begin:Menu item - WhatsApp Center-->
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('wa-chat.*') || request()->routeIs('wa-blast.*') ? 'here show' : '' }}">
+                                            <span class="menu-link">
+                                                <span class="menu-icon"><i class="ki-duotone ki-whatsapp fs-2"><span class="path1"></span><span class="path2"></span></i></span>
+                                                <span class="menu-title">WhatsApp Center</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                            <div class="menu-sub menu-sub-accordion">
+                                                <div class="menu-item">
+                                                    <a class="menu-link {{ request()->routeIs('wa-chat.*') ? 'active' : '' }}" href="{{ route('wa-chat.index') }}">
+                                                        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                                                        <span class="menu-title">Chat WA (Live)</span>
+                                                    </a>
+                                                </div>
+                                                <div class="menu-item">
+                                                    <a class="menu-link {{ request()->routeIs('wa-blast.*') ? 'active' : '' }}" href="{{ route('wa-blast.index') }}">
+                                                        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                                                        <span class="menu-title">WA Blast Promosi</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -4573,6 +4600,8 @@ Website MDT Management System
 		<script src="assets/js/custom/utilities/modals/users-search.js"></script>
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
+		@stack('scripts')
+		@yield('scripts')
 	</body>
 	<!--end::Body-->
 </html>

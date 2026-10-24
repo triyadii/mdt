@@ -45,4 +45,9 @@ return [
         'admin_chat_id' => env('TELEGRAM_ADMIN_CHAT_ID'),
     ],
 
+    'wa_gateway' => [
+        'base_url' => rtrim(env('WA_GATEWAY_URL', 'https://mdt-solution.site/wa-gateway'), '/'),
+        'token' => env('WA_GATEWAY_TOKEN', 'api_CffvAEdvg8y6arwOBbZqNaaPPkSv1zPIEoFOW31H'),
+    ],
+
 ];
